@@ -87,8 +87,8 @@ public class CustomMonthView extends MonthView {
             android:id="@+id/calendarView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:month_view="com.haibin.calendarviewproject.meizu.MeiZuMonthView"
-            app:week_view="com.haibin.calendarviewproject.meizu.MeizuWeekView" />
+            app:month_view="com.haibin.TimeManager.meizu.MeiZuMonthView"
+            app:week_view="com.haibin.TimeManager.meizu.MeizuWeekView" />
 
 ```
 
@@ -145,9 +145,9 @@ support date intercept
              android:id="@+id/calendarView"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             app:month_view="com.haibin.calendarviewproject.simple.SimpleMonthView"
-             app:week_view="com.haibin.calendarviewproject.simple.SimpleWeekView"
-             app:week_bar_view="com.haibin.calendarviewproject.EnglishWeekBar"
+             app:month_view="com.haibin.TimeManager.simple.SimpleMonthView"
+             app:week_view="com.haibin.TimeManager.simple.SimpleWeekView"
+             app:week_bar_view="com.haibin.TimeManager.EnglishWeekBar"
              app:month_view_show_mode="mode_only_current" />
 
         <android.support.v7.widget.RecyclerView

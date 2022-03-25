@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="#ffffff"
     android:fitsSystemWindows="true"
-    tools:context="com.haibin.calendarviewproject.MainActivity"
+    tools:context="com.haibin.TimeManager.MainActivity"
     tools:ignore="RtlHardcoded,HardcodedText,RtlSymmetry,SmallSp">
 
 
@@ -116,8 +116,8 @@
             app:scheme_text_color="#333"
             app:scheme_theme_color="#128c4b"
             app:selected_lunar_text_color="#CFCFCF"
-            app:month_view="com.haibin.calendarviewproject.meizu.MeiZuMonthView"
-            app:week_view="com.haibin.calendarviewproject.meizu.MeizuWeekView"
+            app:month_view="com.haibin.TimeManager.meizu.MeiZuMonthView"
+            app:week_view="com.haibin.TimeManager.meizu.MeizuWeekView"
             app:selected_text_color="#333"
             app:selected_theme_color="#80cfcfcf"
             app:week_background="#fff"
@@ -135,7 +135,6 @@
             android:id="@+id/recyclerView"
             android:layout_height="match_parent"
             android:layout_width="match_parent"/>
-
 
     </com.haibin.calendarview.CalendarLayout>
 

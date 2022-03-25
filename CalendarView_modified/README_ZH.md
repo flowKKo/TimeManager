@@ -83,6 +83,7 @@ app:week_bar_view="com.haibin.calendarviewproject.EnglishWeekBar"
 ```
 
 ### 使用方法
+
 ```xml
  <com.haibin.calendarview.CalendarLayout
         android:layout_width="match_parent"
@@ -97,9 +98,9 @@ app:week_bar_view="com.haibin.calendarviewproject.EnglishWeekBar"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:background="#fff"
-             app:month_view="com.haibin.calendarviewproject.simple.SimpleCalendarCardView"
-             app:week_view="com.haibin.calendarviewproject.simple.SimpleWeekView"
-             app:week_bar_view="com.haibin.calendarviewproject.EnglishWeekBar"
+             app:month_view="com.haibin.TimeManager.simple.SimpleCalendarCardView"
+             app:week_view="com.haibin.TimeManager.simple.SimpleWeekView"
+             app:week_bar_view="com.haibin.TimeManager.EnglishWeekBar"
              app:calendar_height="50dp"
              app:current_month_text_color="#333333"
              app:current_month_lunar_text_color="#CFCFCF"

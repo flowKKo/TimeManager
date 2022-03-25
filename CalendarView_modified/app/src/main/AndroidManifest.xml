@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.haibin.calendarviewproject">
+    package="com.haibin.TimeManager">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <application
@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.haibin.TimeManager.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,12 +21,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".meizu.MeiZuActivity" />
-        <activity android:name=".custom.CustomActivity" />
-        <activity android:name=".full.FullActivity" />
-        <activity android:name=".CalendarActivity" />
-        <activity android:name=".showActivity" />
-        <activity android:name=".textActivity"/>
+        <activity android:name="com.haibin.TimeManager.meizu.MeiZuActivity" />
+        <activity android:name="com.haibin.TimeManager.custom.CustomActivity" />
+        <activity android:name="com.haibin.TimeManager.full.FullActivity" />
+        <activity android:name="com.haibin.TimeManager.CalendarActivity" />
+        <activity android:name="com.haibin.TimeManager.showActivity" />
+        <activity android:name="com.haibin.TimeManager.textActivity"/>
     </application>
 
 </manifest>

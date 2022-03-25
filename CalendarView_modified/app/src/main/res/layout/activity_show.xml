@@ -7,9 +7,8 @@
     android:background="#ffffff"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.haibin.calendarviewproject.showActivity"
+    tools:context="com.haibin.TimeManager.showActivity"
     tools:ignore="RtlHardcoded,HardcodedText,RtlSymmetry,SmallSp">
-
 
     <RelativeLayout
         android:id="@+id/rl_tool"
@@ -102,7 +101,7 @@
         android:background="#fff"
         android:orientation="vertical"
         app:calendar_content_view_id="@+id/recyclerView"
-        app:calendar_show_mode="both_month_week_view">
+        app:calendar_show_mode="only_week_view">
 
         <com.haibin.calendarview.CalendarView
             android:id="@+id/calendarView"
@@ -122,7 +121,8 @@
             app:min_year="2008"
             app:min_year_day="1"
             app:min_year_month="1"
-            app:month_view="com.haibin.calendarviewproject.custom.CustomMonthView"
+            app:week_view="com.haibin.TimeManager.custom.CustomWeekView"
+            app:month_view="com.haibin.TimeManager.custom.CustomMonthView"
             app:month_view_show_mode="mode_only_current"
             app:other_month_lunar_text_color="#e1e1e1"
             app:other_month_text_color="#e1e1e1"
@@ -135,12 +135,11 @@
             app:selected_theme_color="#80cfcfcf"
             app:week_background="#fff"
             app:week_bar_height="46dp"
-            app:week_bar_view="com.haibin.calendarviewproject.custom.CustomWeekBar"
+            app:week_bar_view="com.haibin.TimeManager.custom.CustomWeekBar"
             app:week_line_background="#00000000"
             app:week_line_margin="16dp"
             app:week_start_with="sun"
             app:week_text_size="10sp"
-            app:week_view="com.haibin.calendarviewproject.custom.CustomWeekView"
             app:year_view_background="#f6f6f6"
             app:year_view_day_text_color="#333333"
             app:year_view_day_text_size="8sp"
@@ -152,14 +151,51 @@
             app:month_view_auto_select_day="last_select_day_ignore_current"
             app:year_view_week_text_size="7sp" />
 
-
-        <WebView
-            android:id="@+id/recyclerView"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"/>
-
-
     </com.haibin.calendarview.CalendarLayout>
+
+    <WebView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <Button
+            android:id="@+id/button_first"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="first"
+            android:textSize="18sp"></Button>
+
+        <Button
+            android:id="@+id/button_second"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="second"
+            android:textSize="18sp"></Button>
+
+        <Button
+            android:id="@+id/button_third"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="third"
+            android:textSize="18sp"></Button>
+
+        <Button
+            android:id="@+id/button_fourth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="forth"
+            android:textSize="18sp"></Button>
+    </LinearLayout>
 
 
 </LinearLayout>
