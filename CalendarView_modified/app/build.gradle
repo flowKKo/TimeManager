@@ -5,7 +5,7 @@ android {
     compileSdkVersion 28
     //noinspection GradleDependency
     defaultConfig {
-        applicationId "com.haibin.calendarviewproject"
+        applicationId "com.haibin.TimeManager"
         minSdkVersion 15
         //noinspection OldTargetApi
         targetSdkVersion 28

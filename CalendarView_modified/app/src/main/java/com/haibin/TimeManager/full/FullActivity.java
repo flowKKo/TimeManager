@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.haibin.TimeManager.showActivity;
+import com.haibin.TimeManager.tempActivity_fourth;
+import com.haibin.TimeManager.tempActivity_third;
 import com.haibin.calendarview.Calendar;
 import com.haibin.calendarview.CalendarView;
 import com.haibin.TimeManager.R;
@@ -76,11 +79,38 @@ public class FullActivity extends BaseActivity implements
         mTextCurrentDay.setText(String.valueOf(mCalendarView.getCurDay()));
 
 
-        Button button_1 = (Button)findViewById(R.id.button_first);
-        button_1.setOnClickListener(new View.OnClickListener() {
+        ImageButton button_todo = (ImageButton)findViewById(R.id.button_todo);
+        button_todo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(FullActivity.this, showActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton button_calendar = (ImageButton)findViewById(R.id.button_calendar);
+        button_calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FullActivity.this, FullActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton button_clock = (ImageButton)findViewById(R.id.button_clock);
+        button_clock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FullActivity.this, tempActivity_third.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton button_statistics = (ImageButton)findViewById(R.id.button_statistics);
+        button_statistics.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FullActivity.this, tempActivity_fourth.class);
                 startActivity(intent);
             }
         });

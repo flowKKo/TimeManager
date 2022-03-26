@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -68,7 +69,6 @@ public class showActivity extends BaseActivity implements
         mRelativeTool = findViewById(R.id.rl_tool);
         mCalendarView = findViewById(R.id.calendarView);
 
-        //mCalendarView.setRange(2018, 7, 1, 2019, 4, 28);
         mTextCurrentDay = findViewById(R.id.tv_current_day);
         mTextMonthDay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,53 +83,6 @@ public class showActivity extends BaseActivity implements
                 mTextMonthDay.setText(String.valueOf(mYear));
             }
         });
-
-
-
-        final DialogInterface.OnClickListener listener =
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        switch (which) {
-                            case 0:
-                                mCalendarLayout.expand();
-                                break;
-                            case 1:
-                                boolean result = mCalendarLayout.shrink();
-                                Log.e("shrink", " --  " + result);
-                                break;
-                            case 2:
-                                mCalendarView.scrollToPre(false);
-                                break;
-                            case 3:
-                                mCalendarView.scrollToNext(false);
-                                break;
-                            case 4:
-                                //mCalendarView.scrollToCurrent(true);
-                                mCalendarView.scrollToCalendar(2018, 12, 30);
-                                break;
-                            case 5:
-                                mCalendarView.setRange(2018, 7, 1, 2019, 4, 28);
-//                                mCalendarView.setRange(mCalendarView.getCurYear(), mCalendarView.getCurMonth(), 6,
-//                                        mCalendarView.getCurYear(), mCalendarView.getCurMonth(), 23);
-                                break;
-                            case 6:
-                                Log.e("scheme", "  " + mCalendarView.getSelectedCalendar().getScheme() + "  --  "
-                                        + mCalendarView.getSelectedCalendar().isCurrentDay());
-                                List<Calendar> weekCalendars = mCalendarView.getCurrentWeekCalendars();
-                                for (Calendar calendar : weekCalendars) {
-                                    Log.e("onWeekChange", calendar.toString() + "  --  " + calendar.getScheme());
-                                }
-                                new AlertDialog.Builder(showActivity.this)
-                                        .setMessage(String.format("Calendar Range: \n%s —— %s",
-                                                mCalendarView.getMinRangeCalendar(),
-                                                mCalendarView.getMaxRangeCalendar()))
-                                        .show();
-                                break;
-                        }
-                    }
-                };
-
 
         mCalendarLayout = findViewById(R.id.calendarLayout);
         mCalendarView.setOnYearChangeListener(this);
@@ -149,17 +102,17 @@ public class showActivity extends BaseActivity implements
         mTextLunar.setText("今日");
         mTextCurrentDay.setText(String.valueOf(mCalendarView.getCurDay()));
 
-//        Button button_1 = (Button)findViewById(R.id.button_1);
-//        button_1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(showActivity.this, showActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        ImageButton button_todo = (ImageButton)findViewById(R.id.button_todo);
+        button_todo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(showActivity.this, showActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        Button button_2 = (Button)findViewById(R.id.button_second);
-        button_2.setOnClickListener(new View.OnClickListener() {
+        ImageButton button_calendar = (ImageButton)findViewById(R.id.button_calendar);
+        button_calendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(showActivity.this, FullActivity.class);
@@ -167,7 +120,23 @@ public class showActivity extends BaseActivity implements
             }
         });
 
+        ImageButton button_clock = (ImageButton)findViewById(R.id.button_clock);
+        button_clock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(showActivity.this, tempActivity_third.class);
+                startActivity(intent);
+            }
+        });
 
+        ImageButton button_statistics = (ImageButton)findViewById(R.id.button_statistics);
+        button_statistics.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(showActivity.this, tempActivity_fourth.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -216,8 +185,13 @@ public class showActivity extends BaseActivity implements
         mYear = calendar.getYear();
         
         if (isClick) {
-            Intent intent = new Intent(showActivity.this, textActivity.class);
-            startActivity(intent);
+
+            // 在此处实现recycleView视图更新逻辑
+
+            Toast.makeText(this,"此处实现recycleView视图更新逻辑", Toast.LENGTH_SHORT).show();
+
+//            Intent intent = new Intent(showActivity.this, textActivity.class);
+//            startActivity(intent);
         }
     }
 

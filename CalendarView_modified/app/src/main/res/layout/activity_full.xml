@@ -134,46 +134,15 @@
             app:year_view_week_text_color="#e1e1e1"
             app:year_view_week_text_size="6sp" >
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_weight="1">
-
-
-                <Button
-                    android:id="@+id/button_first"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="first"
-                    android:textSize="18sp"></Button>
-
-                <Button
-                    android:id="@+id/button_second"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="second"
-                    android:textSize="18sp"></Button>
-
-                <Button
-                    android:id="@+id/button_third"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="third"
-                    android:textSize="18sp"></Button>
-
-                <Button
-                    android:id="@+id/button_fourth"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="forth"
-                    android:textSize="18sp"></Button>
-
+                android:layout_gravity="bottom">
+                <include layout="@layout/mynavibar"/>
             </LinearLayout>
+
+
         </com.haibin.calendarview.CalendarView>
     </com.haibin.calendarview.CalendarLayout>
 

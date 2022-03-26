@@ -163,38 +163,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom">
-
-        <Button
-            android:id="@+id/button_first"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="first"
-            android:textSize="18sp"></Button>
-
-        <Button
-            android:id="@+id/button_second"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="second"
-            android:textSize="18sp"></Button>
-
-        <Button
-            android:id="@+id/button_third"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="third"
-            android:textSize="18sp"></Button>
-
-        <Button
-            android:id="@+id/button_fourth"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="forth"
-            android:textSize="18sp"></Button>
+        <include layout="@layout/mynavibar"/>
     </LinearLayout>
 
 
