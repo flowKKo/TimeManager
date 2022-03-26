@@ -3,6 +3,7 @@ package com.haibin.TimeManager.full;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -96,6 +97,7 @@ public class FullActivity extends BaseActivity implements
                 startActivity(intent);
             }
         });
+        button_calendar.setBackgroundColor(Color.parseColor("#D7D7D7"));
 
         ImageButton button_clock = (ImageButton)findViewById(R.id.button_clock);
         button_clock.setOnClickListener(new View.OnClickListener() {

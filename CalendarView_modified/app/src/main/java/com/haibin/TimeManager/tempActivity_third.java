@@ -1,6 +1,7 @@
 package com.haibin.TimeManager;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,6 +43,7 @@ public class tempActivity_third extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        button_clock.setBackgroundColor(Color.parseColor("#D7D7D7"));
 
         ImageButton button_statistics = (ImageButton)findViewById(R.id.button_statistics);
         button_statistics.setOnClickListener(new View.OnClickListener() {

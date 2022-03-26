@@ -3,6 +3,7 @@ package com.haibin.TimeManager;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -110,6 +111,7 @@ public class showActivity extends BaseActivity implements
                 startActivity(intent);
             }
         });
+        button_todo.setBackgroundColor(Color.parseColor("#D7D7D7"));
 
         ImageButton button_calendar = (ImageButton)findViewById(R.id.button_calendar);
         button_calendar.setOnClickListener(new View.OnClickListener() {
