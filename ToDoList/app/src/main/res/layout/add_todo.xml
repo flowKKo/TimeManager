@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/shape_round_edge"
+    android:background="@drawable/shape_dialog_edge"
+    android:visibility="visible"
     tools:layout_editor_absoluteX="18dp"
-    tools:layout_editor_absoluteY="0dp">
+    tools:layout_editor_absoluteY="0dp"
+    tools:visibility="visible">
 
     <EditText
         android:id="@+id/EditText_ToDo"
-        android:layout_width="299dp"
-        android:layout_height="42dp"
+        android:layout_width="293dp"
+        android:layout_height="40dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/edittext_selector"
@@ -19,25 +21,24 @@
         android:hint="   准备做什么？"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toStartOf="@+id/button_addtodo"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_clock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
+        android:layout_width="86dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/button_selector"
-        android:shadowColor=""
         android:text="不提醒"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_select_date"
-        app:layout_constraintVertical_bias="0.017" />
+        app:layout_constraintTop_toBottomOf="@+id/button_select_date" />
 
     <Button
         android:id="@+id/button_addtodo"
-        android:layout_width="86dp"
-        android:layout_height="43dp"
+        android:layout_width="81dp"
+        android:layout_height="37dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="12dp"
         android:background="@drawable/button_selector"
@@ -47,8 +48,8 @@
 
     <EditText
         android:id="@+id/EditText_date"
-        android:layout_width="251dp"
-        android:layout_height="42dp"
+        android:layout_width="252dp"
+        android:layout_height="41dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
         android:background="@drawable/edittext_selector"
@@ -57,18 +58,29 @@
         android:focusable="false"
         android:textIsSelectable="false"
         app:layout_constraintEnd_toStartOf="@+id/button_select_date"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EditText_ToDo" />
 
     <Button
         android:id="@+id/button_select_date"
-        android:layout_width="134dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="125dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="12dp"
         android:background="@drawable/button_selector"
         android:text="选择日期"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_addtodo" />
+
+    <Button
+        android:id="@+id/button_repeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="不重复"
+        app:layout_constraintEnd_toStartOf="@+id/button_clock"
+        app:layout_constraintTop_toBottomOf="@+id/EditText_date" />
 
     <!--<androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="410dp"
