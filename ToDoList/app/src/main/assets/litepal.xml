@@ -2,9 +2,11 @@
 <litepal>
     <dbname value="TodoList"></dbname>
 
-    <version value="1"></version>
+    <version value="4"></version>
 
     <list>
-        <mapping class="com.example.todolist.ToDo"></mapping>
+        <mapping class="com.example.todolist.Todo"></mapping>
+<!--        <mapping class="com.example.todolist.Date"></mapping>
+        <mapping class="com.example.todolist.Time"></mapping>-->
     </list>
 </litepal>

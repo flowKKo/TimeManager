@@ -3,13 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.234" />
         <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/drawable/button.xml" value="0.234" />
+        <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/drawable/button_selector.xml" value="0.115" />
         <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/drawable/edittext_selector.xml" value="0.234" />
         <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/drawable/ic_launcher_background.xml" value="0.234" />
         <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/drawable/shape_border.xml" value="0.234" />
+        <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/drawable/shape_dialog_edge.xml" value="0.115" />
         <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/drawable/shape_round_edge.xml" value="0.234" />
-        <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/layout/activity_main.xml" value="0.375" />
         <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/layout/add_todo.xml" value="0.335" />
+        <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/layout/date_select.xml" value="0.3211050724637681" />
+        <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/layout/fragment_day.xml" value="0.3211050724637681" />
+        <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/layout/fragment_month.xml" value="0.3211050724637681" />
+        <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/layout/fragment_week.xml" value="0.20471014492753623" />
+        <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/layout/repeat_set.xml" value="0.375" />
+        <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/menu/select_ways.xml" value="0.325" />
+        <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.234" />
+        <entry key="..\:/Android_Studio/Android_Project/ToDoList/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.234" />
       </map>
     </option>
   </component>

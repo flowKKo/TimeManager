@@ -8,5 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <drawable name="btn_focused">#33ff66</drawable>
-    <drawable name="btn_normal">#F0F0F0</drawable>
+    <drawable name="btn_normal">#D3CFCF</drawable>
 </resources>
