@@ -19,7 +19,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/RepeatMode"
         style="@style/Theme.ToDoList"
-        android:layout_width="412dp"
+        android:layout_width="410dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:background="#FFFFFF"
@@ -72,8 +72,8 @@
 
     <TextView
         android:id="@+id/textView_begin"
-        android:layout_width="412dp"
-        android:layout_height="35dp"
+        android:layout_width="361dp"
+        android:layout_height="34dp"
         android:hint="    何时开始？"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
