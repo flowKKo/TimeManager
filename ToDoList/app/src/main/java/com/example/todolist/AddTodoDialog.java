@@ -33,7 +33,8 @@ import java.util.Locale;
 
 public class AddTodoDialog extends BottomSheetDialogFragment {
     private Calendar calendar= Calendar.getInstance(Locale.CHINA);//创建一个日历
-    private Date select_date=new Date(0,0,0);//选择的日期
+    private Date select_date=new Date(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH)+1,
+            calendar.get(Calendar.DAY_OF_MONTH));//选择的日期，默认今天
     private DatePickerDialog datePickerDialog=null;//日期选择对话框
     private boolean is_clock=false;//是否提醒
     private TimePickerDialog timePickerDialog=null;//时间选择对话框
@@ -72,6 +73,9 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
          */
         //设置父背景为透明
         ((View) view.getParent()).setBackgroundColor(getResources().getColor(android.R.color.transparent));
+        ((EditText)getView().findViewById(R.id.EditText_date)).setText(Integer.toString(calendar.get(Calendar.YEAR))+'/'+
+                String.format("%02d",calendar.get(Calendar.MONTH)+1)+'/'+
+                String.format("%02d",calendar.get(Calendar.DAY_OF_MONTH)));
         initDialog();//初始化各个对话框
         initOnClick();//初始化监听
     }
@@ -102,7 +106,7 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
                     }
                 },12,0,true);
         //创建一个重复任务设置对话框
-        repeatSetDialog=new RepeatSetDialog();
+       /* repeatSetDialog=new RepeatSetDialog();
         repeatSetDialog.setOnRepeatSetListener(new OnRepeatSetListener() {//设置监听
             @Override
             public void onRepeatSet(RepeatSet repeatSet) {
@@ -110,9 +114,8 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
                 is_repeat=true;
                 //按钮文本提示...
                 ((Button)getView().findViewById(R.id.button_repeat)).setText("重复");
-
             }
-        });
+        });*/
     }
 
     public void initOnClick(){
@@ -152,6 +155,16 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
                 break;
             case R.id.button_repeat:  //重复任务设置
                 if(!is_repeat){
+                    repeatSetDialog=new RepeatSetDialog();
+                    repeatSetDialog.setOnRepeatSetListener(new OnRepeatSetListener() {//设置监听
+                        @Override
+                        public void onRepeatSet(RepeatSet repeatSet) {
+                            m_repeatSet=repeatSet;
+                            is_repeat=true;
+                            //按钮文本提示...
+                            ((Button)getView().findViewById(R.id.button_repeat)).setText("重复");
+                        }
+                    });
                     repeatSetDialog.show(getParentFragmentManager(),"This is repeatSetDialog");
                 }
                 else{//还原按钮
@@ -186,15 +199,7 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
             for(Date date=m_repeatSet.date_begin;date.LessEqual(m_repeatSet.date_end);date.increase()){
                 switch (m_repeatSet.RepeatMode){
                     case 0://日重复
-                        todos.add(new Todo());
-                        todos.get(todos.size()-1).setTodo(((EditText)getView().findViewById(R.id.EditText_ToDo)).getText().toString());
-                        todos.get(todos.size()-1).setCreate_date(Integer.toString(calendar.get(Calendar.YEAR))+'/'+
-                                String.format("%02d",calendar.get(Calendar.MONTH)+1)+'/'+
-                                String.format("%02d",calendar.get(Calendar.DAY_OF_MONTH)));
-                        todos.get(todos.size()-1).setIs_clock(is_clock);
-                        todos.get(todos.size()-1).setTime(select_time.tostring());
-                        todos.get(todos.size()-1).setDate(date.tostring());
-                        todos.get(todos.size()-1).setId(max_id+1);
+                        AddTodoToList(todos,max_id+1,date);
                         max_id++;
                         break;
                     case 1://周重复
@@ -208,15 +213,7 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
                         calendar1.setTime(date1);
                         int w=calendar1.get(Calendar.DAY_OF_WEEK)-1;
                         if(m_repeatSet.DaysOfWeek.contains(week[w])){//添加
-                            todos.add(new Todo());
-                            todos.get(todos.size()-1).setTodo(((EditText)getView().findViewById(R.id.EditText_ToDo)).getText().toString());
-                            todos.get(todos.size()-1).setCreate_date(Integer.toString(calendar.get(Calendar.YEAR))+'/'+
-                                    String.format("%02d",calendar.get(Calendar.MONTH)+1)+'/'+
-                                    String.format("%02d",calendar.get(Calendar.DAY_OF_MONTH)));
-                            todos.get(todos.size()-1).setIs_clock(is_clock);
-                            todos.get(todos.size()-1).setTime(select_time.tostring());
-                            todos.get(todos.size()-1).setDate(date.tostring());
-                            todos.get(todos.size()-1).setId(max_id+1);
+                            AddTodoToList(todos,max_id+1,date);
                             max_id++;
                         }
                         break;
@@ -224,19 +221,17 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
                         if(date.getDay()== Integer.valueOf
                                 (m_repeatSet.DayOfMonth.substring(1,m_repeatSet.DayOfMonth.length()-1))){
                             //添加
-                            todos.add(new Todo());
-                            todos.get(todos.size()-1).setTodo(((EditText)getView().findViewById(R.id.EditText_ToDo)).getText().toString());
-                            todos.get(todos.size()-1).setCreate_date(Integer.toString(calendar.get(Calendar.YEAR))+'/'+
-                                    String.format("%02d",calendar.get(Calendar.MONTH)+1)+'/'+
-                                    String.format("%02d",calendar.get(Calendar.DAY_OF_MONTH)));
-                            todos.get(todos.size()-1).setIs_clock(is_clock);
-                            todos.get(todos.size()-1).setTime(select_time.tostring());
-                            todos.get(todos.size()-1).setDate(date.tostring());
-                            todos.get(todos.size()-1).setId(max_id+1);
+                            AddTodoToList(todos,max_id+1,date);
                             max_id++;
                         }
                         break;
                     case 3://年重复
+                        if(date.getMonth()==Integer.valueOf(m_repeatSet.DayOfYear.substring(0,2))&&
+                        date.getDay()==Integer.valueOf(m_repeatSet.DayOfYear.substring(3,5))){
+                            //添加
+                            AddTodoToList(todos,max_id+1,date);
+                            max_id++;
+                        }
                         break;
                     default:break;
                 }
@@ -244,6 +239,18 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
             }
             LitePal.saveAll(todos);//保存
         }
+    }
+
+    public void AddTodoToList(List<Todo> todos, int id, Date date){//重复任务添加一个到list
+        todos.add(new Todo());
+        todos.get(todos.size()-1).setTodo(((EditText)getView().findViewById(R.id.EditText_ToDo)).getText().toString());
+        todos.get(todos.size()-1).setCreate_date(Integer.toString(calendar.get(Calendar.YEAR))+'/'+
+                String.format("%02d",calendar.get(Calendar.MONTH)+1)+'/'+
+                String.format("%02d",calendar.get(Calendar.DAY_OF_MONTH)));
+        todos.get(todos.size()-1).setIs_clock(is_clock);
+        todos.get(todos.size()-1).setTime(select_time.tostring());
+        todos.get(todos.size()-1).setDate(date.tostring());
+        todos.get(todos.size()-1).setId(id);
     }
 
 }

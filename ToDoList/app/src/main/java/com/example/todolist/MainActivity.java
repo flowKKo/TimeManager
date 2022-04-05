@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import org.litepal.LitePal;
 import org.litepal.crud.DataSupport;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             default:
                 List<Todo> list= LitePal.findAll(Todo.class);
-                list=list;
+                Toast.makeText(this,"共有"+Integer.toString(list.size())+"条数据",Toast.LENGTH_LONG).show();
             break;
         }
     }

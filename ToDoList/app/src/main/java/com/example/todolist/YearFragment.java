@@ -1,5 +1,6 @@
 package com.example.todolist;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,14 +10,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.NumberPicker;
+
+import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MonthFragment#newInstance} factory method to
+ * Use the {@link YearFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MonthFragment extends Fragment {
+public class YearFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,9 +29,11 @@ public class MonthFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private NumberPicker numberPicker=null;//数字选择器选取某月的哪一天
+    private Calendar calendar= Calendar.getInstance(Locale.CHINA);
+    Button btn_select;//日期选择按钮
+    private DatePickerDialog datePickerDialog;//日期选择对话框
 
-    public MonthFragment() {
+    public YearFragment() {
         // Required empty public constructor
     }
 
@@ -38,11 +43,11 @@ public class MonthFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MonthFragment.
+     * @return A new instance of fragment YearFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static MonthFragment newInstance(String param1, String param2) {
-        MonthFragment fragment = new MonthFragment();
+    public static YearFragment newInstance(String param1, String param2) {
+        YearFragment fragment = new YearFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -57,46 +62,41 @@ public class MonthFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        //连接按钮响应事件
-       /* Button btn_dayofmonth=(Button) getView().findViewById(R.id.button_DayOfMonth);
-        btn_dayofmonth.setOnClickListener(this::onClick);*/
+        initDialog();//初始化对话框
     }
 
-  /*  public void onClick(View view) {
-        switch (getView().getId()){
-            case R.id.button_DayOfMonth://选择月中的某一天
-                numberPicker=getView().findViewById(R.id.numberPicker);
-
-
-                break;
-            default: break;
-        }
-
-    }*/
+    private void initDialog() {
+        datePickerDialog=new DatePickerDialog(getContext(), 0, null,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH));
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_month, container, false);
+        return inflater.inflate(R.layout.fragment_year, container, false);
     }
 
     @Override
-    public  void onViewCreated(final View view, Bundle savedInstanceState){
+    public void onViewCreated(final View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //初始化numberPicker
-        numberPicker=(NumberPicker) getView().findViewById(R.id.numberPicker);
-        String[] days=new String[31];
-        for(int i=1;i<=31;i++){
-            days[i-1]="第"+Integer.toString(i)+"天";
-        }
-        numberPicker.setDisplayedValues(days);
-        numberPicker.setMaxValue(30);
-        numberPicker.setMinValue(0);
-        numberPicker.setValue(0);
+        //设置默认今天
+        btn_select=((Button)getView().findViewById(R.id.button_year));
+        btn_select.setText(String.format("%02d",calendar.get(Calendar.MONTH)+1)+"月"+
+                String.format("%02d",calendar.get(Calendar.DAY_OF_MONTH))+"日");
+        btn_select.setOnClickListener(this::onClick);//设置监听
+
     }
 
-    public NumberPicker GetNumberPicker(){
-        return numberPicker;
+    private void onClick(View view) {
+        switch (view.getId()){
+            case R.id.button_year://显示日期选择对话框
+                datePickerDialog.show();
+                break;
+            default: break;
+        }
+    }
+
+    public DatePickerDialog GetDatePickerDialog(){//获取日期选择对话框
+        return datePickerDialog;
     }
 }

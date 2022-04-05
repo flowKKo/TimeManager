@@ -4,23 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MonthFragment">
+    tools:context=".YearFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="196dp"
-        android:background="#FFFFFF">
+        android:layout_height="match_parent">
 
-        <NumberPicker
-            android:id="@+id/numberPicker"
-            android:layout_width="75dp"
-            android:layout_height="49dp"
-            android:layout_below="@+id/button_DayOfMonth"
-            android:layout_marginStart="168dp"
-            android:layout_marginTop="4dp"
-            android:background="#FFFFFF"
+        <Button
+            android:id="@+id/button_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

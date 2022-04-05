@@ -1,34 +1,27 @@
 package com.example.todolist;
 
 import android.app.DatePickerDialog;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.media.session.PlaybackStateCompat;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Calendar;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Locale;
 
 class RepeatSet{
@@ -65,6 +58,7 @@ interface OnRepeatSetListener {
 }
 
 public class RepeatSetDialog extends DialogFragment {
+    //private boolean isInitFragments =false;//是否初始化
     private List<Fragment> fragments=new LinkedList<>();//重复模式不同下的fragment
     private ViewPager2 viewPager;
     private boolean is_ViewPagerOnClick=false;//viewpager中信号槽是否连接
@@ -98,24 +92,28 @@ public class RepeatSetDialog extends DialogFragment {
         我们在这里可以重新设定view的各个数据，但是不能修改对话框最外层的ViewGroup的布局参数。
         因为这里的view还没添加到父级中，我们需要在下面onStart生命周期里修改对话框尺寸参数
          */
+        //获取view
         viewPager=(ViewPager2)getView().findViewById(R.id.RepeatSelect);//获取布局中的对象
         bottomNavigationView=(BottomNavigationView)getView().findViewById(R.id.RepeatMode);
         textView_begin=(TextView) getView().findViewById(R.id.textView_begin);
         textView_end=(TextView)getView().findViewById(R.id.textView_end);
         button_close=(ImageButton)getView().findViewById(R.id.button_Repeatclose);
         button_ok=(Button)getView().findViewById(R.id.button_Repeatok);
-
+        //设置viewpager中的fragment
         fragments.add(new DayFragment());//加入需要的各个fragment
         fragments.add(new WeekFragment());
         fragments.add(new MonthFragment());
+        fragments.add(new YearFragment());
+        //配置viewpager的adapter
         SelectRepeatFragmentPagerAdapter adapter=new SelectRepeatFragmentPagerAdapter(getParentFragmentManager(),
                 getLifecycle(),fragments);//自定义adapter对象
         viewPager.setAdapter(adapter);//为viewpager设置adapter
         viewPager.setCurrentItem(0);//初始页面
         viewPager.setOffscreenPageLimit(3);//预加载
         viewPager.setUserInputEnabled(false);//设置不可滑动
-        initOnClick();//信号槽连接
         initDatePicker();//初始化日期选择器
+        initOnClick();//信号槽连接
+
     }
 
     public void initOnClick(){
@@ -143,7 +141,20 @@ public class RepeatSetDialog extends DialogFragment {
         List<Fragment> list=((SelectRepeatFragmentPagerAdapter)viewPager.getAdapter()).fragmentList;
         MonthFragment monthFragment=(MonthFragment) list.get(2);
         monthFragment.GetNumberPicker().setOnValueChangedListener(this::onClick_month);
+        //年任务
+        YearFragment yearFragment=(YearFragment) list.get(3);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            yearFragment.GetDatePickerDialog().setOnDateSetListener(this::onClick_year);
+        }
+    }
 
+    private void onClick_year(DatePicker datePicker, int year, int month, int day) {
+        List<Fragment> list=((SelectRepeatFragmentPagerAdapter)viewPager.getAdapter()).fragmentList;
+        YearFragment yearFragment=(YearFragment) list.get(3);
+        Button btn= (Button)yearFragment.getView().findViewById(R.id.button_year);//年日期选择按钮
+        btn.setText(String.format("%02d",month+1)+"月"+
+                String.format("%02d",day)+"日");//设置文本
+        repeatSet.DayOfYear=btn.getText().toString();
     }
 
     private void onClick_week(View view) {
