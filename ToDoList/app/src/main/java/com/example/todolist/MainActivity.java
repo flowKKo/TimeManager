@@ -32,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
                 bottomSheet_add.show();*/
 
                 addTodoDialog=new AddTodoDialog();
+                addTodoDialog.setOnTodoAddListener(new OnTodoAddListener() {
+                    @Override
+                    public void onTodoAdd() {
+                        //Todo
+                        //Toast.makeText(getApplicationContext(),"ok",Toast.LENGTH_LONG).show();
+                    }
+                });
                 addTodoDialog.show(getSupportFragmentManager(),"This is addTodoDialog");
 
 

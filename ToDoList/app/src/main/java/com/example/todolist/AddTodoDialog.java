@@ -31,6 +31,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
+// 添加todo监听
+interface OnTodoAddListener {
+    // 回调方法
+    void onTodoAdd();
+}
+
 public class AddTodoDialog extends BottomSheetDialogFragment {
     private Calendar calendar= Calendar.getInstance(Locale.CHINA);//创建一个日历
     private Date select_date=new Date(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH)+1,
@@ -45,6 +51,7 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
     private boolean is_repeat=false;//是否重复任务
     private RepeatSetDialog repeatSetDialog=null;//重复任务设置对话框
     private boolean isIs_repeat=false;//不重复
+    private OnTodoAddListener onTodoAddListener;//监听者
 
     // 构造方法
     public static AddTodoDialog newInstance(Long feedId) {
@@ -137,6 +144,7 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
             case R.id.button_addtodo:  //添加待办事项
                 AddToSQL();//添加到数据库
                 Toast.makeText(getContext(),"添加成功", Toast.LENGTH_SHORT).show();
+                onTodoAddListener.onTodoAdd();//函数回调
                 dismiss();//销毁添加待办事项对话框
                 break;
             case R.id.button_select_date:  //选择日期
@@ -251,6 +259,10 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
         todos.get(todos.size()-1).setTime(select_time.tostring());
         todos.get(todos.size()-1).setDate(date.tostring());
         todos.get(todos.size()-1).setId(id);
+    }
+
+    public void setOnTodoAddListener(OnTodoAddListener onTodoAddListener){
+        this.onTodoAddListener=onTodoAddListener;//回调函数定义
     }
 
 }
