@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Pomodoro Clock</string>
+    <string name="button_play">Resume</string>
+    <string name="button_pause">Pause</string>
+    <string name="button_reset">Reset</string>
+    <string name="working_timer_option">Set working time</string>
+    <string name="break_timer_option">Set break time</string>
+    <string name="time">%1$s:%2$s</string>
+    <string name="hour_time">%1$s:%2$s:%3$s</string>
+    <string name="default_time">25:00</string>
+    <string name="button_default">Start</string>
+    <string name="set_alarm_sound">Set alarm sound</string>
+    <string name="done_button">Set</string>
+    <string name="hour_hint">Hours</string>
+    <string name="minute_hint">Minutes</string>
+    <string name="second_hint">Seconds</string>
+    <string name="worker_icon">Worker</string>
+    <string name="error_edit_text">Fields can\'t be all empty!</string>
+    <string name="all_zeros">Fields can\'t be all zeros!</string>
+    <string name="set_start_time">设置专注时长</string>
+    <string name="set_break_time">设置休息时长</string>
+    <string name="potato">potato</string>
+    <string name="default_count">0</string>
+</resources>
