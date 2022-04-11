@@ -1,4 +1,4 @@
-package com.example.todolist;
+package com.example.todolist.AddTodoDialog;
 
 import android.app.DatePickerDialog;
 import android.os.Build;
@@ -17,6 +17,8 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.todolist.R;
+import com.example.todolist.Todo.Date;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Calendar;
@@ -31,7 +33,7 @@ class RepeatSet{
     List<String> DaysOfWeek;//周任务中的哪几天
     String DayOfMonth;//月任务中的哪一天
     String DayOfYear;//年任务中的哪一天
-    RepeatSet(int RepeatMode,Date date_begin,Date date_end,List<String> DaysOfWeek,String DayOfMonth,
+    RepeatSet(int RepeatMode, Date date_begin, Date date_end, List<String> DaysOfWeek, String DayOfMonth,
               String DayOfYear){
         this.RepeatMode=RepeatMode;
         this.date_begin=date_begin;
@@ -40,8 +42,8 @@ class RepeatSet{
         this.DayOfMonth=DayOfMonth;
         this.DayOfYear=DayOfYear;
     }
-    void setRepeatSet(int RepeatMode,Date date_begin,Date date_end,List<String> DaysOfWeek,String DayOfMonth,
-                 String DayOfYear){
+    void setRepeatSet(int RepeatMode, Date date_begin, Date date_end, List<String> DaysOfWeek, String DayOfMonth,
+                      String DayOfYear){
         this.RepeatMode=RepeatMode;
         this.date_begin=date_begin;
         this.date_end=date_end;

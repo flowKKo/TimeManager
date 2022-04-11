@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <litepal>
-    <dbname value="TodoList"></dbname>
+    <dbname value="TodoList" />
 
-    <version value="4"></version>
+    <version value="7" />
 
     <list>
-        <mapping class="com.example.todolist.Todo"></mapping>
+        <mapping class="com.example.todolist.Todo.Todo" />
 <!--        <mapping class="com.example.todolist.Date"></mapping>
         <mapping class="com.example.todolist.Time"></mapping>-->
     </list>
