@@ -3,7 +3,7 @@ package com.haibin.TimeManager;
 import android.content.Context;
 import android.content.Intent;
 
-import com.haibin.TimeManager.base.activity.BaseActivity;
+import com.haibin.TimeManager.calendar.base.activity.BaseActivity;
 
 /**
  * Only calendar

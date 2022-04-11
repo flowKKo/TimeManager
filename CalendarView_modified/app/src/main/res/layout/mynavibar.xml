@@ -6,12 +6,12 @@
     android:layout_gravity="bottom"
     android:background="@color/colorPrimary"
     android:layout_weight="1"
-    android:paddingBottom="10dp">
+    android:paddingBottom="17dp">
 
     <ImageButton
         android:id="@+id/button_todo"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="35dp"
         android:layout_weight="1"
         android:background="@color/colorPrimary"
         android:scaleType="fitCenter"
@@ -21,7 +21,7 @@
     <ImageButton
         android:id="@+id/button_calendar"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="35dp"
         android:layout_weight="1"
         android:background="@color/colorPrimary"
         android:scaleType="fitCenter"
@@ -31,7 +31,7 @@
     <ImageButton
         android:id="@+id/button_clock"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="35dp"
         android:layout_weight="1"
         android:background="@color/colorPrimary"
         android:scaleType="fitCenter"
@@ -41,7 +41,7 @@
     <ImageButton
         android:id="@+id/button_statistics"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="35dp"
         android:layout_weight="1"
         android:background="@color/colorPrimary"
         android:scaleType="fitCenter"

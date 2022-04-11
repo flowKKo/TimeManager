@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.haibin.TimeManager.full.FullActivity;
+import com.haibin.TimeManager.calendar.full.FullActivity;
 
 public class MainActivity extends AppCompatActivity {
 

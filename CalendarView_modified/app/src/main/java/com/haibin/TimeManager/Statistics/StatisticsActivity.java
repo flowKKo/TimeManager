@@ -1,4 +1,4 @@
-package com.haibin.TimeManager;
+package com.haibin.TimeManager.Statistics;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -8,20 +8,23 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.haibin.TimeManager.Statistics.StatisticsActivity;
+import com.haibin.TimeManager.R;
 import com.haibin.TimeManager.calendar.full.FullActivity;
+import com.haibin.TimeManager.showActivity;
+import com.haibin.TimeManager.tempActivity_third;
 
-public class tempActivity_third extends AppCompatActivity {
+public class StatisticsActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_third);
+        setContentView(R.layout.activity_statistics);
 
         ImageButton button_todo = (ImageButton)findViewById(R.id.button_todo);
         button_todo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(tempActivity_third.this, showActivity.class);
+                Intent intent = new Intent(StatisticsActivity.this, showActivity.class);
                 startActivity(intent);
             }
         });
@@ -30,7 +33,7 @@ public class tempActivity_third extends AppCompatActivity {
         button_calendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(tempActivity_third.this, FullActivity.class);
+                Intent intent = new Intent(StatisticsActivity.this, FullActivity.class);
                 startActivity(intent);
             }
         });
@@ -39,20 +42,20 @@ public class tempActivity_third extends AppCompatActivity {
         button_clock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(tempActivity_third.this, tempActivity_third.class);
+                Intent intent = new Intent(StatisticsActivity.this, tempActivity_third.class);
                 startActivity(intent);
             }
         });
-        button_clock.setBackgroundColor(Color.parseColor("#D7D7D7"));
 
         ImageButton button_statistics = (ImageButton)findViewById(R.id.button_statistics);
         button_statistics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(tempActivity_third.this, StatisticsActivity.class);
+                Intent intent = new Intent(StatisticsActivity.this, StatisticsActivity.class);
                 startActivity(intent);
             }
         });
+        button_statistics.setBackgroundColor(Color.parseColor("#D7D7D7"));
 
 
     }

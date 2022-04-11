@@ -18,11 +18,11 @@
         <activity android:name="com.haibin.TimeManager.MainActivity">
         </activity>
 
-        <activity android:name="com.haibin.TimeManager.meizu.MeiZuActivity"
+        <activity android:name=".calendar.meizu.MeiZuActivity"
             android:launchMode="singleTask"/>
-        <activity android:name="com.haibin.TimeManager.custom.CustomActivity"
+        <activity android:name=".calendar.custom.CustomActivity"
             android:launchMode="singleTask"/>
-        <activity android:name="com.haibin.TimeManager.full.FullActivity"
+        <activity android:name=".calendar.full.FullActivity"
             android:launchMode="singleTask"/>
         <activity android:name="com.haibin.TimeManager.CalendarActivity"
             android:launchMode="singleTask"/>
@@ -39,7 +39,8 @@
 
         <activity android:name="com.haibin.TimeManager.tempActivity_third"
             android:launchMode="singleTask"/>
-        <activity android:name="com.haibin.TimeManager.tempActivity_fourth"
+
+        <activity android:name=".Statistics.StatisticsActivity"
             android:launchMode="singleTask"/>
 
     </application>

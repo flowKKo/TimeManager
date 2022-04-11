@@ -7,7 +7,6 @@ import android.graphics.Color;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -15,12 +14,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
-import com.haibin.TimeManager.full.FullActivity;
+import com.haibin.TimeManager.Statistics.StatisticsActivity;
+import com.haibin.TimeManager.calendar.full.FullActivity;
 import com.haibin.calendarview.Calendar;
 import com.haibin.calendarview.CalendarLayout;
 import com.haibin.calendarview.CalendarView;
-import com.haibin.TimeManager.base.activity.BaseActivity;
-import com.haibin.TimeManager.meizu.MeiZuActivity;
+import com.haibin.TimeManager.calendar.base.activity.BaseActivity;
+import com.haibin.TimeManager.calendar.meizu.MeiZuActivity;
 
 import java.util.List;
 
@@ -135,7 +135,7 @@ public class showActivity extends BaseActivity implements
         button_statistics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(showActivity.this, tempActivity_fourth.class);
+                Intent intent = new Intent(showActivity.this, StatisticsActivity.class);
                 startActivity(intent);
             }
         });
