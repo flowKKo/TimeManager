@@ -1,15 +1,14 @@
-package com.example.todolist;
+package com.example.todolist.AddTodoDialog;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.NumberPicker;
+
+import androidx.fragment.app.Fragment;
+
+import com.example.todolist.R;
 
 /**
  * A simple {@link Fragment} subclass.

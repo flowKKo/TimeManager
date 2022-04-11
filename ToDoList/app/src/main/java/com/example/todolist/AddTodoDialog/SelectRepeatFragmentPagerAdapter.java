@@ -1,4 +1,4 @@
-package com.example.todolist;
+package com.example.todolist.AddTodoDialog;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

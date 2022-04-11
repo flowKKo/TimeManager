@@ -1,4 +1,4 @@
-package com.example.todolist;
+package com.example.todolist.AddTodoDialog;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -9,33 +9,25 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.example.todolist.R;
+import com.example.todolist.Todo.Date;
+import com.example.todolist.Todo.Time;
+import com.example.todolist.Todo.Todo;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import org.litepal.LitePal;
-import org.litepal.crud.LitePalSupport;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
-
-// 添加todo监听
-interface OnTodoAddListener {
-    // 回调方法
-    void onTodoAdd();
-}
 
 public class AddTodoDialog extends BottomSheetDialogFragment {
     private Calendar calendar= Calendar.getInstance(Locale.CHINA);//创建一个日历
@@ -44,7 +36,7 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
     private DatePickerDialog datePickerDialog=null;//日期选择对话框
     private boolean is_clock=false;//是否提醒
     private TimePickerDialog timePickerDialog=null;//时间选择对话框
-    private Time select_time=new Time();//选择的提醒时间
+    private Time select_time=new Time(12,0);//选择的提醒时间
     //重复任务设置
     private RepeatSet m_repeatSet=new RepeatSet(0, new Date(0, 0, 0),
             new Date(0, 0, 0), new LinkedList<>(),"", "");
@@ -187,7 +179,9 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
     }
 
     public void AddToSQL(){
-        int max_id=LitePal.max("Todo","id",int.class);//保证todo_id自增
+        int max_id;
+        if(LitePal.count("Todo")==0) max_id=0;
+        else max_id=LitePal.max("Todo","id",int.class);//保证todo_id自增
         if(!is_repeat){//不重复
             Todo todo = new Todo();//设置要加入的todo
             todo.setTodo(((EditText)getView().findViewById(R.id.EditText_ToDo)).getText().toString());
@@ -204,7 +198,7 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
             String []week={"星期天","星期一","星期二","星期三","星期四","星期五","星期六",};
             SimpleDateFormat format= new SimpleDateFormat("yyyy/MM/dd");
             List<Todo> todos=new LinkedList<>();
-            for(Date date=m_repeatSet.date_begin;date.LessEqual(m_repeatSet.date_end);date.increase()){
+            for(Date date = m_repeatSet.date_begin; date.LessEqual(m_repeatSet.date_end); date.increase()){
                 switch (m_repeatSet.RepeatMode){
                     case 0://日重复
                         AddTodoToList(todos,max_id+1,date);

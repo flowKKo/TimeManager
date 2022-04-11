@@ -1,15 +1,15 @@
-package com.example.todolist;
+package com.example.todolist.AddTodoDialog;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.DatePicker;
+
+import androidx.fragment.app.Fragment;
+
+import com.example.todolist.R;
 
 import java.util.Calendar;
 import java.util.Locale;
