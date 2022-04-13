@@ -73,13 +73,13 @@ public class Todo extends LitePalSupport {
     private boolean is_clock;//是否提醒
     private String time;//提醒时间
     private boolean is_done;//是否完成
-    private String is_delete;//是否被删除
+    private boolean is_delete;//是否被删除
 
-    public String isIs_delete() {
+    public boolean isIs_delete() {
         return is_delete;
     }
 
-    public void setIs_delete(String Is_delete) {
+    public void setIs_delete(boolean Is_delete) {
 
         this.is_delete = Is_delete;
     }
@@ -136,7 +136,7 @@ public class Todo extends LitePalSupport {
         return is_clock;
     }
 
-    public Todo(int id, String todo, String date, String create_date, boolean is_clock, String time, boolean is_done, String is_delete) {
+    public Todo(int id, String todo, String date, String create_date, boolean is_clock, String time, boolean is_done, boolean is_delete) {
         this.id = id;
         this.todo = todo;
         this.date = date;

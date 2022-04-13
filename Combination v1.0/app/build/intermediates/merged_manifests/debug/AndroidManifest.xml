@@ -25,9 +25,15 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.haibin.TimeManager.activity.MainActivity"
+            android:name="com.haibin.TimeManager.activity.MainActivityTemp"
             android:launchMode="singleTop"
             android:theme="@style/Theme.ToDoList" />
+        <activity
+            android:name="com.haibin.TimeManager.menu.search_dustbin"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.haibin.TimeManager.menu.search_history"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="com.haibin.TimeManager.calendar.custom.CustomActivity"
             android:launchMode="singleTop" />

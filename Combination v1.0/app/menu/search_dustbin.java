@@ -107,7 +107,7 @@ private Toolbar mToolbar;
         return new DragTouchAdapter(this,mRecyclerView);
     }
     protected int getContentView() {
-        return R.layout.activity_main;
+        return R.layout.activity_main_temp;
     }
     protected RecyclerView.ItemDecoration createItemDecoration() {
         return new DefaultItemDecoration(ContextCompat.getColor(this, R.color.divider_color));

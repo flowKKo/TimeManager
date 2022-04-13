@@ -37,6 +37,7 @@
         app:chipIcon="@drawable/ic_today"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/todo_text"
+        android:theme="@style/Theme.MaterialComponents.Light"
          />
 
 

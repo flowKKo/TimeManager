@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:2:1-59:12
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-67:12
 MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\eefe8de60a573b982a63de6e2062aff4\AndroidManifest.xml:2:1-20:12
 MERGED from [org.litepal.guolindev:core:3.2.3] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\5a0f5aa88fe9a27413e7e2392ac504a5\AndroidManifest.xml:2:1-14:12
 MERGED from [com.yanzhenjie.recyclerview:x:1.3.2] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\89a6317de8632dea5f8ca02242c6ec8e\AndroidManifest.xml:17:1-24:12
@@ -11,7 +11,7 @@ MERGED from [androidx.navigation:navigation-ui:2.4.1] D:\CodeRelated\Android_SDK
 MERGED from [com.google.android.material:material:1.5.0] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\f4716404554a146a6eda0387005da9c5\AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.bumptech.glide:glide:4.5.0] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\cdbfd20b2f6d146027e6bb30bb78e89b\AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\42c52c446f8be2d1170941897e7e6ed8\AndroidManifest.xml:2:1-11:12
-MERGED from [:calendarview] C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\calendarview\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:calendarview] C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.4.1] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\420175f206c02d7a2fc84ccd725151a8\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\9490784190fd429ad81e36ee311f9945\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview:1.2.1] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\037a41dd6e332822a7da877d8c2053cd\AndroidManifest.xml:17:1-24:12
@@ -63,39 +63,39 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] D:\CodeRelated\An
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\da3dd406b8bbe36d18768d25b24446ca\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\74038dcd5e283fdbe12b92f95e00cce7\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\524948ac25cd7b4f8e0897f980a1d3a6\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-67:12
+INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-67:12
 	package
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:4:5-37
-		INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:4:5-37
+		INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:2:1-59:12
-		INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-67:12
+		INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:3:5-51
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:2:1-59:12
-		INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-67:12
+		INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:6:5-81
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:6:5-81
 	android:name
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:6:22-78
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:6:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:7:5-80
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:7:5-80
 	android:name
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:7:22-77
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:7:22-77
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:9:5-67
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:9:5-67
 	android:name
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:9:22-64
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:9:22-64
 application
-ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:10:5-57:19
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:10:5-65:19
 MERGED from [org.litepal.guolindev:core:3.2.3] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\5a0f5aa88fe9a27413e7e2392ac504a5\AndroidManifest.xml:11:5-12:19
 MERGED from [org.litepal.guolindev:core:3.2.3] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\5a0f5aa88fe9a27413e7e2392ac504a5\AndroidManifest.xml:11:5-12:19
 MERGED from [com.google.android.material:material:1.5.0] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\f4716404554a146a6eda0387005da9c5\AndroidManifest.xml:22:5-20
@@ -121,95 +121,107 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] D:\CodeRelated\Android_SDK\
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.7.0] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\a7982607c7879570ba7cd16424b40dea\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:17:9-35
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:17:9-35
 	android:label
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:16:9-41
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:16:9-41
 	tools:ignore
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:20:9-64
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:20:9-64
 	android:roundIcon
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:14:9-54
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:14:9-54
 	android:icon
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:13:9-43
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:13:9-43
 	android:allowBackup
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:12:9-35
 	android:theme
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:18:9-40
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:18:9-40
 	android:usesCleartextTraffic
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:19:9-44
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:19:9-44
 	android:name
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:11:9-54
-activity#com.haibin.TimeManager.activity.MainActivity
-ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:22:9-24:45
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:11:9-54
+activity#com.haibin.TimeManager.activity.MainActivityTemp
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:22:9-24:45
 	android:launchMode
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:24:13-43
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:24:13-43
 	android:theme
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:23:13-50
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:23:13-50
 	android:name
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:22:19-56
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:22:19-60
+activity#com.haibin.TimeManager.menu.search_dustbin
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:26:9-28:71
+	android:theme
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:28:13-69
+	android:name
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:27:13-48
+activity#com.haibin.TimeManager.menu.search_history
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:30:9-32:71
+	android:theme
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:32:13-69
+	android:name
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:31:13-48
 activity#com.haibin.TimeManager.calendar.custom.CustomActivity
-ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:26:9-27:45
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:34:9-35:45
 	android:launchMode
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:27:13-43
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:35:13-43
 	android:name
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:26:19-65
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:34:19-65
 activity#com.haibin.TimeManager.calendar.full.FullActivity
-ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:29:9-30:45
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:37:9-38:45
 	android:launchMode
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:30:13-43
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:38:13-43
 	android:name
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:29:19-61
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:37:19-61
 activity#com.haibin.TimeManager.calendar.CalendarActivity
-ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:32:9-33:45
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:40:9-41:45
 	android:launchMode
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:33:13-43
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:41:13-43
 	android:name
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:32:19-60
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:40:19-60
 activity#com.haibin.TimeManager.showActivity
-ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:35:9-43:20
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:43:9-51:20
 	android:launchMode
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:38:13-43
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:46:13-43
 	android:exported
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:36:13-36
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:44:13-36
 	android:theme
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:37:13-57
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:45:13-57
 	android:name
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:35:19-47
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:43:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:39:13-42:29
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:47:13-50:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:40:17-69
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:48:17-69
 	android:name
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:40:25-66
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:48:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:41:17-77
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:49:17-77
 	android:name
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:41:27-74
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:49:27-74
 activity#com.haibin.TimeManager.showDailyTodoActivity
-ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:45:9-47:15
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:53:9-55:15
 	android:theme
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:46:13-57
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:54:13-57
 	android:name
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:45:19-56
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:53:19-56
 activity#com.haibin.TimeManager.tempActivity_third
-ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:49:9-50:45
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:57:9-58:45
 	android:launchMode
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:50:13-43
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:58:13-43
 	android:name
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:49:19-53
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:57:19-53
 activity#com.haibin.TimeManager.Statistics.StatisticsActivity
-ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:52:9-55:45
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:60:9-63:45
 	android:label
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:53:13-35
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:61:13-35
 	android:launchMode
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:55:13-43
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:63:13-43
 	android:theme
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:54:13-57
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:62:13-57
 	android:name
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml:52:19-64
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:60:19-64
 uses-sdk
-INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
 MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\eefe8de60a573b982a63de6e2062aff4\AndroidManifest.xml:16:5-18:41
 MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\eefe8de60a573b982a63de6e2062aff4\AndroidManifest.xml:16:5-18:41
 MERGED from [org.litepal.guolindev:core:3.2.3] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\5a0f5aa88fe9a27413e7e2392ac504a5\AndroidManifest.xml:7:5-9:41
@@ -224,8 +236,8 @@ MERGED from [com.github.bumptech.glide:glide:4.5.0] D:\CodeRelated\Android_SDK\.
 MERGED from [com.github.bumptech.glide:glide:4.5.0] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\cdbfd20b2f6d146027e6bb30bb78e89b\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\42c52c446f8be2d1170941897e7e6ed8\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\42c52c446f8be2d1170941897e7e6ed8\AndroidManifest.xml:5:5-7:41
-MERGED from [:calendarview] C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\calendarview\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:calendarview] C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\calendarview\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:calendarview] C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:calendarview] C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.appcompat:appcompat:1.4.1] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\420175f206c02d7a2fc84ccd725151a8\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.4.1] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\420175f206c02d7a2fc84ccd725151a8\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\9490784190fd429ad81e36ee311f9945\AndroidManifest.xml:20:5-22:41
@@ -328,16 +340,16 @@ MERGED from [androidx.arch.core:core-runtime:2.1.0] D:\CodeRelated\Android_SDK\.
 MERGED from [androidx.arch.core:core-runtime:2.1.0] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\74038dcd5e283fdbe12b92f95e00cce7\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\524948ac25cd7b4f8e0897f980a1d3a6\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\524948ac25cd7b4f8e0897f980a1d3a6\AndroidManifest.xml:20:5-22:41
-INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\AgarthaSF\Desktop\combination\SE_Project_TimeManager- (2)\CalendarView_modified\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.0.0] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\05a5e553533b596f7024ed8e7f73e35e\AndroidManifest.xml:26:9-34:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] D:\CodeRelated\Android_SDK\.gradle\caches\transforms-2\files-2.1\ae66e9ac05cca74adfe061706016b33e\AndroidManifest.xml:26:9-34:20

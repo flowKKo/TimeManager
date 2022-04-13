@@ -30,7 +30,6 @@ import com.haibin.TimeManager.EditTodoDialog.EditTodoDialog;
 import com.haibin.TimeManager.EditTodoDialog.OnTodoEditListener;
 import com.haibin.TimeManager.R;
 import com.haibin.TimeManager.Todo.Todo;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.yanzhenjie.recyclerview.SwipeRecyclerView;
 import com.yanzhenjie.recyclerview.touch.OnItemMoveListener;
 import com.yanzhenjie.recyclerview.touch.OnItemStateChangedListener;
@@ -88,7 +87,7 @@ private Toolbar mToolbar;
         mRecyclerView.addItemDecoration(mItemDecoration);
         mRecyclerView.setOnItemClickListener(this::onItemClick);
         mRecyclerView.setAdapter(mAdapter);
-        HistoryList= LitePal.where("is_delete = ?","true").
+        HistoryList= LitePal.where("is_delete = ?", "1").
                 order("date desc").find(Todo.class);
         mAdapter.notifyDataSetChanged(HistoryList);
 
@@ -107,7 +106,7 @@ private Toolbar mToolbar;
         return new DragTouchAdapter(this,mRecyclerView);
     }
     protected int getContentView() {
-        return R.layout.activity_main;
+        return R.layout.activity_main_temp;
     }
     protected RecyclerView.ItemDecoration createItemDecoration() {
         return new DefaultItemDecoration(ContextCompat.getColor(this, R.color.divider_color));
@@ -119,7 +118,7 @@ private Toolbar mToolbar;
         editTodoDialog.setOnTodoEditListener(new OnTodoEditListener() {
             @Override
             public void onTodoEdit() {//刷新界面
-                HistoryList= LitePal.where("is_delete = ? and todo like ?","true","%"+search_str+"%").
+                HistoryList= LitePal.where("is_delete = ? and todo like ?", "1","%"+search_str+"%").
                         order("date desc").find(Todo.class);
                 mAdapter.notifyDataSetChanged(HistoryList);
             }
@@ -136,8 +135,9 @@ private Toolbar mToolbar;
 
     public void SearchHistory()
     {
+
         Log.w("TAG6","search history begin"+search_str);
-        HistoryList= LitePal.where("is_delete = ? and todo like ?","true","%"+search_str+"%").
+        HistoryList= LitePal.where("is_delete = ? and todo like ?", "1","%"+search_str+"%").
                 order("date desc").find(Todo.class);
 //        HistoryList=LitePal.findAll(Todo.class);
         Log.w("TAG7","search history over"+HistoryList.size());
@@ -259,7 +259,7 @@ private Toolbar mToolbar;
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(search_dustbin.this, "你点击了确定按钮~", Toast.LENGTH_SHORT).show();
                             Todo updatetodo=new Todo();
-                            updatetodo.setIs_delete("false");
+                            updatetodo.setIs_delete(false);
                             updatetodo.updateAll("todo = ? and date = ?",todoname,date);
 
 
@@ -282,17 +282,7 @@ private Toolbar mToolbar;
                         }
                     })//即使点了取消之后事件依然被删除啊啊，要不然试试页面刷新
                     .show();
-//            //依然是根据todo的名字更新数据库
-//
-//            Todo updatetodo=new Todo();
-//            updatetodo.setIs_delete(true);
-//            updatetodo.updateAll("todo=?",todoname);
-//
-//            mToDoList.remove(position);
-//            //LitePal.deleteAll(Todo.class,"todo=?",todo);
-//            mAdapter.notifyItemRemoved(position);
-//
-//            Toast.makeText(MainActivity.this, "现在的第" + position + "条被删除。", Toast.LENGTH_SHORT).show();
+
         }
 
     };

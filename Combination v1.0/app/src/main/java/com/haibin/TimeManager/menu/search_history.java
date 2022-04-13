@@ -9,7 +9,6 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -31,10 +30,6 @@ import com.haibin.TimeManager.EditTodoDialog.EditTodoDialog;
 import com.haibin.TimeManager.EditTodoDialog.OnTodoEditListener;
 import com.haibin.TimeManager.R;
 import com.haibin.TimeManager.Todo.Todo;
-import com.haibin.TimeManager.activity.MainActivity;
-import com.haibin.TimeManager.menu.search_dustbin;
-import com.haibin.TimeManager.menu.search_history;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.yanzhenjie.recyclerview.SwipeRecyclerView;
 import com.yanzhenjie.recyclerview.touch.OnItemMoveListener;
 import com.yanzhenjie.recyclerview.touch.OnItemStateChangedListener;
@@ -93,7 +88,7 @@ public class search_history extends AppCompatActivity {
                 if (!TextUtils.isEmpty(newText)){
                     search_str=newText;
                 }else{
-                    HistoryList= LitePal.where("is_delete = ? and date < ?","false",mdate).
+                    HistoryList= LitePal.where("is_delete = ? and date < ?", "0", mdate).
                             order("date desc").find(Todo.class);
                     mAdapter.notifyDataSetChanged(HistoryList);
                 }
@@ -118,7 +113,7 @@ public class search_history extends AppCompatActivity {
         localReceiver=new LocalReceiver();
         intentFilter=new IntentFilter("myaction");
         localBroadcastManager.registerReceiver(localReceiver,intentFilter);
-        HistoryList= LitePal.where("is_delete = ? and date<?","false",mdate).
+        HistoryList= LitePal.where("is_delete = ? and date<?", "0",mdate).
                 order("date desc").find(Todo.class);
         mAdapter.notifyDataSetChanged(HistoryList);
     }
@@ -126,7 +121,7 @@ public class search_history extends AppCompatActivity {
         return new DragTouchAdapter(this,mRecyclerView);
     }
     protected int getContentView() {
-        return R.layout.activity_main;
+        return R.layout.activity_main_temp;
     }
     protected RecyclerView.ItemDecoration createItemDecoration() {
         return new DefaultItemDecoration(ContextCompat.getColor(this, R.color.divider_color));
@@ -138,7 +133,7 @@ public class search_history extends AppCompatActivity {
         editTodoDialog.setOnTodoEditListener(new OnTodoEditListener() {
             @Override
             public void onTodoEdit() {//刷新界面
-                HistoryList= LitePal.where("todo like ? and is_delete = ? and date < ?","%"+search_str+"%","false",mdate).
+                HistoryList= LitePal.where("todo like ? and is_delete = ? and date < ?","%"+search_str+"%", "0",mdate).
                         order("date desc").find(Todo.class);
                 mAdapter.notifyDataSetChanged(HistoryList);
             }
@@ -156,7 +151,7 @@ public class search_history extends AppCompatActivity {
     public void SearchHistory()
     {
         Log.w("TAG6","search history begin"+search_str);
-        HistoryList= LitePal.where("todo like ? and is_delete = ? and date<?","%"+search_str+"%","false",mdate).
+        HistoryList= LitePal.where("todo like ? and is_delete = ? and date<?","%"+search_str+"%", "0",mdate).
                 order("date desc").find(Todo.class);
 //        HistoryList=LitePal.findAll(Todo.class);
         Log.w("TAG7","search history over"+HistoryList.size());
@@ -277,7 +272,7 @@ public class search_history extends AppCompatActivity {
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(search_history.this, "你点击了确定按钮~", Toast.LENGTH_SHORT).show();
                             Todo updatetodo=new Todo();
-                            updatetodo.setIs_delete("true");
+                            updatetodo.setIs_delete(true);
                             updatetodo.updateAll("todo=?",todoname);
 
                             HistoryList.remove(position);

@@ -192,7 +192,7 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
             todo.setTime(select_time.tostring());
             todo.setDate(select_date.tostring());
             todo.setId(max_id+1);
-            todo.setIs_delete("false");
+            todo.setIs_delete(false);
             todo.save();//插入数据
         }
         else{//重复添加
