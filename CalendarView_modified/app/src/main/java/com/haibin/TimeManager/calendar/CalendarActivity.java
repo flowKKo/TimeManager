@@ -1,8 +1,9 @@
-package com.haibin.TimeManager;
+package com.haibin.TimeManager.calendar;
 
 import android.content.Context;
 import android.content.Intent;
 
+import com.haibin.TimeManager.R;
 import com.haibin.TimeManager.calendar.base.activity.BaseActivity;
 
 /**

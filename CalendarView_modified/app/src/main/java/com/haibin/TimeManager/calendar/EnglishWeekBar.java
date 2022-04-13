@@ -1,10 +1,11 @@
-package com.haibin.TimeManager;
+package com.haibin.TimeManager.calendar;
 
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.widget.TextView;
 
+import com.haibin.TimeManager.R;
 import com.haibin.calendarview.Calendar;
 import com.haibin.calendarview.WeekBar;
 

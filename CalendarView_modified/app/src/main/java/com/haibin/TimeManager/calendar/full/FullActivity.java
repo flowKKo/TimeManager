@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.haibin.TimeManager.Statistics.StatisticsActivity;
 import com.haibin.TimeManager.showActivity;
+import com.haibin.TimeManager.showDailyTodoActivity;
 import com.haibin.TimeManager.tempActivity_third;
 import com.haibin.calendarview.Calendar;
 import com.haibin.calendarview.CalendarView;
@@ -161,7 +162,7 @@ public class FullActivity extends BaseActivity implements
                 "  --  " + isClick + "  --   " + calendar.getScheme());
 
         if(isClick){
-            Intent intent = new Intent(FullActivity.this, com.haibin.TimeManager.textActivity.class);
+            Intent intent = new Intent(FullActivity.this, showDailyTodoActivity.class);
             startActivity(intent);
         }
     }

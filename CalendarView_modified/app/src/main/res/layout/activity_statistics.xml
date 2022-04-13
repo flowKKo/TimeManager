@@ -49,7 +49,6 @@
                     android:textSize="30dp"
                     android:text="0"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
                     />
 
             </LinearLayout>
@@ -80,7 +79,6 @@
                     android:textSize="30dp"
                     android:text="0h"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
                     />
 
 
@@ -131,7 +129,6 @@
                     android:textSize="30dp"
                     android:text="0"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
                     />
 
 
@@ -163,7 +160,6 @@
                     android:textSize="30dp"
                     android:text="0h"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
                     />
 
 
