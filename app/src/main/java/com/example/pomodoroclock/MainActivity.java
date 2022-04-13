@@ -31,7 +31,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.litepal.LitePal;
+import org.litepal.crud.LitePalSupport;
+
+import java.time.Clock;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
@@ -50,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
     EditText numCount;
     Vibrator vibrator;
     Ringtone ringtone;
-    clockDatabaseHelper dbHelper;
     boolean isdone = true; //记录当前番茄钟是否被用完，是则为true，反之为false
     int id = -1; //记录当前番茄钟的编号
 
@@ -59,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
 //        if (isTimeRunning) return;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        LitePal.getDatabase();
 
-        dbHelper = new clockDatabaseHelper(this, "Pomodoro_records", null, 1);
         resumePauseButton = findViewById(R.id.resumePauseButton);
         resetButton = findViewById(R.id.resetButton);
         timerProgressBar = findViewById(R.id.progressBar);
@@ -81,11 +85,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void readCount() {
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        //获取当前番茄id
-        Cursor cursor = db.rawQuery("select count(id) from Clock where state = 1",null);
-        cursor.moveToFirst();
-        numCount.setText(String.valueOf(cursor.getInt(0)));
+        //获取当前番茄个数
+        int cnt = LitePal.where("state = ?", "1").count(Clock_Database.class);
+        numCount.setText(String.valueOf(cnt));
     }
 
     @Override
@@ -244,16 +246,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void update_pomodoro()
     {
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put("state", true);
-        db.update("Clock", values, "id = ?",
-                new String[] {String.valueOf(id)}); //更新番茄状态
+        Clock_Database db1 = new Clock_Database();
+        db1.setState(true);
+        db1.updateAll("id = ?", String.valueOf(id)); //更新该id的番茄钟
         isdone = true;
     }
 
     private void record_pomodoro(boolean isfinished) {
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        Clock_Database db1 = new Clock_Database();
         ContentValues values = new ContentValues();
         Calendar calendar = Calendar.getInstance();
         //年
@@ -266,15 +266,14 @@ public class MainActivity extends AppCompatActivity {
         String cur_date = year + "/" + month + "/" + day;
 
         //获取当前番茄id
-        Cursor cursor = db.rawQuery("select count(id) from Clock",null);
-        cursor.moveToFirst();
-        id = cursor.getInt(0) + 1;
+        id = LitePal.count(Clock_Database.class) + 1;
 
-        //装载数据
-        values.put("date", cur_date); //执行日期
-        values.put("time", startTime); //专注时长
-        values.put("state", isfinished); //完成状态
-        db.insert("Clock", null, values);
+        db1.setId(1);
+        db1.setDate(cur_date);
+        db1.setTime(startTime);
+        db1.setState(isfinished);
+        db1.save();
+
         values.clear();
     }
 
