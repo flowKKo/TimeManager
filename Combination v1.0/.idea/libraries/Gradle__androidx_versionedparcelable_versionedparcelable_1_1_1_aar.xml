@@ -1,10 +1,10 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.versionedparcelable:versionedparcelable:1.1.1@aar">
     <CLASSES>
-      <root url="file://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/71bdadd7918c8c469f9978631a9d3d1a/res" />
-      <root url="jar://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/8ecc1f29b3dc1dca3a22cc2e9fca6421/jars/classes.jar!/" />
-      <root url="file://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/8ecc1f29b3dc1dca3a22cc2e9fca6421/res" />
-      <root url="file://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/8ecc1f29b3dc1dca3a22cc2e9fca6421/AndroidManifest.xml" />
+      <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/3b62dff3bf6995f73decc0a2f71ae727/res" />
+      <root url="jar://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/eb175aef50c6bf726e3b5a34b89c2560/jars/classes.jar!/" />
+      <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/eb175aef50c6bf726e3b5a34b89c2560/AndroidManifest.xml" />
+      <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/eb175aef50c6bf726e3b5a34b89c2560/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\AgarthaSF\\Desktop\\se project\\CalendarView_modified\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",
+            "outputFile": "C:\\Users\\AgarthaSF\\Desktop\\combination\\SE_Project_TimeManager- (2)\\CalendarView_modified\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",
             "map": [
                 {
-                    "source": "D:\\CodeRelated\\Android_SDK\\caches\\transforms-2\\files-2.1\\59de106e951efb203cc2087aef4cfb15\\res\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",
+                    "source": "D:\\CodeRelated\\Android_SDK\\.gradle\\caches\\transforms-2\\files-2.1\\f4716404554a146a6eda0387005da9c5\\res\\values-h360dp-land-v13\\values-h360dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

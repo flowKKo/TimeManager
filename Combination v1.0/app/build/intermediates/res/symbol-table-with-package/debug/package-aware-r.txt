@@ -2640,8 +2640,12 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable edittext_selector
+drawable ic_baseline_delete
+drawable ic_baseline_edit
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
+drawable ic_launcher_background
+drawable ic_launcher_foreground
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
@@ -2810,6 +2814,7 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id buttonPanel
+id button_DayOfMonth
 id button_Fri
 id button_Mon
 id button_Repeatclose

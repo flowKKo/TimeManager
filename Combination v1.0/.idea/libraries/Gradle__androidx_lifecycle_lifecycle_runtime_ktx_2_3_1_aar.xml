@@ -1,10 +1,10 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.lifecycle:lifecycle-runtime-ktx:2.3.1@aar">
     <CLASSES>
-      <root url="file://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/859690ab2ddcad64dacf67ee58fcf499/res" />
-      <root url="file://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/e6e875ee0c354bb5dae7bdbad8b9f6fe/AndroidManifest.xml" />
-      <root url="jar://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/e6e875ee0c354bb5dae7bdbad8b9f6fe/jars/classes.jar!/" />
-      <root url="file://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/e6e875ee0c354bb5dae7bdbad8b9f6fe/res" />
+      <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/0df54f2f5390516e33dc7e896c0df872/res" />
+      <root url="jar://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/21d6c2b182ad5876d8f5ad9d534cdba7/jars/classes.jar!/" />
+      <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/21d6c2b182ad5876d8f5ad9d534cdba7/AndroidManifest.xml" />
+      <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/21d6c2b182ad5876d8f5ad9d534cdba7/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

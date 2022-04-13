@@ -1,10 +1,29 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\AgarthaSF\\Desktop\\se project\\CalendarView_modified\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh\\values-zh.xml",
+            "outputFile": "C:\\Users\\AgarthaSF\\Desktop\\combination\\SE_Project_TimeManager- (2)\\CalendarView_modified\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh\\values-zh.xml",
             "map": [
                 {
-                    "source": "D:\\CodeRelated\\Android_SDK\\caches\\transforms-2\\files-2.1\\bd4951259f09a85516b27f39ed88afb8\\res\\values-zh\\values-zh.xml",
+                    "source": "C:\\Users\\AgarthaSF\\Desktop\\combination\\SE_Project_TimeManager- (2)\\CalendarView_modified\\app\\src\\main\\res\\values-zh\\strings.xml",
+                    "from": {
+                        "startLines": "13,3,38,27,52,1,25,23,51,48,49,50",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "300,66,956,645,1390,16,593,541,1341,1209,1255,1295",
+                        "endLines": "21,11,46,36,52,1,25,23,51,48,49,50",
+                        "endColumns": "19,19,19,19,44,48,50,50,48,45,39,45",
+                        "endOffsets": "535,294,1203,950,1430,60,639,587,1385,1250,1290,1336"
+                    },
+                    "to": {
+                        "startLines": "31,40,49,58,231,232,235,236,238,241,243,244",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "791,1031,1264,1516,6011,6056,6192,6243,6328,6445,6525,6565",
+                        "endLines": "39,48,57,67,231,232,235,236,238,241,243,244",
+                        "endColumns": "19,19,19,19,44,48,50,50,48,45,39,45",
+                        "endOffsets": "1026,1259,1511,1821,6051,6100,6238,6289,6372,6486,6560,6606"
+                    }
+                },
+                {
+                    "source": "D:\\CodeRelated\\Android_SDK\\.gradle\\caches\\transforms-2\\files-2.1\\89a6317de8632dea5f8ca02242c6ec8e\\res\\values-zh\\values-zh.xml",
                     "from": {
                         "startLines": "2,3,4,5,6",
                         "startColumns": "4,4,4,4,4",
@@ -21,26 +40,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\AgarthaSF\\Desktop\\se project\\CalendarView_modified\\app\\src\\main\\res\\values-zh\\strings.xml",
-                    "from": {
-                        "startLines": "13,3,38,27,53,1,25,23,52,49,50,51",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "300,66,956,645,1391,16,593,541,1342,1210,1256,1296",
-                        "endLines": "21,11,46,36,53,1,25,23,52,49,50,51",
-                        "endColumns": "19,19,19,19,44,48,50,50,48,45,39,45",
-                        "endOffsets": "535,294,1203,950,1431,60,639,587,1386,1251,1291,1337"
-                    },
-                    "to": {
-                        "startLines": "31,40,49,58,231,232,235,236,238,241,243,244",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "791,1031,1264,1516,6011,6056,6192,6243,6328,6445,6525,6565",
-                        "endLines": "39,48,57,67,231,232,235,236,238,241,243,244",
-                        "endColumns": "19,19,19,19,44,48,50,50,48,45,39,45",
-                        "endOffsets": "1026,1259,1511,1821,6051,6100,6238,6289,6372,6486,6560,6606"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\AgarthaSF\\Desktop\\se project\\CalendarView_modified\\calendarview\\build\\intermediates\\packaged_res\\debug\\values-zh\\values-zh.xml",
+                    "source": "C:\\Users\\AgarthaSF\\Desktop\\combination\\SE_Project_TimeManager- (2)\\CalendarView_modified\\calendarview\\build\\intermediates\\packaged_res\\debug\\values-zh\\values-zh.xml",
                     "from": {
                         "startLines": "2,16,31,45,77,91,111,137,142,151,164,176,185,194,195,196,197,198,199,200,201",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

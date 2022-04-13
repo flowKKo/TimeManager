@@ -12,7 +12,7 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int abc_vector_test = 0x7f080054;
+        public static final int abc_vector_test = 0x7f080055;
     }
     public static final class styleable {
         private styleable() {}
