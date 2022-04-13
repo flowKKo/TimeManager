@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3" xmlns:ns1="http://schemas.android.com/tools"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\AgarthaSF\Desktop\se project\CalendarView_modified\calendarview\src\main\res"/><source path="C:\Users\AgarthaSF\Desktop\se project\CalendarView_modified\calendarview\build\generated\res\rs\debug"/><source path="C:\Users\AgarthaSF\Desktop\se project\CalendarView_modified\calendarview\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\AgarthaSF\Desktop\se project\CalendarView_modified\calendarview\src\main\res"><file name="cv_bg_material" path="C:\Users\AgarthaSF\Desktop\se project\CalendarView_modified\calendarview\src\main\res\drawable\cv_bg_material.xml" qualifiers="" type="drawable"/><file name="cv_bg_material" path="C:\Users\AgarthaSF\Desktop\se project\CalendarView_modified\calendarview\src\main\res\drawable-v21\cv_bg_material.xml" qualifiers="v21" type="drawable"/><file name="cv_layout_calendar_view" path="C:\Users\AgarthaSF\Desktop\se project\CalendarView_modified\calendarview\src\main\res\layout\cv_layout_calendar_view.xml" qualifiers="" type="layout"/><file name="cv_week_bar" path="C:\Users\AgarthaSF\Desktop\se project\CalendarView_modified\calendarview\src\main\res\layout\cv_week_bar.xml" qualifiers="" type="layout"/><file path="C:\Users\AgarthaSF\Desktop\se project\CalendarView_modified\calendarview\src\main\res\values\attrs.xml" qualifiers=""><declare-styleable name="CalendarView">
+
+        <attr format="dimension" name="calendar_padding"/>
+        <attr format="dimension" name="calendar_padding_left"/>
+        <attr format="dimension" name="calendar_padding_right"/>
+
+
+        <attr format="color" name="week_background"/>
+        <attr format="color" name="week_line_background"/>
+        <attr format="color" name="week_text_color"/>
+        <attr format="dimension" name="week_text_size"/>
+        <attr format="dimension" name="week_line_margin"/>
+
+        <attr format="string" name="month_view"/>
+        <attr format="string" name="week_view"/> 
+        <attr format="string" name="year_view"/> 
+        <attr format="dimension" name="week_bar_height"/> 
+        <attr format="string" name="week_bar_view"/> 
+
+        <attr format="string" name="scheme_text"/>
+        <attr format="dimension" name="day_text_size"/>
+        <attr format="dimension" name="lunar_text_size"/>
+        <attr format="dimension" name="calendar_height"/>
+        <attr format="boolean" name="calendar_match_parent"/> 
+        <attr format="color" name="scheme_text_color"/>
+        <attr format="color" name="scheme_month_text_color"/>
+        <attr format="color" name="scheme_lunar_text_color"/>
+        <attr format="color" name="scheme_theme_color"/>
+
+        <attr format="color" name="selected_theme_color"/>
+        <attr format="color" name="selected_text_color"/>
+        <attr format="color" name="selected_lunar_text_color"/>
+
+        <attr format="color" name="current_day_text_color"/>
+        <attr format="color" name="current_day_lunar_text_color"/>
+        <attr format="color" name="current_month_text_color"/>
+        <attr format="color" name="other_month_text_color"/>
+        <attr format="color" name="current_month_lunar_text_color"/>
+        <attr format="color" name="other_month_lunar_text_color"/>
+
+
+        
+        <attr format="dimension" name="year_view_month_text_size"/>
+        <attr format="dimension" name="year_view_day_text_size"/>
+        <attr format="color" name="year_view_month_text_color"/>
+        <attr format="color" name="year_view_current_day_text_color"/>
+        <attr format="color" name="year_view_day_text_color"/>
+        <attr format="color" name="year_view_select_text_color"/>
+        <attr format="color" name="year_view_scheme_color"/>
+        <attr format="color" name="year_view_background"/>
+        <attr format="dimension" name="year_view_month_height"/>
+        <attr format="dimension" name="year_view_week_height"/>
+        <attr format="dimension" name="year_view_week_text_size"/>
+        <attr format="color" name="year_view_week_text_color"/>
+
+        <attr format="dimension" name="year_view_padding"/>
+        <attr format="dimension" name="year_view_padding_left"/>
+        <attr format="dimension" name="year_view_padding_right"/>
+
+        <attr format="dimension" name="year_view_month_padding_top"/>
+        <attr format="dimension" name="year_view_month_padding_left"/>
+        <attr format="dimension" name="year_view_month_padding_right"/>
+        <attr format="dimension" name="year_view_month_padding_bottom"/>
+
+        
+        <attr format="integer" name="min_year"/>
+        <attr format="integer" name="max_year"/>
+        <attr format="integer" name="min_year_month"/>
+        <attr format="integer" name="max_year_month"/>
+        <attr format="integer" name="min_year_day"/>
+        <attr format="integer" name="max_year_day"/>
+
+
+        
+        <attr format="boolean" name="month_view_scrollable"/>
+        
+        <attr format="boolean" name="week_view_scrollable"/>
+        
+        <attr format="boolean" name="year_view_scrollable"/>
+
+        
+        <attr name="month_view_show_mode">
+            <enum name="mode_all" value="0"/>
+            <enum name="mode_only_current" value="1"/>
+            <enum name="mode_fix" value="2"/>
+        </attr>
+
+        
+        <attr name="week_start_with">
+            <enum name="sun" value="1"/>
+            <enum name="mon" value="2"/>
+            <enum name="sat" value="7"/>
+        </attr>
+
+        
+        <attr name="select_mode">
+            <enum name="default_mode" value="0"/>
+            <enum name="single_mode" value="1"/>
+            <enum name="range_mode" value="2"/>
+            <enum name="multi_mode" value="3"/>
+        </attr>
+
+        
+        <attr format="integer" name="max_multi_select_size"/>
+
+        
+        <attr format="integer" name="min_select_range"/>
+        <attr format="integer" name="max_select_range"/>
+
+        
+        <attr name="month_view_auto_select_day">
+            <enum name="first_day_of_month" value="0"/>
+            <enum name="last_select_day" value="1"/>
+            <enum name="last_select_day_ignore_current" value="2"/>
+        </attr>
+    </declare-styleable><declare-styleable name="CalendarLayout">
+        <attr name="default_status">
+            <enum name="expand" value="0"/>
+            <enum name="shrink" value="1"/>
+        </attr>
+
+
+        
+        <attr name="gesture_mode">
+            <enum name="default_mode" value="0"/>
+            
+            <enum name="disabled" value="2"/>
+        </attr>
+
+        <attr name="calendar_show_mode">
+            <enum name="both_month_week_view" value="0"/>
+            <enum name="only_week_view" value="1"/>
+            <enum name="only_month_view" value="2"/>
+        </attr>
+        <attr format="integer" name="calendar_content_view_id"/>
+    </declare-styleable></file><file path="C:\Users\AgarthaSF\Desktop\se project\CalendarView_modified\calendarview\src\main\res\values\strings.xml" qualifiers=""><string name="cv_app_name">CalendarView</string><string-array name="lunar_first_of_month">
+        <item>春节</item>
+        <item>二月</item>
+        <item>三月</item>
+        <item>四月</item>
+        <item>五月</item>
+        <item>六月</item>
+        <item>七月</item>
+        <item>八月</item>
+        <item>九月</item>
+        <item>十月</item>
+        <item>冬月</item>
+        <item>腊月</item>
+    </string-array><string-array name="tradition_festival">
+        <item>除夕</item>
+        <item>0101春节</item>
+        <item>0115元宵</item>
+        <item>0505端午</item>
+        <item>0707七夕</item>
+        <item>0815中秋</item>
+        <item>0909重阳</item>
+    </string-array><string-array name="lunar_str">
+        <item>初一</item>
+        <item>初二</item>
+        <item>初三</item>
+        <item>初四</item>
+        <item>初五</item>
+        <item>初六</item>
+        <item>初七</item>
+        <item>初八</item>
+        <item>初九</item>
+        <item>初十</item>
+        <item>十一</item>
+        <item>十二</item>
+        <item>十三</item>
+        <item>十四</item>
+        <item>十五</item>
+        <item>十六</item>
+        <item>十七</item>
+        <item>十八</item>
+        <item>十九</item>
+        <item>二十</item>
+        <item>廿一</item>
+        <item>廿二</item>
+        <item>廿三</item>
+        <item>廿四</item>
+        <item>廿五</item>
+        <item>廿六</item>
+        <item>廿七</item>
+        <item>廿八</item>
+        <item>廿九</item>
+        <item>三十</item>
+    </string-array><string-array name="solar_festival" ns1:ignore="InconsistentArrays">
+        <item>0101元旦</item>
+        <item>0214情人节</item>
+        <item>0308妇女节</item>
+        <item>0312植树节</item>
+        <item>0315消权日</item>
+        <item>0401愚人节</item>
+        <item>0422地球日</item>
+        <item>0501劳动节</item>
+        <item>0504青年节</item>
+        <item>0601儿童节</item>
+        <item>0701建党节</item>
+        <item>0801建军节</item>
+        <item>0910教师节</item>
+        <item>1001国庆节</item>
+        <item>1031万圣节</item>
+        <item>1111光棍节</item>
+        <item>1224平安夜</item>
+        <item>1225圣诞节</item>
+    </string-array><string-array name="solar_term">
+        <item>春分</item>
+        <item>清明</item>
+        <item>谷雨</item>
+        <item>立夏</item>
+        <item>小满</item>
+        <item>芒种</item>
+        <item>夏至</item>
+        <item>小暑</item>
+        <item>大暑</item>
+        <item>立秋</item>
+        <item>处暑</item>
+        <item>白露</item>
+        <item>秋分</item>
+        <item>寒露</item>
+        <item>霜降</item>
+        <item>立冬</item>
+        <item>小雪</item>
+        <item>大雪</item>
+        <item>冬至</item>
+        <item>小寒</item>
+        <item>大寒</item>
+        <item>立春</item>
+        <item>雨水</item>
+        <item>惊蛰</item>
+    </string-array><string-array name="special_festivals">
+        <item>母亲节</item>
+        <item>父亲节</item>
+        <item>感恩节</item>
+    </string-array><string name="sun">Sun</string><string name="mon">Mon</string><string name="tue">Tue</string><string name="wed">Wed</string><string name="thu">Thu</string><string name="fri">Fri</string><string name="sat">Sat</string><string-array name="week_string_array">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array><string-array name="year_view_week_string_array">
+        <item>S</item>
+        <item>M</item>
+        <item>T</item>
+        <item>W</item>
+        <item>T</item>
+        <item>F</item>
+        <item>S</item>
+    </string-array><string-array name="month_string_array">
+        <item>JAN</item>
+        <item>FEB</item>
+        <item>MAR</item>
+        <item>APR</item>
+        <item>MAY</item>
+        <item>JUN</item>
+        <item>JUL</item>
+        <item>AUG</item>
+        <item>SEP</item>
+        <item>OCT</item>
+        <item>NOV</item>
+        <item>DEC</item>
+    </string-array><integer-array name="trunk_integer_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+
+    </integer-array><string-array name="trunk_string_array">
+        <item>辛</item>
+        <item>壬</item>
+        <item>癸</item>
+        <item>甲</item>
+        <item>乙</item>
+        <item>丙</item>
+        <item>丁</item>
+        <item>戊</item>
+        <item>己</item>
+        <item>庚</item>
+    </string-array><integer-array name="branch_integer_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </integer-array><string-array name="branch_string_array">
+        <item>酉</item>
+        <item>戌</item>
+        <item>亥</item>
+        <item>子</item>
+        <item>丑</item>
+        <item>寅</item>
+        <item>卯</item>
+        <item>辰</item>
+        <item>巳</item>
+        <item>午</item>
+        <item>未</item>
+        <item>申</item>
+
+    </string-array></file><file path="C:\Users\AgarthaSF\Desktop\se project\CalendarView_modified\calendarview\src\main\res\values-zh\strings.xml" qualifiers="zh"><string name="cv_app_name">CalendarView</string><string-array name="lunar_first_of_month">
+        <item>春节</item>
+        <item>二月</item>
+        <item>三月</item>
+        <item>四月</item>
+        <item>五月</item>
+        <item>六月</item>
+        <item>七月</item>
+        <item>八月</item>
+        <item>九月</item>
+        <item>十月</item>
+        <item>冬月</item>
+        <item>腊月</item>
+    </string-array><string-array name="tradition_festival">
+        <item>除夕</item>
+        <item>0101春节</item>
+        <item>0115元宵</item>
+        <item>0505端午</item>
+        <item>0707七夕</item>
+        <item>0815中秋</item>
+        <item>0909重阳</item>
+    </string-array><string-array name="lunar_str">
+        <item>初一</item>
+        <item>初二</item>
+        <item>初三</item>
+        <item>初四</item>
+        <item>初五</item>
+        <item>初六</item>
+        <item>初七</item>
+        <item>初八</item>
+        <item>初九</item>
+        <item>初十</item>
+        <item>十一</item>
+        <item>十二</item>
+        <item>十三</item>
+        <item>十四</item>
+        <item>十五</item>
+        <item>十六</item>
+        <item>十七</item>
+        <item>十八</item>
+        <item>十九</item>
+        <item>二十</item>
+        <item>廿一</item>
+        <item>廿二</item>
+        <item>廿三</item>
+        <item>廿四</item>
+        <item>廿五</item>
+        <item>廿六</item>
+        <item>廿七</item>
+        <item>廿八</item>
+        <item>廿九</item>
+        <item>三十</item>
+    </string-array><string-array name="solar_festival" ns1:ignore="InconsistentArrays">
+        <item>0101元旦</item>
+        <item>0214情人节</item>
+        <item>0308妇女节</item>
+        <item>0312植树节</item>
+        <item>0315消权日</item>
+        <item>0401愚人节</item>
+        <item>0422地球日</item>
+        <item>0501劳动节</item>
+        <item>0504青年节</item>
+        <item>0601儿童节</item>
+        <item>0701建党节</item>
+        <item>0801建军节</item>
+        <item>0910教师节</item>
+        <item>1001国庆节</item>
+        <item>1031万圣节</item>
+        <item>1111光棍节</item>
+        <item>1224平安夜</item>
+        <item>1225圣诞节</item>
+    </string-array><string-array name="solar_term">
+        <item>春分</item>
+        <item>清明</item>
+        <item>谷雨</item>
+        <item>立夏</item>
+        <item>小满</item>
+        <item>芒种</item>
+        <item>夏至</item>
+        <item>小暑</item>
+        <item>大暑</item>
+        <item>立秋</item>
+        <item>处暑</item>
+        <item>白露</item>
+        <item>秋分</item>
+        <item>寒露</item>
+        <item>霜降</item>
+        <item>立冬</item>
+        <item>小雪</item>
+        <item>大雪</item>
+        <item>冬至</item>
+        <item>小寒</item>
+        <item>大寒</item>
+        <item>立春</item>
+        <item>雨水</item>
+        <item>惊蛰</item>
+    </string-array><string-array name="special_festivals">
+        <item>母亲节</item>
+        <item>父亲节</item>
+        <item>感恩节</item>
+    </string-array><string name="sun">日</string><string name="mon">一</string><string name="tue">二</string><string name="wed">三</string><string name="thu">四</string><string name="fri">五</string><string name="sat">六</string><string-array name="week_string_array">
+        <item>日</item>
+        <item>一</item>
+        <item>二</item>
+        <item>三</item>
+        <item>四</item>
+        <item>五</item>
+        <item>六</item>
+    </string-array><string-array name="year_view_week_string_array">
+        <item>日</item>
+        <item>一</item>
+        <item>二</item>
+        <item>三</item>
+        <item>四</item>
+        <item>五</item>
+        <item>六</item>
+    </string-array><string-array name="month_string_array">
+        <item>1月</item>
+        <item>2月</item>
+        <item>3月</item>
+        <item>4月</item>
+        <item>5月</item>
+        <item>6月</item>
+        <item>7月</item>
+        <item>8月</item>
+        <item>9月</item>
+        <item>10月</item>
+        <item>11月</item>
+        <item>12月</item>
+    </string-array><integer-array name="trunk_integer_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+
+    </integer-array><string-array name="trunk_string_array">
+        <item>辛</item>
+        <item>壬</item>
+        <item>癸</item>
+        <item>甲</item>
+        <item>乙</item>
+        <item>丙</item>
+        <item>丁</item>
+        <item>戊</item>
+        <item>己</item>
+        <item>庚</item>
+    </string-array><integer-array name="branch_integer_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </integer-array><string-array name="branch_string_array">
+        <item>酉</item>
+        <item>戌</item>
+        <item>亥</item>
+        <item>子</item>
+        <item>丑</item>
+        <item>寅</item>
+        <item>卯</item>
+        <item>辰</item>
+        <item>巳</item>
+        <item>午</item>
+        <item>未</item>
+        <item>申</item>
+
+    </string-array></file><file path="C:\Users\AgarthaSF\Desktop\se project\CalendarView_modified\calendarview\src\main\res\values-zh-rHK\strings.xml" qualifiers="zh-rHK"><string name="cv_app_name">CalendarView</string><string-array name="lunar_first_of_month">
+        <item>春節</item>
+        <item>二月</item>
+        <item>三月</item>
+        <item>四月</item>
+        <item>五月</item>
+        <item>六月</item>
+        <item>七月</item>
+        <item>八月</item>
+        <item>九月</item>
+        <item>十月</item>
+        <item>冬月</item>
+        <item>臘月</item>
+    </string-array><string-array name="tradition_festival">
+        <item>除夕</item>
+        <item>0101春節</item>
+        <item>0115元宵</item>
+        <item>0505端午</item>
+        <item>0707七夕</item>
+        <item>0815中秋</item>
+        <item>0909重陽</item>
+    </string-array><string-array name="lunar_str">
+        <item>初一</item>
+        <item>初二</item>
+        <item>初三</item>
+        <item>初四</item>
+        <item>初五</item>
+        <item>初六</item>
+        <item>初七</item>
+        <item>初八</item>
+        <item>初九</item>
+        <item>初十</item>
+        <item>十一</item>
+        <item>十二</item>
+        <item>十三</item>
+        <item>十四</item>
+        <item>十五</item>
+        <item>十六</item>
+        <item>十七</item>
+        <item>十八</item>
+        <item>十九</item>
+        <item>二十</item>
+        <item>廿一</item>
+        <item>廿二</item>
+        <item>廿三</item>
+        <item>廿四</item>
+        <item>廿五</item>
+        <item>廿六</item>
+        <item>廿七</item>
+        <item>廿八</item>
+        <item>廿九</item>
+        <item>三十</item>
+    </string-array><string-array name="solar_festival" ns1:ignore="InconsistentArrays">
+        <item>0101元旦</item>
+        <item>0214情人節</item>
+        <item>0308婦女節</item>
+        <item>0312植樹節</item>
+        <item>0315消權日</item>
+        <item>0401愚人節</item>
+        <item>0404兒童節</item>
+        <item>0422地球日</item>
+        <item>0501勞動節</item>
+        <item>0504青年節</item>
+        <item>0701香港回歸</item>
+        <item>0801建军节</item>
+        <item>0910教師節</item>
+        <item>1001國慶日</item>
+        <item>1031萬聖節</item>
+        <item>1111光棍節</item>
+        <item>1224平安夜</item>
+        <item>1225聖誕節</item>
+    </string-array><string-array name="solar_term">
+        <item>春分</item>
+        <item>清明</item>
+        <item>穀雨</item>
+        <item>立夏</item>
+        <item>小滿</item>
+        <item>芒種</item>
+        <item>夏至</item>
+        <item>小暑</item>
+        <item>大暑</item>
+        <item>立秋</item>
+        <item>處暑</item>
+        <item>白露</item>
+        <item>秋分</item>
+        <item>寒露</item>
+        <item>霜降</item>
+        <item>立冬</item>
+        <item>小雪</item>
+        <item>大雪</item>
+        <item>冬至</item>
+        <item>小寒</item>
+        <item>大寒</item>
+        <item>立春</item>
+        <item>雨水</item>
+        <item>驚蟄</item>
+    </string-array><string-array name="special_festivals">
+        <item>母親節</item>
+        <item>父親節</item>
+        <item>感恩節</item>
+    </string-array><string name="sun">日</string><string name="mon">一</string><string name="tue">二</string><string name="wed">三</string><string name="thu">四</string><string name="fri">五</string><string name="sat">六</string><string-array name="week_string_array">
+        <item>日</item>
+        <item>一</item>
+        <item>二</item>
+        <item>三</item>
+        <item>四</item>
+        <item>五</item>
+        <item>六</item>
+    </string-array><string-array name="month_string_array">
+        <item>1月</item>
+        <item>2月</item>
+        <item>3月</item>
+        <item>4月</item>
+        <item>5月</item>
+        <item>6月</item>
+        <item>7月</item>
+        <item>8月</item>
+        <item>9月</item>
+        <item>10月</item>
+        <item>11月</item>
+        <item>12月</item>
+    </string-array><integer-array name="trunk_integer_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+
+    </integer-array><string-array name="trunk_string_array">
+        <item>辛</item>
+        <item>壬</item>
+        <item>癸</item>
+        <item>甲</item>
+        <item>乙</item>
+        <item>丙</item>
+        <item>丁</item>
+        <item>戊</item>
+        <item>己</item>
+        <item>庚</item>
+    </string-array><integer-array name="branch_integer_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </integer-array><string-array name="branch_string_array">
+        <item>酉</item>
+        <item>戌</item>
+        <item>亥</item>
+        <item>子</item>
+        <item>丑</item>
+        <item>寅</item>
+        <item>卯</item>
+        <item>辰</item>
+        <item>巳</item>
+        <item>午</item>
+        <item>未</item>
+        <item>申</item>
+
+    </string-array></file><file path="C:\Users\AgarthaSF\Desktop\se project\CalendarView_modified\calendarview\src\main\res\values-zh-rTW\strings.xml" qualifiers="zh-rTW"><string name="cv_app_name">CalendarView</string><string-array name="lunar_first_of_month">
+        <item>春節</item>
+        <item>二月</item>
+        <item>三月</item>
+        <item>四月</item>
+        <item>五月</item>
+        <item>六月</item>
+        <item>七月</item>
+        <item>八月</item>
+        <item>九月</item>
+        <item>十月</item>
+        <item>冬月</item>
+        <item>臘月</item>
+    </string-array><string-array name="tradition_festival">
+        <item>除夕</item>
+        <item>0101春節</item>
+        <item>0115元宵</item>
+        <item>0505端午</item>
+        <item>0707七夕</item>
+        <item>0815中秋</item>
+        <item>0909重陽</item>
+    </string-array><string-array name="lunar_str">
+        <item>初一</item>
+        <item>初二</item>
+        <item>初三</item>
+        <item>初四</item>
+        <item>初五</item>
+        <item>初六</item>
+        <item>初七</item>
+        <item>初八</item>
+        <item>初九</item>
+        <item>初十</item>
+        <item>十一</item>
+        <item>十二</item>
+        <item>十三</item>
+        <item>十四</item>
+        <item>十五</item>
+        <item>十六</item>
+        <item>十七</item>
+        <item>十八</item>
+        <item>十九</item>
+        <item>二十</item>
+        <item>廿一</item>
+        <item>廿二</item>
+        <item>廿三</item>
+        <item>廿四</item>
+        <item>廿五</item>
+        <item>廿六</item>
+        <item>廿七</item>
+        <item>廿八</item>
+        <item>廿九</item>
+        <item>三十</item>
+    </string-array><string-array name="solar_festival" ns1:ignore="InconsistentArrays">
+        <item>0101元旦</item>
+        <item>0214情人節</item>
+        <item>0308婦女節</item>
+        <item>0312植樹節</item>
+        <item>0315消權日</item>
+        <item>0401愚人節</item>
+        <item>0404兒童節</item>
+        <item>0422地球日</item>
+        <item>0501勞動節</item>
+        <item>0903軍人節</item>
+        <item>0928教師節</item>
+        <item>0501勞動節</item>
+        <item>0504青年節</item>
+        <item>0601兒童節</item>
+        <item>0701建黨節</item>
+        <item>0801建軍節</item>
+        <item>0928教師節</item>
+        <item>1001國慶節</item>
+        <item>1031萬聖節</item>
+        <item>1111光棍節</item>
+        <item>1224平安夜</item>
+        <item>1225聖誕節</item>
+    </string-array><string-array name="solar_term">
+        <item>春分</item>
+        <item>清明</item>
+        <item>穀雨</item>
+        <item>立夏</item>
+        <item>小滿</item>
+        <item>芒種</item>
+        <item>夏至</item>
+        <item>小暑</item>
+        <item>大暑</item>
+        <item>立秋</item>
+        <item>處暑</item>
+        <item>白露</item>
+        <item>秋分</item>
+        <item>寒露</item>
+        <item>霜降</item>
+        <item>立冬</item>
+        <item>小雪</item>
+        <item>大雪</item>
+        <item>冬至</item>
+        <item>小寒</item>
+        <item>大寒</item>
+        <item>立春</item>
+        <item>雨水</item>
+        <item>驚蟄</item>
+    </string-array><string-array name="special_festivals">
+        <item>母親節</item>
+        <item>父親節</item>
+        <item>感恩節</item>
+    </string-array><string name="sun">日</string><string name="mon">一</string><string name="tue">二</string><string name="wed">三</string><string name="thu">四</string><string name="fri">五</string><string name="sat">六</string><string-array name="week_string_array">
+        <item>日</item>
+        <item>一</item>
+        <item>二</item>
+        <item>三</item>
+        <item>四</item>
+        <item>五</item>
+        <item>六</item>
+    </string-array><string-array name="month_string_array">
+        <item>1月</item>
+        <item>2月</item>
+        <item>3月</item>
+        <item>4月</item>
+        <item>5月</item>
+        <item>6月</item>
+        <item>7月</item>
+        <item>8月</item>
+        <item>9月</item>
+        <item>10月</item>
+        <item>11月</item>
+        <item>12月</item>
+    </string-array><integer-array name="trunk_integer_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+
+    </integer-array><string-array name="trunk_string_array">
+        <item>辛</item>
+        <item>壬</item>
+        <item>癸</item>
+        <item>甲</item>
+        <item>乙</item>
+        <item>丙</item>
+        <item>丁</item>
+        <item>戊</item>
+        <item>己</item>
+        <item>庚</item>
+    </string-array><integer-array name="branch_integer_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </integer-array><string-array name="branch_string_array">
+        <item>酉</item>
+        <item>戌</item>
+        <item>亥</item>
+        <item>子</item>
+        <item>丑</item>
+        <item>寅</item>
+        <item>卯</item>
+        <item>辰</item>
+        <item>巳</item>
+        <item>午</item>
+        <item>未</item>
+        <item>申</item>
+    </string-array></file></source><source path="C:\Users\AgarthaSF\Desktop\se project\CalendarView_modified\calendarview\build\generated\res\rs\debug"/><source path="C:\Users\AgarthaSF\Desktop\se project\CalendarView_modified\calendarview\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\AgarthaSF\Desktop\se project\CalendarView_modified\calendarview\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\AgarthaSF\Desktop\se project\CalendarView_modified\calendarview\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="CalendarView">
+
+        <attr format="dimension" name="calendar_padding"/>
+        <attr format="dimension" name="calendar_padding_left"/>
+        <attr format="dimension" name="calendar_padding_right"/>
+
+
+        <attr format="color" name="week_background"/>
+        <attr format="color" name="week_line_background"/>
+        <attr format="color" name="week_text_color"/>
+        <attr format="dimension" name="week_text_size"/>
+        <attr format="dimension" name="week_line_margin"/>
+
+        <attr format="string" name="month_view"/>
+        <attr format="string" name="week_view"/> 
+        <attr format="string" name="year_view"/> 
+        <attr format="dimension" name="week_bar_height"/> 
+        <attr format="string" name="week_bar_view"/> 
+
+        <attr format="string" name="scheme_text"/>
+        <attr format="dimension" name="day_text_size"/>
+        <attr format="dimension" name="lunar_text_size"/>
+        <attr format="dimension" name="calendar_height"/>
+        <attr format="boolean" name="calendar_match_parent"/> 
+        <attr format="color" name="scheme_text_color"/>
+        <attr format="color" name="scheme_month_text_color"/>
+        <attr format="color" name="scheme_lunar_text_color"/>
+        <attr format="color" name="scheme_theme_color"/>
+
+        <attr format="color" name="selected_theme_color"/>
+        <attr format="color" name="selected_text_color"/>
+        <attr format="color" name="selected_lunar_text_color"/>
+
+        <attr format="color" name="current_day_text_color"/>
+        <attr format="color" name="current_day_lunar_text_color"/>
+        <attr format="color" name="current_month_text_color"/>
+        <attr format="color" name="other_month_text_color"/>
+        <attr format="color" name="current_month_lunar_text_color"/>
+        <attr format="color" name="other_month_lunar_text_color"/>
+
+
+        
+        <attr format="dimension" name="year_view_month_text_size"/>
+        <attr format="dimension" name="year_view_day_text_size"/>
+        <attr format="color" name="year_view_month_text_color"/>
+        <attr format="color" name="year_view_current_day_text_color"/>
+        <attr format="color" name="year_view_day_text_color"/>
+        <attr format="color" name="year_view_select_text_color"/>
+        <attr format="color" name="year_view_scheme_color"/>
+        <attr format="color" name="year_view_background"/>
+        <attr format="dimension" name="year_view_month_height"/>
+        <attr format="dimension" name="year_view_week_height"/>
+        <attr format="dimension" name="year_view_week_text_size"/>
+        <attr format="color" name="year_view_week_text_color"/>
+
+        <attr format="dimension" name="year_view_padding"/>
+        <attr format="dimension" name="year_view_padding_left"/>
+        <attr format="dimension" name="year_view_padding_right"/>
+
+        <attr format="dimension" name="year_view_month_padding_top"/>
+        <attr format="dimension" name="year_view_month_padding_left"/>
+        <attr format="dimension" name="year_view_month_padding_right"/>
+        <attr format="dimension" name="year_view_month_padding_bottom"/>
+
+        
+        <attr format="integer" name="min_year"/>
+        <attr format="integer" name="max_year"/>
+        <attr format="integer" name="min_year_month"/>
+        <attr format="integer" name="max_year_month"/>
+        <attr format="integer" name="min_year_day"/>
+        <attr format="integer" name="max_year_day"/>
+
+
+        
+        <attr format="boolean" name="month_view_scrollable"/>
+        
+        <attr format="boolean" name="week_view_scrollable"/>
+        
+        <attr format="boolean" name="year_view_scrollable"/>
+
+        
+        <attr name="month_view_show_mode">
+            <enum name="mode_all" value="0"/>
+            <enum name="mode_only_current" value="1"/>
+            <enum name="mode_fix" value="2"/>
+        </attr>
+
+        
+        <attr name="week_start_with">
+            <enum name="sun" value="1"/>
+            <enum name="mon" value="2"/>
+            <enum name="sat" value="7"/>
+        </attr>
+
+        
+        <attr name="select_mode">
+            <enum name="default_mode" value="0"/>
+            <enum name="single_mode" value="1"/>
+            <enum name="range_mode" value="2"/>
+            <enum name="multi_mode" value="3"/>
+        </attr>
+
+        
+        <attr format="integer" name="max_multi_select_size"/>
+
+        
+        <attr format="integer" name="min_select_range"/>
+        <attr format="integer" name="max_select_range"/>
+
+        
+        <attr name="month_view_auto_select_day">
+            <enum name="first_day_of_month" value="0"/>
+            <enum name="last_select_day" value="1"/>
+            <enum name="last_select_day_ignore_current" value="2"/>
+        </attr>
+    </declare-styleable><declare-styleable name="CalendarLayout">
+        <attr name="default_status">
+            <enum name="expand" value="0"/>
+            <enum name="shrink" value="1"/>
+        </attr>
+
+
+        
+        <attr name="gesture_mode">
+            <enum name="default_mode" value="0"/>
+            
+            <enum name="disabled" value="2"/>
+        </attr>
+
+        <attr name="calendar_show_mode">
+            <enum name="both_month_week_view" value="0"/>
+            <enum name="only_week_view" value="1"/>
+            <enum name="only_month_view" value="2"/>
+        </attr>
+        <attr format="integer" name="calendar_content_view_id"/>
+    </declare-styleable></configuration></mergedItems></merger>

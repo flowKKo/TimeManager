@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="TodoList" />
+
+    <version value="7" />
+
+    <list>
+        <mapping class="com.haibin.TimeManager.Todo.Todo" />
+<!--        <mapping class="com.example.todolist.Date"></mapping>
+        <mapping class="com.example.todolist.Time"></mapping>-->
+    </list>
+</litepal>

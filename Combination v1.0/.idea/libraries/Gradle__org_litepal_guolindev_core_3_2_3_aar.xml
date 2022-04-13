@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.litepal.guolindev:core:3.2.3@aar">
+    <CLASSES>
+      <root url="file://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/9099f1081d16bded52ad96d8a2656da9/AndroidManifest.xml" />
+      <root url="jar://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/9099f1081d16bded52ad96d8a2656da9/jars/classes.jar!/" />
+      <root url="file://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/9099f1081d16bded52ad96d8a2656da9/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
