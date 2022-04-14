@@ -59,6 +59,7 @@
             />
 
         ]]>
+
         <activity android:name=".Statistics.StatisticsActivity"
             android:label="数据复盘回顾"
             android:theme="@style/Theme.AppCompat.Light"
@@ -67,7 +68,7 @@
         <activity android:name=".Pomodoro.PomodoroActivity"
             android:theme="@style/Theme.AppCompat.Light"
             android:label="Pomodoro"
-            android:launchMode="singleTask"/>
+            android:launchMode="singleInstance"/>
 
         <activity android:name=".Pomodoro.SetTimeActivity"
             android:theme="@style/Theme.AppCompat.Light"

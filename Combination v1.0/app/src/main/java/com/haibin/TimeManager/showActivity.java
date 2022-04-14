@@ -123,7 +123,6 @@ public class showActivity extends BaseActivity implements
                 order("date desc").find(Todo.class);
         mAdapter.notifyDataSetChanged(mToDoList);
 
-
     }
 
     @Override
@@ -567,7 +566,6 @@ public class showActivity extends BaseActivity implements
         }
     }
 
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -579,7 +577,6 @@ public class showActivity extends BaseActivity implements
                 order("date desc").find(Todo.class);
         mAdapter.notifyDataSetChanged(mToDoList);
     }
-
 }
 
 
