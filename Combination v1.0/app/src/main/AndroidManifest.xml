@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.haibin.TimeManager">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -21,29 +22,31 @@
 
         <activity android:name=".activity.MainActivityTemp"
             android:theme="@style/Theme.ToDoList"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTask"/>
 
         <activity
             android:name=".menu.search_dustbin"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:launchMode="singleTask"/>/>
 
         <activity
             android:name=".menu.search_history"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:launchMode="singleTask"/>/>
 
         <activity android:name=".calendar.custom.CustomActivity"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTask"/>
 
         <activity android:name=".calendar.full.FullActivity"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTask"/>
 
         <activity android:name=".calendar.CalendarActivity"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTask"/>
 
         <activity android:name=".showActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light"
-            android:launchMode="singleTop">
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -52,15 +55,24 @@
 
         <activity android:name=".showDailyTodoActivity"
             android:theme="@style/Theme.AppCompat.Light"
+            android:launchMode="singleTask"/><![CDATA[
             />
 
-        <activity android:name=".tempActivity_third"
-            android:launchMode="singleTop"/>
-
+        ]]>
         <activity android:name=".Statistics.StatisticsActivity"
             android:label="数据复盘回顾"
             android:theme="@style/Theme.AppCompat.Light"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTask"/>
+
+        <activity android:name=".Pomodoro.PomodoroActivity"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:label="Pomodoro"
+            android:launchMode="singleTask"/>
+
+        <activity android:name=".Pomodoro.SetTimeActivity"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:label="Pomodoro"
+            android:launchMode="singleTask"/>
 
     </application>
 

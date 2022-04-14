@@ -22,7 +22,7 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int nav_controller_view_tag = 0x7f09015d;
+        public static final int nav_controller_view_tag = 0x7f090163;
     }
     public static final class styleable {
         private styleable() {}

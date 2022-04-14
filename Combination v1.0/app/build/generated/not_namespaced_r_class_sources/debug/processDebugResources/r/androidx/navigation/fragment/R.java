@@ -22,9 +22,9 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int nav_host_fragment_container = 0x7f09015e;
-        public static final int sliding_pane_detail_container = 0x7f0901c9;
-        public static final int sliding_pane_layout = 0x7f0901ca;
+        public static final int nav_host_fragment_container = 0x7f090164;
+        public static final int sliding_pane_detail_container = 0x7f0901d4;
+        public static final int sliding_pane_layout = 0x7f0901d5;
     }
     public static final class styleable {
         private styleable() {}

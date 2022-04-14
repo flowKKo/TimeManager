@@ -25,17 +25,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.haibin.TimeManager.Todo.Todo;
 
 public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {
-
     private final LayoutInflater mInflater;
-
     public BaseAdapter(Context context) {
         this.mInflater = LayoutInflater.from(context);
     }
-
     public LayoutInflater getInflater() {
         return mInflater;
     }
     //继承baseadapter的主要原因是调用这个函数，可以检测到adapter内内容的变化
     public abstract void notifyDataSetChanged(List<Todo> dataList);
-
 }

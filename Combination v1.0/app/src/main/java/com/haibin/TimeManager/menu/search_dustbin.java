@@ -259,19 +259,14 @@ private Toolbar mToolbar;
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(search_dustbin.this, "你点击了确定按钮~", Toast.LENGTH_SHORT).show();
                             Todo updatetodo=new Todo();
-                            updatetodo.setIs_delete(false);
+                            updatetodo.setToDefault("is_delete");
                             updatetodo.updateAll("todo = ? and date = ?",todoname,date);
-
-
                             Log.w("ID_DELETE","is_delete?"+updatetodo.isIs_delete()+updatetodo.getTodo()+updatetodo.getDate()+LitePal.count(Todo.class));
-
 
                             HistoryList.remove(position);
                             //LitePal.deleteAll(Todo.class,"todo=?",todo);
                             mAdapter.notifyItemRemoved(position);
-
                             Toast.makeText(search_dustbin.this, "现在的第" + position + "条被恢复。", Toast.LENGTH_SHORT).show();
-
 
                         }
                     })

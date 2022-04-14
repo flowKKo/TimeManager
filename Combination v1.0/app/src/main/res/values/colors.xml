@@ -29,5 +29,6 @@
     <drawable name="btn_focused">#33ff66</drawable>
     <drawable name="btn_normal">#D3CFCF</drawable>
 
+    <color name="windowBackground">@color/design_default_color_secondary</color>
 
 </resources>

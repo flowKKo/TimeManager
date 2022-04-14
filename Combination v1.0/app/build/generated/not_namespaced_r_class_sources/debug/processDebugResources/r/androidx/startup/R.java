@@ -12,6 +12,6 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int androidx_startup = 0x7f10001c;
+        public static final int androidx_startup = 0x7f10001d;
     }
 }

@@ -32,6 +32,7 @@ import com.haibin.TimeManager.AddTodoDialog.AddTodoDialog;
 import com.haibin.TimeManager.AddTodoDialog.OnTodoAddListener;
 import com.haibin.TimeManager.EditTodoDialog.EditTodoDialog;
 import com.haibin.TimeManager.EditTodoDialog.OnTodoEditListener;
+import com.haibin.TimeManager.Pomodoro.PomodoroActivity;
 import com.haibin.TimeManager.Statistics.StatisticsActivity;
 import com.haibin.TimeManager.Todo.Todo;
 import com.haibin.TimeManager.calendar.full.FullActivity;
@@ -123,6 +124,7 @@ public class showActivity extends BaseActivity implements
                 order("date desc").find(Todo.class);
         mAdapter.notifyDataSetChanged(mToDoList);
 
+
     }
 
     @Override
@@ -137,10 +139,8 @@ public class showActivity extends BaseActivity implements
         mTextMonthDay = findViewById(R.id.tv_month_day);
         mTextYear = findViewById(R.id.tv_year);
         mTextLunar = findViewById(R.id.tv_lunar);
-
         mRelativeTool = findViewById(R.id.rl_tool);
         mCalendarView = findViewById(R.id.calendarView);
-
         mTextCurrentDay = findViewById(R.id.tv_current_day);
         mTextMonthDay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -197,7 +197,7 @@ public class showActivity extends BaseActivity implements
         button_clock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(showActivity.this, tempActivity_third.class);
+                Intent intent = new Intent(showActivity.this, PomodoroActivity.class);
                 startActivity(intent);
             }
         });
@@ -581,6 +581,19 @@ public class showActivity extends BaseActivity implements
         Todo task5 = new Todo(5,"3", "2033/3/31", "2033/3/31", false, "16:49", false,false);
         task5.save();
         int count = LitePal.count(Todo.class);
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        int year = current_calendar.getYear();
+        int month = current_calendar.getMonth();
+        int day = current_calendar.getDay();
+        String currentDate = String.valueOf(year) + "/" + String.format("%02d", month) + "/" +String.format("%02d", day);
+        mToDoList= LitePal.where("is_delete = ? and date=?", "0",currentDate).
+                order("date desc").find(Todo.class);
+        mAdapter.notifyDataSetChanged(mToDoList);
     }
 
 }

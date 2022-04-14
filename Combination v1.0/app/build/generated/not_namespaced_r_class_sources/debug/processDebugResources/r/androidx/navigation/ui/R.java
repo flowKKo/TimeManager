@@ -33,7 +33,7 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int nav_app_bar_navigate_up_description = 0x7f100093;
-        public static final int nav_app_bar_open_drawer_description = 0x7f100094;
+        public static final int nav_app_bar_navigate_up_description = 0x7f1000a0;
+        public static final int nav_app_bar_open_drawer_description = 0x7f1000a1;
     }
 }

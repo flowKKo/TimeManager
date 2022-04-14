@@ -80,12 +80,10 @@ public class TodoChartFragment extends Fragment {
         lineChart.setData(lineData);
     }
 
-
     public static boolean isIntegerForDouble(double obj) {
         double eps = 1e-4;  // 精度范围
         return obj-Math.floor(obj) < eps;
     }
-
 
     private void setDisplay(){
         lineChart.setScaleXEnabled(false);

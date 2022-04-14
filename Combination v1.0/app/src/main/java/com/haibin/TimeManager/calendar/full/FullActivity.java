@@ -9,10 +9,10 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.haibin.TimeManager.Pomodoro.PomodoroActivity;
 import com.haibin.TimeManager.Statistics.StatisticsActivity;
 import com.haibin.TimeManager.showActivity;
 import com.haibin.TimeManager.showDailyTodoActivity;
-import com.haibin.TimeManager.tempActivity_third;
 import com.haibin.calendarview.Calendar;
 import com.haibin.calendarview.CalendarView;
 import com.haibin.TimeManager.R;
@@ -103,7 +103,7 @@ public class FullActivity extends BaseActivity implements
         button_clock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FullActivity.this, tempActivity_third.class);
+                Intent intent = new Intent(FullActivity.this, PomodoroActivity.class);
                 startActivity(intent);
             }
         });

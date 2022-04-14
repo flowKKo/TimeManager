@@ -106,13 +106,13 @@ public class DragTouchAdapter extends BaseAdapter<DragTouchAdapter.ViewHolder> {
 
         @Override
         public boolean onTouch(View v, MotionEvent event) {
-            int action = event.getAction();
+            /*int action = event.getAction();
             switch (action) {
                 case MotionEvent.ACTION_DOWN: {
                     mMenuRecyclerView.startDrag(this);
                     break;
                 }
-            }
+            }*/
             return false;
         }
     }

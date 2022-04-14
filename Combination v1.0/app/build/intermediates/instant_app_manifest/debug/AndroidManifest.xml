@@ -9,6 +9,7 @@
         android:minSdkVersion="21"
         android:targetSdkVersion="31" />
 
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -27,27 +28,31 @@
         android:usesCleartextTraffic="true" >
         <activity
             android:name="com.haibin.TimeManager.activity.MainActivityTemp"
-            android:launchMode="singleTop"
+            android:launchMode="singleTask"
             android:theme="@style/Theme.ToDoList" />
         <activity
             android:name="com.haibin.TimeManager.menu.search_dustbin"
+            android:launchMode="singleTask"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+/>
         <activity
             android:name="com.haibin.TimeManager.menu.search_history"
+            android:launchMode="singleTask"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+/>
         <activity
             android:name="com.haibin.TimeManager.calendar.custom.CustomActivity"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTask" />
         <activity
             android:name="com.haibin.TimeManager.calendar.full.FullActivity"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTask" />
         <activity
             android:name="com.haibin.TimeManager.calendar.CalendarActivity"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTask" />
         <activity
             android:name="com.haibin.TimeManager.showActivity"
             android:exported="true"
-            android:launchMode="singleTop"
+            android:launchMode="singleTask"
             android:theme="@style/Theme.AppCompat.Light" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -57,14 +62,26 @@
         </activity>
         <activity
             android:name="com.haibin.TimeManager.showDailyTodoActivity"
+            android:launchMode="singleTask"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity
-            android:name="com.haibin.TimeManager.tempActivity_third"
-            android:launchMode="singleTop" />
+<![CDATA[
+            />
+
+        ]]>
         <activity
             android:name="com.haibin.TimeManager.Statistics.StatisticsActivity"
             android:label="数据复盘回顾"
-            android:launchMode="singleTop"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name="com.haibin.TimeManager.Pomodoro.PomodoroActivity"
+            android:label="Pomodoro"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name="com.haibin.TimeManager.Pomodoro.SetTimeActivity"
+            android:label="Pomodoro"
+            android:launchMode="singleTask"
             android:theme="@style/Theme.AppCompat.Light" />
 
         <provider

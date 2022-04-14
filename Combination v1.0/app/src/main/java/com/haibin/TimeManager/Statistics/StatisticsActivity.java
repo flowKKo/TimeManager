@@ -8,10 +8,10 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.haibin.TimeManager.Pomodoro.PomodoroActivity;
 import com.haibin.TimeManager.R;
 import com.haibin.TimeManager.calendar.full.FullActivity;
 import com.haibin.TimeManager.showActivity;
-import com.haibin.TimeManager.tempActivity_third;
 
 public class StatisticsActivity extends AppCompatActivity {
 
@@ -42,7 +42,7 @@ public class StatisticsActivity extends AppCompatActivity {
         button_clock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(StatisticsActivity.this, tempActivity_third.class);
+                Intent intent = new Intent(StatisticsActivity.this, PomodoroActivity.class);
                 startActivity(intent);
             }
         });
@@ -56,7 +56,6 @@ public class StatisticsActivity extends AppCompatActivity {
             }
         });
         button_statistics.setBackgroundColor(Color.parseColor("#D7D7D7"));
-
 
     }
 }
