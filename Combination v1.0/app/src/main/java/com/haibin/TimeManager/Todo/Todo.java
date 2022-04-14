@@ -3,67 +3,6 @@ package com.haibin.TimeManager.Todo;
 //import org.litepal.crud.DataSupport;
 import org.litepal.crud.LitePalSupport;
 
-//class Date extends LitePalSupport{
-//    int year;//年
-//    int month;//月
-//    int day;//日
-//    Date(int year,int month,int day){
-//        this.year=year;
-//        this.month=month;
-//        this.day=day;
-//    }
-//    void SetDate(int year,int month,int day) {
-//        this.year=year;
-//        this.month=month;
-//        this.day=day;
-//    }
-//
-//    public int getYear() {
-//        return year;
-//    }
-//
-//    public void setYear(int year) {
-//        this.year = year;
-//    }
-//
-//    public int getMonth() {
-//        return month;
-//    }
-//
-//    public void setMonth(int month) {
-//        this.month = month;
-//    }
-//
-//    public int getDay() {
-//        return day;
-//    }
-//
-//    public void setDay(int day) {
-//        this.day = day;
-//    }
-//}
-//
-//class Time extends LitePalSupport{
-//    int hour;//小时
-//    int minute;//分钟
-//
-//    public int getHour() {
-//        return hour;
-//    }
-//
-//    public void setHour(int hour) {
-//        this.hour = hour;
-//    }
-//
-//    public int getMinute() {
-//        return minute;
-//    }
-//
-//    public void setMinute(int minute) {
-//        this.minute = minute;
-//    }
-//}
-
 //数据库部分
 public class Todo extends LitePalSupport {
     private int id;//todo的id

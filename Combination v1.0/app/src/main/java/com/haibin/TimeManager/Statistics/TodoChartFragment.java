@@ -8,11 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.haibin.TimeManager.Pomodoro.Clock_Database;
 import com.haibin.TimeManager.R;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -22,9 +24,14 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.haibin.TimeManager.Todo.Todo;
+
+import org.litepal.LitePal;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 public class TodoChartFragment extends Fragment {
 
@@ -37,6 +44,8 @@ public class TodoChartFragment extends Fragment {
     private LineChart lineChart;
     private LineDataSet lineDataSet;
     private LineData lineData;
+    private String[] DateStrs = new String[7];
+    private int[] Datas = new int[7];
 
 
     public TodoChartFragment() {
@@ -73,6 +82,23 @@ public class TodoChartFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         lineChart =  view.findViewById(R.id.todoChart);
+        java.util.Calendar cld= java.util.Calendar.getInstance(Locale.CHINA);//创建一个日历
+        List<Todo> mToDoList;
+        for(int i = 6 ; i >= 0 ; i--){
+            String curDate = Integer.toString(cld.get(java.util.Calendar.YEAR))+'/'+
+                    String.format("%02d",cld.get(java.util.Calendar.MONTH)+1)+'/'+
+                    String.format("%02d",cld.get(java.util.Calendar.DAY_OF_MONTH));
+
+            String showDate = String.format("%02d",cld.get(java.util.Calendar.MONTH)+1)+'.'+
+                    String.format("%02d",cld.get(java.util.Calendar.DAY_OF_MONTH));
+
+
+            mToDoList= LitePal.where("is_delete = ? and date=? and is_done = ?", "0",curDate, "1").find(Todo.class);
+            DateStrs[i] = showDate;
+            Datas[i] = mToDoList.size();
+            cld.add(Calendar.DAY_OF_MONTH,-1);
+        }
+
         setDisplay();
         setXAxis();
         setYAxis();
@@ -93,11 +119,10 @@ public class TodoChartFragment extends Fragment {
         lineChart.getDescription().setEnabled(true);
         lineChart.setBackgroundColor(ColorTemplate.rgb("#FFFFFF"));
 
-
         WindowManager wm=(WindowManager)getActivity().getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics dm = new DisplayMetrics();
         wm.getDefaultDisplay().getMetrics(dm);
-        float x = dm.widthPixels / (float)1.2;
+        float x = dm.widthPixels / (float)2.2;
         float y = dm.heightPixels / 30;
         lineChart.getDescription().setText("七日工作量趋势");//设置文本
         lineChart.getDescription().setTextSize(18f); //设置文本大小
@@ -109,9 +134,7 @@ public class TodoChartFragment extends Fragment {
         XAxis xAxis = lineChart.getXAxis();
         xAxis.setDrawGridLines(false);
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setTextSize(14f);
-        final String weeks[] = { "Sun", "Mon", "Tue", "Wed", "Thu",
-                "Fri", "Sat"};
+        xAxis.setTextSize(10f);
         xAxis.setGranularity(3);
         xAxis.setLabelCount(7, true);
         xAxis.setValueFormatter(new ValueFormatter(){
@@ -119,7 +142,7 @@ public class TodoChartFragment extends Fragment {
             public String getFormattedValue(float v) {
                 if (v < 0 || !isIntegerForDouble(v))
                     return "";
-                return weeks[(int) (v - 1)];
+                return DateStrs[(int) (v - 1)];
             }
         });
     }
@@ -146,12 +169,9 @@ public class TodoChartFragment extends Fragment {
     }
 
     private void setDataset(){
-        //int datas[] = {15,20,7,13,56,34,21};
-        //int datas[] = {5,15,1,2,3,4,12};
-        int datas[] = {0, 0, 0, 0, 0, 0,0};
         List<Entry> entries = new ArrayList<Entry>();
-        for(int i = 0 ; i < datas.length; i++){
-            entries.add(new Entry(i+1, datas[i]));
+        for(int i = 0 ; i < Datas.length; i++){
+            entries.add(new Entry(i+1, Datas[i]));
         }
         lineDataSet = new LineDataSet(entries, "");
         lineDataSet.setFillColor(Color.GRAY);

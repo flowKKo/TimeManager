@@ -2,9 +2,10 @@
   <library name="Gradle: com.github.bumptech.glide:glide:4.5.0@aar">
     <CLASSES>
       <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/e25839959b42db420f6f7b38ba3fe19b/res" />
-      <root url="jar://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/cdbfd20b2f6d146027e6bb30bb78e89b/jars/classes.jar!/" />
-      <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/cdbfd20b2f6d146027e6bb30bb78e89b/AndroidManifest.xml" />
       <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/cdbfd20b2f6d146027e6bb30bb78e89b/res" />
+      <root url="jar://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/c0c2a2d0595b122a337f842815e7bbbf/jars/classes.jar!/" />
+      <root url="file://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/c0c2a2d0595b122a337f842815e7bbbf/AndroidManifest.xml" />
+      <root url="file://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/c0c2a2d0595b122a337f842815e7bbbf/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

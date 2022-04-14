@@ -92,7 +92,6 @@ public class showActivity extends BaseActivity implements
 
         mRecyclerView=findViewById(R.id.recycler_view);
         mItemDecoration = new DefaultItemDecoration(ContextCompat.getColor(this, R.color.divider_color));
-        initTask();
         mAdapter = new DragTouchAdapter(this,mRecyclerView);
 
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -566,21 +565,6 @@ public class showActivity extends BaseActivity implements
                 break;
             default: break;
         }
-    }
-
-    public void initTask(){
-        LitePal.deleteAll(Todo.class);
-        Todo task1 = new Todo(1,"吃饭", "2033/3/31", "2033/3/31", false, "16:49", false,false);
-        task1.save();
-        Todo task2 = new Todo(2,"睡觉", "2033/3/31", "2033/3/31", false, "16:49", false,false);
-        task2.save();
-        Todo task3 = new Todo(3,"1", "2033/3/31", "2033/3/31", false, "16:49", false,false);
-        task3.save();
-        Todo task4 = new Todo(4,"2", "2033/3/31", "2033/3/31", false, "16:49", false,false);
-        task4.save();
-        Todo task5 = new Todo(5,"3", "2033/3/31", "2033/3/31", false, "16:49", false,false);
-        task5.save();
-        int count = LitePal.count(Todo.class);
     }
 
 

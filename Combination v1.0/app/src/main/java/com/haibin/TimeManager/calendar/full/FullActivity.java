@@ -162,7 +162,13 @@ public class FullActivity extends BaseActivity implements
                 "  --  " + isClick + "  --   " + calendar.getScheme());
 
         if(isClick){
+            int year = calendar.getYear();
+            int month = calendar.getMonth();
+            int day = calendar.getDay();
+            String currentDate = String.valueOf(year) + "/" + String.format("%02d", month) + "/" +String.format("%02d", day);
+
             Intent intent = new Intent(FullActivity.this, showDailyTodoActivity.class);
+            intent.putExtra("extra_data", currentDate);
             startActivity(intent);
         }
     }

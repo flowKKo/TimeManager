@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.haibin.TimeManager.Pomodoro.Clock_Database;
 import com.haibin.TimeManager.R;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -22,9 +23,14 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.haibin.TimeManager.Todo.Todo;
+
+import org.litepal.LitePal;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -43,6 +49,9 @@ public class TomatoChartFragment extends Fragment {
     private LineChart lineChart;
     private LineDataSet lineDataSet;
     private LineData lineData;
+
+    private String[] DateStrs = new String[7];
+    private int[] Datas = new int[7];
 
     public TomatoChartFragment() {
         // Required empty public constructor
@@ -65,6 +74,29 @@ public class TomatoChartFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        java.util.Calendar cld= java.util.Calendar.getInstance(Locale.CHINA);//创建一个日历
+        List<Clock_Database> mTomatoList;
+        for(int i = 6 ; i >= 0 ; i--){
+            String curDate = Integer.toString(cld.get(java.util.Calendar.YEAR))+'/'+
+                    String.valueOf(cld.get(java.util.Calendar.MONTH)+1)+'/'+
+                    String.valueOf(cld.get(java.util.Calendar.DAY_OF_MONTH));
+
+            String showDate = String.format("%02d",cld.get(java.util.Calendar.MONTH)+1)+'.'+
+                    String.format("%02d",cld.get(java.util.Calendar.DAY_OF_MONTH));
+
+            mTomatoList= LitePal.where("state = ? and date=?", "1",curDate).find(Clock_Database.class);
+            DateStrs[i] = showDate;
+
+            int mils = 0;
+            for(int j = 0 ; j < mTomatoList.size(); j++){
+                mils += mTomatoList.get(j).getTime();
+            }
+            Datas[i] = mils / 60000;
+            cld.add(Calendar.DAY_OF_MONTH,-1);
+        }
+
+
     }
 
     @Override
@@ -105,9 +137,9 @@ public class TomatoChartFragment extends Fragment {
         WindowManager wm=(WindowManager)getActivity().getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics dm = new DisplayMetrics();
         wm.getDefaultDisplay().getMetrics(dm);
-        float x = dm.widthPixels / (float)1.15;
+        float x = dm.widthPixels / (float)1.6;
         float y = dm.heightPixels / 30;
-        lineChart.getDescription().setText("七日番茄专注时长");//设置文本
+        lineChart.getDescription().setText("七日番茄专注时长（分钟）");//设置文本
         lineChart.getDescription().setTextSize(18f); //设置文本大小
         lineChart.getDescription().setTextColor(Color.BLACK);//设置文本颜色
         lineChart.getDescription().setPosition(x,y);
@@ -117,9 +149,7 @@ public class TomatoChartFragment extends Fragment {
         XAxis xAxis = lineChart.getXAxis();
         xAxis.setDrawGridLines(false);
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setTextSize(14f);
-        final String weeks[] = { "Sun", "Mon", "Tue", "Wed", "Thu",
-                "Fri", "Sat"};
+        xAxis.setTextSize(10f);
         xAxis.setGranularity(3);
         xAxis.setLabelCount(7, true);
         xAxis.setValueFormatter(new ValueFormatter(){
@@ -127,7 +157,7 @@ public class TomatoChartFragment extends Fragment {
             public String getFormattedValue(float v) {
                 if (v < 0 || !isIntegerForDouble(v))
                     return "";
-                return weeks[(int) (v - 1)];
+                return DateStrs[(int) (v - 1)];
             }
         });
     }
@@ -154,11 +184,9 @@ public class TomatoChartFragment extends Fragment {
     }
 
     private void setDataset(){
-        //int datas[] = {15,20,7,13,56,34,21};
-        int datas[] = {5,15,1,2,3,4,12};
         List<Entry> entries = new ArrayList<Entry>();
-        for(int i = 0 ; i < datas.length; i++){
-            entries.add(new Entry(i+1, datas[i]));
+        for(int i = 0 ; i < Datas.length; i++){
+            entries.add(new Entry(i+1, Datas[i]));
         }
         lineDataSet = new LineDataSet(entries, "");
         lineDataSet.setFillColor(Color.GRAY);
