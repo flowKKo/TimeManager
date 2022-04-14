@@ -33,8 +33,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_alarm" />
-                            <entry key="sourceFile" value="C:\Users\AgarthaSF\Desktop\se project\CalendarView_modified" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="ic_noinfo" />
+                            <entry key="sourceFile" value="C:\Users\AgarthaSF\Desktop\noInfo.svg" />
                           </map>
                         </option>
                       </PersistentState>

@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -91,6 +92,13 @@ public class showDailyTodoActivity extends AppCompatActivity {
         mToDoList= LitePal.where("is_delete = ? and date=?", "0",curDate).
                 order("date desc").find(Todo.class);
         mAdapter.notifyDataSetChanged(mToDoList);
+        LinearLayout noInfoContent = findViewById(R.id.noInfoContent);
+        if(mToDoList.size() == 0){
+            noInfoContent.setVisibility(View.VISIBLE);
+        }else{
+            noInfoContent.setVisibility(View.INVISIBLE);
+        }
+
 
         ImageButton button_todo = (ImageButton)findViewById(R.id.button_todo);
         button_todo.setOnClickListener(new View.OnClickListener() {

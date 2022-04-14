@@ -62,10 +62,6 @@
             android:name="com.haibin.TimeManager.showDailyTodoActivity"
             android:launchMode="singleTask"
             android:theme="@style/Theme.AppCompat.Light" />
-<![CDATA[
-            />
-
-        ]]>
         <activity
             android:name="com.haibin.TimeManager.Statistics.StatisticsActivity"
             android:label="数据复盘回顾"

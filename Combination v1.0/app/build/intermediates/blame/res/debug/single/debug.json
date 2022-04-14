@@ -1288,6 +1288,10 @@
         "source": "D:\\CodeRelated\\Android_SDK\\caches\\transforms-2\\files-2.1\\59de106e951efb203cc2087aef4cfb15\\res\\drawable\\mtrl_ic_arrow_drop_up.xml"
     },
     {
+        "merged": "C:\\Users\\AgarthaSF\\Desktop\\se project\\Combination v1.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_noinfo.xml.flat",
+        "source": "C:\\Users\\AgarthaSF\\Desktop\\se project\\Combination v1.0\\app\\src\\main\\res\\drawable\\ic_noinfo.xml"
+    },
+    {
         "merged": "C:\\Users\\AgarthaSF\\Desktop\\se project\\Combination v1.0\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_statistics.xml.flat",
         "source": "C:\\Users\\AgarthaSF\\Desktop\\se project\\Combination v1.0\\app\\src\\main\\res\\layout\\activity_statistics.xml"
     },

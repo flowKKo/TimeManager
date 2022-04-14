@@ -55,10 +55,7 @@
 
         <activity android:name=".showDailyTodoActivity"
             android:theme="@style/Theme.AppCompat.Light"
-            android:launchMode="singleTask"/><![CDATA[
-            />
-
-        ]]>
+            android:launchMode="singleTask"/>
 
         <activity android:name=".Statistics.StatisticsActivity"
             android:label="数据复盘回顾"

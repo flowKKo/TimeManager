@@ -2687,6 +2687,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_noinfo
 drawable ic_round_circle
 drawable ic_today
 drawable m3_appbar_background
@@ -3007,6 +3008,7 @@ id image
 id imageButton_editClose
 id imageView
 id imageView4
+id img_orange_rectangle
 id immediateStop
 id included
 id info
@@ -3111,6 +3113,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id noInfoContent
 id noScroll
 id noState
 id none

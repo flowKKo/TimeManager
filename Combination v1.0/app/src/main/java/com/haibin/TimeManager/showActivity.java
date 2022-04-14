@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -113,16 +114,6 @@ public class showActivity extends BaseActivity implements
         localReceiver=new showActivity.LocalReceiver();
         intentFilter=new IntentFilter("myaction");
         localBroadcastManager.registerReceiver(localReceiver,intentFilter);
-
-        java.util.Calendar cld= java.util.Calendar.getInstance(Locale.CHINA);//创建一个日历
-        String curDate = Integer.toString(cld.get(java.util.Calendar.YEAR))+'/'+
-                String.format("%02d",cld.get(java.util.Calendar.MONTH)+1)+'/'+
-                String.format("%02d",cld.get(java.util.Calendar.DAY_OF_MONTH));
-
-        mToDoList= LitePal.where("is_delete = ? and date=?", "0",curDate).
-                order("date desc").find(Todo.class);
-        mAdapter.notifyDataSetChanged(mToDoList);
-
     }
 
     @Override
@@ -255,19 +246,24 @@ public class showActivity extends BaseActivity implements
         mTextYear.setText(String.valueOf(calendar.getYear()));
         mTextLunar.setText(calendar.getLunar());
         mYear = calendar.getYear();
-        
-        if (isClick) {
-            current_calendar = calendar;
 
-            // 此处处理视图更新逻辑
-            int year = calendar.getYear();
-            int month = calendar.getMonth();
-            int day = calendar.getDay();
-            String currentDate = String.valueOf(year) + "/" + String.format("%02d", month) + "/" +String.format("%02d", day);
-            mToDoList= LitePal.where("is_delete = ? and date=?", "0",currentDate).
-                    order("date desc").find(Todo.class);
-            mAdapter.notifyDataSetChanged(mToDoList);
+        current_calendar = calendar;
+        // 此处处理视图更新逻辑
+        int year = calendar.getYear();
+        int month = calendar.getMonth();
+        int day = calendar.getDay();
+        String currentDate = String.valueOf(year) + "/" + String.format("%02d", month) + "/" +String.format("%02d", day);
+        mToDoList= LitePal.where("is_delete = ? and date=?", "0",currentDate).
+                order("date desc").find(Todo.class);
+        mAdapter.notifyDataSetChanged(mToDoList);
+
+        LinearLayout noInfoContent = findViewById(R.id.noInfoContent);
+        if(mToDoList.size() == 0){
+            noInfoContent.setVisibility(View.VISIBLE);
+        }else{
+            noInfoContent.setVisibility(View.INVISIBLE);
         }
+
     }
 
     @Override
@@ -576,6 +572,13 @@ public class showActivity extends BaseActivity implements
         mToDoList= LitePal.where("is_delete = ? and date=?", "0",currentDate).
                 order("date desc").find(Todo.class);
         mAdapter.notifyDataSetChanged(mToDoList);
+
+        LinearLayout noInfoContent = findViewById(R.id.noInfoContent);
+        if(mToDoList.size() == 0){
+            noInfoContent.setVisibility(View.VISIBLE);
+        }else{
+            noInfoContent.setVisibility(View.INVISIBLE);
+        }
     }
 }
 

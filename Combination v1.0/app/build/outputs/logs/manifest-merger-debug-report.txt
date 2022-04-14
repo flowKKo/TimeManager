@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-85:12
-INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-85:12
-INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-85:12
-INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-85:12
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-83:12
+INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-83:12
+INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-83:12
+INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-83:12
 MERGED from [com.yanzhenjie.recyclerview:x:1.3.2] D:\CodeRelated\Android_SDK\caches\transforms-2\files-2.1\bd4951259f09a85516b27f39ed88afb8\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-ui:2.4.1] D:\CodeRelated\Android_SDK\caches\transforms-2\files-2.1\7848b4ffd546d864d28c7d6b7dc5e9de\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.5.0] D:\CodeRelated\Android_SDK\caches\transforms-2\files-2.1\59de106e951efb203cc2087aef4cfb15\AndroidManifest.xml:17:1-24:12
@@ -63,22 +63,22 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] D:\CodeRelated\An
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0] D:\CodeRelated\Android_SDK\caches\transforms-2\files-2.1\abb9f4dc8be84dbf8dd919cbfde7c00c\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] D:\CodeRelated\Android_SDK\caches\transforms-2\files-2.1\5fb2f97c5b60721e7ec808b8b52669a9\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] D:\CodeRelated\Android_SDK\caches\transforms-2\files-2.1\54be5ec43fb7fb648b37e2183c29fe79\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-85:12
-INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-85:12
-INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-85:12
+INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-83:12
+INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-83:12
+INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-83:12
 	package
 		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:4:5-37
 		INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-85:12
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-83:12
 		INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-85:12
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:1-83:12
 		INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:2:11-69
@@ -99,7 +99,7 @@ ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\A
 	android:name
 		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:10:22-64
 application
-ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:11:5-83:19
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:11:5-81:19
 MERGED from [com.google.android.material:material:1.5.0] D:\CodeRelated\Android_SDK\caches\transforms-2\files-2.1\59de106e951efb203cc2087aef4cfb15\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.5.0] D:\CodeRelated\Android_SDK\caches\transforms-2\files-2.1\59de106e951efb203cc2087aef4cfb15\AndroidManifest.xml:22:5-20
 MERGED from [org.litepal.guolindev:core:3.2.3] D:\CodeRelated\Android_SDK\caches\transforms-2\files-2.1\9099f1081d16bded52ad96d8a2656da9\AndroidManifest.xml:11:5-12:19
@@ -213,41 +213,41 @@ ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\A
 	android:name
 		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:56:19-56
 activity#com.haibin.TimeManager.Statistics.StatisticsActivity
-ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:62:9-65:46
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:60:9-63:46
 	android:label
-		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:63:13-35
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:61:13-35
 	android:launchMode
-		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:65:13-44
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:63:13-44
 	android:theme
-		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:64:13-57
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:62:13-57
 	android:name
-		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:62:19-64
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:60:19-64
 activity#com.haibin.TimeManager.Pomodoro.PomodoroActivity
-ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:67:9-70:50
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:65:9-68:50
 	android:label
-		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:69:13-37
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:67:13-37
 	android:launchMode
-		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:70:13-48
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:68:13-48
 	android:theme
-		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:68:13-57
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:66:13-57
 	android:name
-		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:67:19-60
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:65:19-60
 activity#com.haibin.TimeManager.Pomodoro.SetTimeActivity
-ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:72:9-81:20
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:70:9-79:20
 	android:parentActivityName
-		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:75:13-68
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:73:13-68
 	android:label
-		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:74:13-37
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:72:13-37
 	android:theme
-		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:73:13-57
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:71:13-57
 	android:name
-		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:72:19-59
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:70:19-59
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:77:13-79:62
+ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:75:13-77:62
 	android:value
-		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:79:17-59
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:77:17-59
 	android:name
-		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:78:17-63
+		ADDED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml:76:17-63
 uses-sdk
 INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\app\src\main\AndroidManifest.xml
