@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.haibin.TimeManager.Pomodoro.PomodoroActivity;
 import com.haibin.TimeManager.Statistics.StatisticsActivity;
+import com.haibin.TimeManager.Todo.Todo;
 import com.haibin.TimeManager.showActivity;
 import com.haibin.TimeManager.showDailyTodoActivity;
 import com.haibin.calendarview.Calendar;
@@ -19,22 +20,25 @@ import com.haibin.TimeManager.R;
 import com.haibin.TimeManager.calendar.base.activity.BaseActivity;
 import com.haibin.TimeManager.calendar.custom.CustomActivity;
 
+import org.litepal.LitePal;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+
 public class FullActivity extends BaseActivity implements
         CalendarView.OnCalendarSelectListener,
         CalendarView.OnYearChangeListener,
         View.OnClickListener {
 
     TextView mTextMonthDay;
-
     TextView mTextYear;
-
     TextView mTextLunar;
-
     TextView mTextCurrentDay;
-
     private int mYear;
-
     CalendarView mCalendarView;
+    Calendar current_calendar;
 
     public static void show(Context context) {
         context.startActivity(new Intent(context, FullActivity.class));
@@ -117,13 +121,58 @@ public class FullActivity extends BaseActivity implements
             }
         });
 
+        current_calendar = mCalendarView.getSelectedCalendar();
     }
 
     @Override
     protected void initData() {
         int year = mCalendarView.getCurYear();
         int month = mCalendarView.getCurMonth();
+        monthDataInit(year, month);
     }
+
+    private void monthDataInit(int year, int month) {
+        Map<String, Calendar> map = new HashMap<>();
+
+        // 遍历本月寻找所有存在日程的日期
+
+        java.util.Calendar cld= java.util.Calendar.getInstance(Locale.CHINA);
+        cld.set(java.util.Calendar.YEAR, year);
+        cld.set(java.util.Calendar.MONTH, month - 1);
+        cld.set(java.util.Calendar.DATE, 1);
+        cld.roll(java.util.Calendar.DATE, -1);
+        int maxDate = cld.get(java.util.Calendar.DATE);
+        cld.set(java.util.Calendar.DAY_OF_MONTH, 1);// 从一号开始
+
+        List<Todo> mToDoList;
+        String str;
+        for(int i = 0 ; i < maxDate ; i++){
+            String curDate = Integer.toString(cld.get(java.util.Calendar.YEAR))+'/'+
+                    String.format("%02d",cld.get(java.util.Calendar.MONTH)+1)+'/'+
+                    String.format("%02d",cld.get(java.util.Calendar.DAY_OF_MONTH));
+
+            str = "";
+            mToDoList= LitePal.where("is_delete = ? and date=? ", "0",curDate).find(Todo.class);
+            for(int j = 0 ; j < (Math.min(mToDoList.size() , 3 )); j++){
+                if(j == 0){
+                    str += mToDoList.get(j).getTodo();
+                }else{
+                    str += "\n" + mToDoList.get(j).getTodo();
+                }
+            }
+
+            if(str != ""){
+                map.put(getSchemeCalendar(year, month, i+1, 0xFF40db25, str).toString(),
+                        getSchemeCalendar(year, month, i+1, 0xFF40db25, str));
+            }
+            cld.add(java.util.Calendar.DAY_OF_MONTH,1);
+        }
+
+        //此方法在巨大的数据量上不影响遍历性能，推荐使用
+        mCalendarView.setSchemeDate(map);
+    }
+
+
 
     private Calendar getSchemeCalendar(int year, int month, int day, int color, String text) {
         Calendar calendar = new Calendar();
@@ -132,7 +181,6 @@ public class FullActivity extends BaseActivity implements
         calendar.setDay(day);
         calendar.setSchemeColor(color);//如果单独标记颜色、则会使用这个颜色
         calendar.setScheme(text);
-
         return calendar;
     }
 
@@ -156,10 +204,11 @@ public class FullActivity extends BaseActivity implements
         mTextLunar.setText(calendar.getLunar());
         mYear = calendar.getYear();
 
-        Log.e("onDateSelected", "  -- " + calendar.getYear() +
-                "  --  " + calendar.getMonth() +
-                "  -- " + calendar.getDay() +
-                "  --  " + isClick + "  --   " + calendar.getScheme());
+        if(current_calendar.getMonth() != calendar.getMonth()){
+            monthDataInit(calendar.getYear(), calendar.getMonth());
+        }
+        current_calendar = calendar;
+
 
         if(isClick){
             int year = calendar.getYear();
@@ -178,4 +227,13 @@ public class FullActivity extends BaseActivity implements
         mTextMonthDay.setText(String.valueOf(year));
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        monthDataInit(current_calendar.getYear(), current_calendar.getMonth());
+    }
+
+
 }
+

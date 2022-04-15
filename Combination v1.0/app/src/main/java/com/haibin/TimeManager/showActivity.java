@@ -536,7 +536,20 @@ public class showActivity extends BaseActivity implements
             mToDoList.remove(position);
             mAdapter.notifyItemRemoved(position);
 
-            //Toast.makeText(showActivity.this, "现在的第" + position + "条被删除。", Toast.LENGTH_SHORT).show();
+
+
+            int year = current_calendar.getYear();
+            int month = current_calendar.getMonth();
+            int day = current_calendar.getDay();
+            String currentDate = String.valueOf(year) + "/" + String.format("%02d", month) + "/" +String.format("%02d", day);
+            mToDoList= LitePal.where("is_delete = ? and date=?", "0",currentDate).
+                    order("date desc").find(Todo.class);
+            LinearLayout noInfoContent = findViewById(R.id.noInfoContent);
+            if(mToDoList.size() == 0){
+                noInfoContent.setVisibility(View.VISIBLE);
+            }else{
+                noInfoContent.setVisibility(View.INVISIBLE);
+            }
 
 
         }

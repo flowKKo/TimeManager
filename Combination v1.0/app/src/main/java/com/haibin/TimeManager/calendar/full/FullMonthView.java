@@ -3,6 +3,7 @@ package com.haibin.TimeManager.calendar.full;
 import android.content.Context;
 import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.View;
 
@@ -10,11 +11,6 @@ import com.haibin.calendarview.Calendar;
 import com.haibin.calendarview.MonthView;
 
 import java.util.List;
-
-/**
- * 高仿魅族日历布局
- * Created by huanghaibin on 2017/11/15.
- */
 
 public class FullMonthView extends MonthView {
 
@@ -24,6 +20,7 @@ public class FullMonthView extends MonthView {
      * 自定义魅族标记的圆形背景
      */
     private Paint mSchemeBasicPaint = new Paint();
+
 
     public FullMonthView(Context context) {
         super(context);
@@ -55,7 +52,7 @@ public class FullMonthView extends MonthView {
      */
     @Override
     protected boolean onDrawSelected(Canvas canvas, Calendar calendar, int x, int y, boolean hasScheme) {
-        canvas.drawRect(x, y , x + mItemWidth, y + mItemHeight, mSelectedPaint);
+        canvas.drawRect(x, y , x + mItemWidth, y + mItemHeight, mBorderPaint);
         return true;
     }
 
@@ -105,26 +102,65 @@ public class FullMonthView extends MonthView {
     protected void onDrawText(Canvas canvas, Calendar calendar, int x, int y, boolean hasScheme, boolean isSelected) {
         canvas.drawRect(x, y, x + mItemWidth, y + mItemHeight, mRectPaint);
         int cx = x + mItemWidth / 2;
-        int top = y - mItemHeight / 6;
+        int lx = x + mItemWidth / 10;
+        int top = y - mItemHeight / 3;
 
         boolean isInRange = isInRange(calendar);
 
         if (isSelected) {
+
             canvas.drawText(String.valueOf(calendar.getDay()), cx, mTextBaseLine + top,
                     mSelectTextPaint);
-            canvas.drawText(calendar.getLunar(), cx, mTextBaseLine + y + mItemHeight / 10, mSelectedLunarTextPaint);
+            canvas.drawText(calendar.getLunar(), cx, mTextBaseLine + top + mItemHeight / 8, mSelectedLunarTextPaint);
+
+            if (hasScheme){
+                String scheme = calendar.getScheme();
+                String strs[] = scheme.split("\n");
+
+                float currentHeight = mTextBaseLine + top + mItemHeight / 8 + mItemHeight /20;
+                int offset = mItemHeight / 50 ;
+                int len = strs.length;
+                for(int i = 0 ; i < len; i++){
+                    canvas.drawRect(x + mItemWidth/20, currentHeight ,
+                            x + 19 * mItemWidth /20 , currentHeight + mItemHeight / 9 , mTodoBackgroundPaint);
+                    canvas.drawText(strs[i].length() <= 4 ? strs[i] : strs[i].substring(0, 4), lx, currentHeight + offset*47/10, mTodoTextPaint);
+                    currentHeight = offset*2 + currentHeight + mItemHeight / 10;
+                }
+            }
+
+
         } else if (hasScheme) {
+
             canvas.drawText(String.valueOf(calendar.getDay()), cx, mTextBaseLine + top,
                     calendar.isCurrentMonth() && isInRange ? mSchemeTextPaint : mOtherMonthTextPaint);
 
-            canvas.drawText(calendar.getLunar(), cx, mTextBaseLine + y + mItemHeight / 10, mCurMonthLunarTextPaint);
+            canvas.drawText(calendar.getLunar(), cx, mTextBaseLine + top + mItemHeight / 8, mCurMonthLunarTextPaint);
+
+
+            String scheme = calendar.getScheme();
+            String strs[] = scheme.split("\n");
+
+            float currentHeight = mTextBaseLine + top + mItemHeight / 8 + mItemHeight /20;
+            int offset = mItemHeight / 50 ;
+            int len = strs.length;
+            for(int i = 0 ; i < (3 < len ? 3 : len); i++){
+                canvas.drawRect(x + mItemWidth/20, currentHeight ,
+                        x + 19 * mItemWidth /20 , currentHeight + mItemHeight / 9 , mTodoBackgroundPaint);
+
+                canvas.drawText(strs[i].length() <= 4 ? strs[i] : strs[i].substring(0, 4), lx, currentHeight + offset*47/10, mTodoTextPaint);
+                currentHeight = offset*2 + currentHeight + mItemHeight / 10;
+            }
         } else {
+
+
             canvas.drawText(String.valueOf(calendar.getDay()), cx, mTextBaseLine + top,
                     calendar.isCurrentDay() ? mCurDayTextPaint :
                             calendar.isCurrentMonth() && isInRange ? mCurMonthTextPaint : mOtherMonthTextPaint);
-            canvas.drawText(calendar.getLunar(), cx, mTextBaseLine + y + mItemHeight / 10,
+            canvas.drawText(calendar.getLunar(), cx, mTextBaseLine + top + mItemHeight / 8,
                     calendar.isCurrentDay() && isInRange ? mCurDayLunarTextPaint :
                             calendar.isCurrentMonth() ? mCurMonthLunarTextPaint : mOtherMonthLunarTextPaint);
+
+
         }
     }
 

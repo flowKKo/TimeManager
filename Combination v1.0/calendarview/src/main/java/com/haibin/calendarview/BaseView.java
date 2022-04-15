@@ -28,10 +28,6 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
-/**
- * 基本的日历View，派生出MonthView 和 WeekView
- * Created by huanghaibin on 2018/1/23.
- */
 
 public abstract class BaseView extends View implements View.OnClickListener, View.OnLongClickListener {
 
@@ -96,6 +92,19 @@ public abstract class BaseView extends View implements View.OnClickListener, Vie
      * 当前日期文本颜色画笔
      */
     protected Paint mCurDayLunarTextPaint = new Paint();
+
+
+
+    // todo事项背景画笔
+    protected  Paint mTodoBackgroundPaint = new Paint();
+
+    // todo事项文字画笔
+    protected Paint mTodoTextPaint = new Paint();
+
+    // 选中边框画笔
+    protected Paint mBorderPaint = new Paint();
+
+
 
     /**
      * 日历布局，需要在日历下方放自己的布局
@@ -220,10 +229,31 @@ public abstract class BaseView extends View implements View.OnClickListener, Vie
 
         mSelectedPaint.setAntiAlias(true);
         mSelectedPaint.setStyle(Paint.Style.FILL);
-        mSelectedPaint.setStrokeWidth(2);
+        mSelectedPaint.setStrokeWidth(3);
+
+        // todo事项背景画笔
+        mTodoBackgroundPaint.setStyle(Paint.Style.FILL);
+        mTodoBackgroundPaint.setColor(0xffdcdcdc);
+
+
+        // todo事件文字画笔
+
+        mTodoTextPaint.setAntiAlias(true);
+        mTodoTextPaint.setColor(0xFF111111);
+        mTodoTextPaint.setTextAlign(Paint.Align.LEFT);
+        mCurDayLunarTextPaint.setTextSize(CalendarUtil.dipToPx(context, TEXT_SIZE));
+
+
+        // 选中边框画笔
+        mBorderPaint.setStyle(Paint.Style.STROKE);//实心矩形框
+        mBorderPaint.setColor(0xff2e8b57);
+        mBorderPaint.setStrokeWidth(2);
+        mBorderPaint.setAntiAlias(true);
+
 
         setOnClickListener(this);
         setOnLongClickListener(this);
+
     }
 
     /**
@@ -270,6 +300,18 @@ public abstract class BaseView extends View implements View.OnClickListener, Vie
 
         this.mSelectedPaint.setStyle(Paint.Style.FILL);
         this.mSelectedPaint.setColor(mDelegate.getSelectedThemeColor());
+
+        this.mTodoTextPaint.setTextSize(mDelegate.getLunarTextSize());
+        this.mTodoBackgroundPaint.setStyle(Paint.Style.FILL);
+        this.mTodoBackgroundPaint.setColor(0x9C9C9C);
+
+        this.mTodoBackgroundPaint.setStyle(Paint.Style.FILL);
+        this.mTodoBackgroundPaint.setColor(0xffdcdcdc);
+
+        this.mBorderPaint.setStyle(Paint.Style.STROKE);//实心矩形框
+        this.mBorderPaint.setColor(0xff2e8b57);
+        this.mBorderPaint.setStrokeWidth(3);
+        this.mBorderPaint.setAntiAlias(true);
     }
 
     @SuppressWarnings("IntegerDivisionInFloatingPointContext")

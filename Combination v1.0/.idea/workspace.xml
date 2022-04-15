@@ -13,8 +13,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0ec1385-3d04-4c76-a621-2bae361dd025" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/haibin/TimeManager/showActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/haibin/TimeManager/showActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/haibin/TimeManager/calendar/full/FullActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/haibin/TimeManager/calendar/full/FullActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/haibin/TimeManager/calendar/full/FullMonthView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/haibin/TimeManager/calendar/full/FullMonthView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/haibin/TimeManager/calendar/full/FullWeekView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/haibin/TimeManager/calendar/full/FullWeekView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/haibin/TimeManager/showActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/haibin/TimeManager/showActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calendarview/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/haibin/calendarview/BaseView.class" beforeDir="false" afterPath="$PROJECT_DIR$/calendarview/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/haibin/calendarview/BaseView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calendarview/src/main/java/com/haibin/calendarview/BaseView.java" beforeDir="false" afterPath="$PROJECT_DIR$/calendarview/src/main/java/com/haibin/calendarview/BaseView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,10 +80,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="android-custom-viewC:/Users/AgarthaSF/Desktop/se project/Combination v1.0/calendarview/src/main/java/com/haibin/calendarview/BaseView.java_SELECTED" value="BaseView" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../combination/Combination v2.0/Combination v1.0(1)/Combination v1.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../combination/CalendarView-master (1)/CalendarView-master" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />

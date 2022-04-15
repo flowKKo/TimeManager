@@ -11,10 +11,6 @@ import com.haibin.calendarview.WeekView;
 
 import java.util.List;
 
-/**
- * 魅族周视图
- * Created by huanghaibin on 2017/11/29.
- */
 
 public class FullWeekView extends WeekView {
     private Paint mRectPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
