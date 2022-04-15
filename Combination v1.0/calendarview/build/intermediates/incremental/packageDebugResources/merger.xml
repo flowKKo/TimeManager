@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3" xmlns:ns1="http://schemas.android.com/tools"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\AgarthaSF\Desktop\combination\gqComb\Combination v1.0\calendarview\src\main\res"/><source path="C:\Users\AgarthaSF\Desktop\combination\gqComb\Combination v1.0\calendarview\build\generated\res\rs\debug"/><source path="C:\Users\AgarthaSF\Desktop\combination\gqComb\Combination v1.0\calendarview\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\AgarthaSF\Desktop\combination\gqComb\Combination v1.0\calendarview\src\main\res"><file name="cv_bg_material" path="C:\Users\AgarthaSF\Desktop\combination\gqComb\Combination v1.0\calendarview\src\main\res\drawable\cv_bg_material.xml" qualifiers="" type="drawable"/><file name="cv_bg_material" path="C:\Users\AgarthaSF\Desktop\combination\gqComb\Combination v1.0\calendarview\src\main\res\drawable-v21\cv_bg_material.xml" qualifiers="v21" type="drawable"/><file name="cv_layout_calendar_view" path="C:\Users\AgarthaSF\Desktop\combination\gqComb\Combination v1.0\calendarview\src\main\res\layout\cv_layout_calendar_view.xml" qualifiers="" type="layout"/><file name="cv_week_bar" path="C:\Users\AgarthaSF\Desktop\combination\gqComb\Combination v1.0\calendarview\src\main\res\layout\cv_week_bar.xml" qualifiers="" type="layout"/><file path="C:\Users\AgarthaSF\Desktop\combination\gqComb\Combination v1.0\calendarview\src\main\res\values\attrs.xml" qualifiers=""><declare-styleable name="CalendarView">
+<merger version="3" xmlns:ns1="http://schemas.android.com/tools"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\src\main\res"/><source path="C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\build\generated\res\rs\debug"/><source path="C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\src\main\res"><file name="cv_bg_material" path="C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\src\main\res\drawable\cv_bg_material.xml" qualifiers="" type="drawable"/><file name="cv_bg_material" path="C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\src\main\res\drawable-v21\cv_bg_material.xml" qualifiers="v21" type="drawable"/><file name="cv_layout_calendar_view" path="C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\src\main\res\layout\cv_layout_calendar_view.xml" qualifiers="" type="layout"/><file name="cv_week_bar" path="C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\src\main\res\layout\cv_week_bar.xml" qualifiers="" type="layout"/><file path="C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\src\main\res\values\attrs.xml" qualifiers=""><declare-styleable name="CalendarView">
 
         <attr format="dimension" name="calendar_padding"/>
         <attr format="dimension" name="calendar_padding_left"/>
@@ -134,7 +134,7 @@
             <enum name="only_month_view" value="2"/>
         </attr>
         <attr format="integer" name="calendar_content_view_id"/>
-    </declare-styleable></file><file path="C:\Users\AgarthaSF\Desktop\combination\gqComb\Combination v1.0\calendarview\src\main\res\values\strings.xml" qualifiers=""><string name="cv_app_name">CalendarView</string><string-array name="lunar_first_of_month">
+    </declare-styleable></file><file path="C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\src\main\res\values\strings.xml" qualifiers=""><string name="cv_app_name">CalendarView</string><string-array name="lunar_first_of_month">
         <item>春节</item>
         <item>二月</item>
         <item>三月</item>
@@ -313,7 +313,7 @@
         <item>未</item>
         <item>申</item>
 
-    </string-array></file><file path="C:\Users\AgarthaSF\Desktop\combination\gqComb\Combination v1.0\calendarview\src\main\res\values-zh\strings.xml" qualifiers="zh"><string name="cv_app_name">CalendarView</string><string-array name="lunar_first_of_month">
+    </string-array></file><file path="C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\src\main\res\values-zh\strings.xml" qualifiers="zh"><string name="cv_app_name">CalendarView</string><string-array name="lunar_first_of_month">
         <item>春节</item>
         <item>二月</item>
         <item>三月</item>
@@ -492,7 +492,7 @@
         <item>未</item>
         <item>申</item>
 
-    </string-array></file><file path="C:\Users\AgarthaSF\Desktop\combination\gqComb\Combination v1.0\calendarview\src\main\res\values-zh-rHK\strings.xml" qualifiers="zh-rHK"><string name="cv_app_name">CalendarView</string><string-array name="lunar_first_of_month">
+    </string-array></file><file path="C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\src\main\res\values-zh-rHK\strings.xml" qualifiers="zh-rHK"><string name="cv_app_name">CalendarView</string><string-array name="lunar_first_of_month">
         <item>春節</item>
         <item>二月</item>
         <item>三月</item>
@@ -663,7 +663,7 @@
         <item>未</item>
         <item>申</item>
 
-    </string-array></file><file path="C:\Users\AgarthaSF\Desktop\combination\gqComb\Combination v1.0\calendarview\src\main\res\values-zh-rTW\strings.xml" qualifiers="zh-rTW"><string name="cv_app_name">CalendarView</string><string-array name="lunar_first_of_month">
+    </string-array></file><file path="C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\src\main\res\values-zh-rTW\strings.xml" qualifiers="zh-rTW"><string name="cv_app_name">CalendarView</string><string-array name="lunar_first_of_month">
         <item>春節</item>
         <item>二月</item>
         <item>三月</item>
@@ -837,7 +837,7 @@
         <item>午</item>
         <item>未</item>
         <item>申</item>
-    </string-array></file></source><source path="C:\Users\AgarthaSF\Desktop\combination\gqComb\Combination v1.0\calendarview\build\generated\res\rs\debug"/><source path="C:\Users\AgarthaSF\Desktop\combination\gqComb\Combination v1.0\calendarview\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\AgarthaSF\Desktop\combination\gqComb\Combination v1.0\calendarview\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\AgarthaSF\Desktop\combination\gqComb\Combination v1.0\calendarview\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="CalendarView">
+    </string-array></file></source><source path="C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\build\generated\res\rs\debug"/><source path="C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\build\generated\res\resValues\debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\AgarthaSF\Desktop\se project\Combination v1.0\calendarview\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="CalendarView">
 
         <attr format="dimension" name="calendar_padding"/>
         <attr format="dimension" name="calendar_padding_left"/>

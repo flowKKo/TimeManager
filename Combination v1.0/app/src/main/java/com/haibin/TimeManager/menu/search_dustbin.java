@@ -20,6 +20,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.haibin.TimeManager.Adapter.BaseAdapter;
@@ -28,8 +29,12 @@ import com.haibin.TimeManager.AddTodoDialog.AddTodoDialog;
 import com.haibin.TimeManager.AddTodoDialog.OnTodoAddListener;
 import com.haibin.TimeManager.EditTodoDialog.EditTodoDialog;
 import com.haibin.TimeManager.EditTodoDialog.OnTodoEditListener;
+import com.haibin.TimeManager.Pomodoro.PomodoroActivity;
 import com.haibin.TimeManager.R;
+import com.haibin.TimeManager.Statistics.StatisticsActivity;
 import com.haibin.TimeManager.Todo.Todo;
+import com.haibin.TimeManager.calendar.full.FullActivity;
+import com.haibin.TimeManager.showActivity;
 import com.yanzhenjie.recyclerview.SwipeRecyclerView;
 import com.yanzhenjie.recyclerview.touch.OnItemMoveListener;
 import com.yanzhenjie.recyclerview.touch.OnItemStateChangedListener;
@@ -101,7 +106,48 @@ private Toolbar mToolbar;
         localReceiver=new LocalReceiver();
         intentFilter=new IntentFilter("myaction");
         localBroadcastManager.registerReceiver(localReceiver,intentFilter);
+
+        ImageButton button_todo = (ImageButton)findViewById(R.id.button_todo);
+        button_todo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(search_dustbin.this, showActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton button_calendar = (ImageButton)findViewById(R.id.button_calendar);
+        button_calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(search_dustbin.this, FullActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton button_clock = (ImageButton)findViewById(R.id.button_clock);
+        button_clock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(search_dustbin.this, PomodoroActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton button_statistics = (ImageButton)findViewById(R.id.button_statistics);
+        button_statistics.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(search_dustbin.this, StatisticsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
+
+
     protected BaseAdapter createAdapter() {
         return new DragTouchAdapter(this,mRecyclerView);
     }

@@ -78,6 +78,10 @@
 
         </activity>
 
+        <activity android:name=".menu.help_for_user"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:launchMode="singleTask"/>
+
     </application>
 
 </manifest>

@@ -2673,6 +2673,8 @@ drawable design_snackbar_background
 drawable done_button
 drawable edittext_selector
 drawable forest
+drawable help_1
+drawable help_2
 drawable ic_baseline_access_alarm_24
 drawable ic_baseline_delete
 drawable ic_baseline_edit
@@ -3020,6 +3022,7 @@ id item1
 id item2
 id item3
 id item4
+id item_img
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
@@ -3157,6 +3160,7 @@ id recyclerView
 id recycler_view
 id recycler_view_dustbin
 id recycler_view_history
+id recyclerview_help
 id resetButton
 id resumePauseButton
 id reverseSawtooth
@@ -3300,6 +3304,7 @@ id tomato
 id tomatoChart
 id tomatoChart_fragment
 id toolbar_dustbin
+id toolbar_help
 id toolbar_history
 id top
 id topPanel
@@ -3432,6 +3437,7 @@ layout abc_tooltip
 layout activity_calendar
 layout activity_custom
 layout activity_full
+layout activity_help_for_user
 layout activity_main_temp
 layout activity_pomodoro
 layout activity_search_dustbin
@@ -3467,6 +3473,7 @@ layout fragment_todo_chart
 layout fragment_tomato_chart
 layout fragment_week
 layout fragment_year
+layout help_list
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title

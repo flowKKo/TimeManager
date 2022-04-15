@@ -82,6 +82,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Pomodoro.PomodoroActivity" />
         </activity>
+        <activity
+            android:name="com.haibin.TimeManager.menu.help_for_user"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

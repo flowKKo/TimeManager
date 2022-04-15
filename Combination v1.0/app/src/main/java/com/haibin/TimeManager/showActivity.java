@@ -38,6 +38,7 @@ import com.haibin.TimeManager.Pomodoro.PomodoroActivity;
 import com.haibin.TimeManager.Statistics.StatisticsActivity;
 import com.haibin.TimeManager.Todo.Todo;
 import com.haibin.TimeManager.calendar.full.FullActivity;
+import com.haibin.TimeManager.menu.help_for_user;
 import com.haibin.TimeManager.menu.search_dustbin;
 import com.haibin.TimeManager.menu.search_history;
 import com.haibin.calendarview.Calendar;
@@ -351,6 +352,8 @@ public class showActivity extends BaseActivity implements
 //                order("date desc").find(Todo.class);
 //        mAdapter.notifyDataSetChanged(mToDoList);
     }
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -360,7 +363,10 @@ public class showActivity extends BaseActivity implements
                 startActivityForResult(intent_history,1);
                 break;
             case R.id.help:
-                Toast.makeText(this, "You clicked activity", Toast.LENGTH_LONG).show();
+                Log.w("TAG_New","entry help");
+                Intent intent_help = new Intent(showActivity.this, help_for_user.class);
+                Log.w("TAG_New","start help");
+                startActivity(intent_help);
                 break;
             case R.id.dustbin_activity:
                 Log.w("TAG5","entry dustbin");
