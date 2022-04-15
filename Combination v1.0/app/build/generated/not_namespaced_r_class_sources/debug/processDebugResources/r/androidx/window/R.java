@@ -31,9 +31,9 @@ public final class R {
         private id() {}
 
         public static final int androidx_window_activity_scope = 0x7f090052;
-        public static final int locale = 0x7f090124;
-        public static final int ltr = 0x7f090125;
-        public static final int rtl = 0x7f0901a6;
+        public static final int locale = 0x7f090123;
+        public static final int ltr = 0x7f090124;
+        public static final int rtl = 0x7f0901a5;
     }
     public static final class styleable {
         private styleable() {}

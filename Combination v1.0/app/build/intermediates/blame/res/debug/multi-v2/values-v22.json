@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\AgarthaSF\\Desktop\\se project\\Combination v1.0\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
+            "outputFile": "C:\\Users\\AgarthaSF\\Desktop\\combination\\gqComb\\Combination v1.0\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
             "map": [
                 {
-                    "source": "D:\\CodeRelated\\Android_SDK\\caches\\transforms-2\\files-2.1\\2a8c01cdb5f2d1b4638d1ac4d4244ba9\\res\\values-v22\\values-v22.xml",
+                    "source": "D:\\CodeRelated\\Android_SDK\\.gradle\\caches\\transforms-2\\files-2.1\\420175f206c02d7a2fc84ccd725151a8\\res\\values-v22\\values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

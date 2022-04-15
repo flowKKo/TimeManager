@@ -2673,6 +2673,7 @@ drawable design_snackbar_background
 drawable done_button
 drawable edittext_selector
 drawable forest
+drawable ic_baseline_access_alarm_24
 drawable ic_baseline_delete
 drawable ic_baseline_edit
 drawable ic_circular
@@ -3020,7 +3021,6 @@ id item2
 id item3
 id item4
 id item_touch_helper_previous_elevation
-id iv_more
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -3296,6 +3296,7 @@ id todo_row_layout
 id todo_text
 id todochart_fragment
 id toggle
+id tomato
 id tomatoChart
 id tomatoChart_fragment
 id toolbar_dustbin

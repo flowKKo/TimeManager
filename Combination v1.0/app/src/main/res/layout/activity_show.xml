@@ -64,11 +64,10 @@
             android:id="@+id/fl_current"
             android:layout_width="32dp"
             android:layout_height="32dp"
+            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="12dp"
-            android:layout_toLeftOf="@+id/iv_more"
-            android:background="@drawable/bg_ripple"
-            android:visibility="gone">
+            android:background="@drawable/bg_ripple">
 
             <ImageView
                 android:id="@+id/ib_calendar"
@@ -88,7 +87,8 @@
                 android:gravity="center"
                 android:text="13"
                 android:textColor="#000000"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                tools:ignore="HardcodedText" />
         </FrameLayout>
 
 

@@ -1,6 +1,7 @@
 package com.haibin.TimeManager;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -19,10 +20,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -79,9 +80,8 @@ public class showActivity extends BaseActivity implements
 
     protected SwipeRecyclerView mRecyclerView;
     protected LinearLayoutManager mLayoutManager=new LinearLayoutManager(this);
-    protected RecyclerView.ItemDecoration mItemDecoration;
     protected List<Todo> mToDoList;
-    protected BaseAdapter mAdapter;
+    protected DragTouchAdapter mAdapter;
     private LocalReceiver localReceiver;   //本地广播接收者
     private LocalBroadcastManager localBroadcastManager;   //本地广播管理者   可以用来注册广播
     private IntentFilter intentFilter;
@@ -92,11 +92,10 @@ public class showActivity extends BaseActivity implements
         super.onCreate(savedInstanceState);
 
         mRecyclerView=findViewById(R.id.recycler_view);
-        mItemDecoration = new DefaultItemDecoration(ContextCompat.getColor(this, R.color.divider_color));
         mAdapter = new DragTouchAdapter(this,mRecyclerView);
 
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.addItemDecoration(mItemDecoration);
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
         mRecyclerView.setOnItemClickListener(this::onItemClick);
         mRecyclerView.setAdapter(mAdapter);
         //在checkbox选中时，mTodolist也跟着发生了变化，然后发布广播消息，更新数据库的内容
@@ -201,6 +200,12 @@ public class showActivity extends BaseActivity implements
         });
 
         current_calendar = mCalendarView.getSelectedCalendar();
+        findViewById(R.id.fl_current).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCalendarView.scrollToCurrent();
+            }
+        });
     }
 
     @SuppressWarnings("unused")
@@ -249,21 +254,7 @@ public class showActivity extends BaseActivity implements
 
         current_calendar = calendar;
         // 此处处理视图更新逻辑
-        int year = calendar.getYear();
-        int month = calendar.getMonth();
-        int day = calendar.getDay();
-        String currentDate = String.valueOf(year) + "/" + String.format("%02d", month) + "/" +String.format("%02d", day);
-        mToDoList= LitePal.where("is_delete = ? and date=?", "0",currentDate).
-                order("date desc").find(Todo.class);
-        mAdapter.notifyDataSetChanged(mToDoList);
-
-        LinearLayout noInfoContent = findViewById(R.id.noInfoContent);
-        if(mToDoList.size() == 0){
-            noInfoContent.setVisibility(View.VISIBLE);
-        }else{
-            noInfoContent.setVisibility(View.INVISIBLE);
-        }
-
+        onResume();
     }
 
     @Override
@@ -381,7 +372,36 @@ public class showActivity extends BaseActivity implements
         return true;
     }
 
+    //这个函数会让已经完成的事件标记为已完成
+    public void init_is_done(){
+        for(int i=0;i<mToDoList.size();i++){
+            //已完成
+            mAdapter.flag[i]=false;//先初始化为全未完成
 
+        }
+        for(int i=0;i<mToDoList.size();i++){
+            if(mToDoList.get(i).getIs_done()){//已完成
+                mAdapter.flag[i]=true;
+            }
+        }
+
+
+    }
+    public void swap_position(){
+        int k=mToDoList.size();
+        for(int i=0;i<k;){
+            if(mToDoList.get(i).getIs_done()){
+                k--;
+                for (int j = i; j <mToDoList.size()-1; j++) {
+                    Collections.swap(mToDoList, j, j + 1);//交换数据源两个数据的位置
+                    //swap(mAdapter.flag,j,j+1);
+                    //mAdapter.notifyItemMoved(j, j + 1);
+
+                }
+            }
+            else i++;
+        }
+    }
     private class LocalReceiver extends BroadcastReceiver {//消息从adapter收到了
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -389,18 +409,24 @@ public class showActivity extends BaseActivity implements
             if("myaction".equals(action)){
                 Log.d( "消息：" + intent.getStringExtra( "data" )  , "线程： " + Thread.currentThread().getName() ) ;
             }
-            String todoname=intent.getStringExtra("todoname");
-            boolean isdone=intent.getBooleanExtra("is_done",false);
-            //在这里出了问题（已改正），position应该是由getadapterposition函数得到的
+            String todo_name=intent.getStringExtra("to_doname");
+            int todo_id=intent.getIntExtra("todo_id",0);
+            boolean is_done=intent.getBooleanExtra("is_done",false);
+            //在这里出了问题（已改正），position应该是由getAdapterPosition函数得到的
             int fromPosition=intent.getIntExtra("position",0);
-            //成功更新数据库is_done
-            Todo updatetodo=new Todo();
-            if(isdone) updatetodo.setIs_done(isdone);
-            else updatetodo.setToDefault("is_done");//当set为false时应调用该函数
-            updatetodo.updateAll("todo=?",todoname);
+
+            Todo UpdateTodo=new Todo();
+            if(is_done) UpdateTodo.setIs_done(is_done);
+            else UpdateTodo.setToDefault("is_done");//当set为false时应调用该函数
+            UpdateTodo.updateAll("id = ?",String.valueOf(todo_id));
+
+
+            //flag也跟着变化
+            List<Todo> test=LitePal.findAll(Todo.class);
+
             //接下来要做的是将这个todo的position移到最下面去
             //分为两种情况，当is_done变为true时和当is_done变为false时
-            if(isdone) {
+            if(is_done) {
                 int toPosition = mToDoList.size() - 1;
                 if (fromPosition < toPosition) {
                     //从上往下拖动，每滑动一个item，都将list中的item向下交换，向上滑同理。
@@ -433,7 +459,6 @@ public class showActivity extends BaseActivity implements
         }
     }
 
-
     //取消广播的注册
     @Override
     public void onDestroy() {
@@ -448,13 +473,7 @@ public class showActivity extends BaseActivity implements
         editTodoDialog.setOnTodoEditListener(new OnTodoEditListener() {
             @Override
             public void onTodoEdit() {//刷新界面
-                int year = current_calendar.getYear();
-                int month = current_calendar.getMonth();
-                int day = current_calendar.getDay();
-                String currentDate = String.valueOf(year) + "/" + String.format("%02d", month) + "/" +String.format("%02d", day);
-                mToDoList= LitePal.where("is_delete = ? and date=?", "0",currentDate).
-                        order("date desc").find(Todo.class);
-                mAdapter.notifyDataSetChanged(mToDoList);
+                onResume();
             }
         });
         editTodoDialog.show(getSupportFragmentManager(),"EditDialog");
@@ -500,23 +519,25 @@ public class showActivity extends BaseActivity implements
         @Override
         public void onItemDismiss(RecyclerView.ViewHolder srcHolder) {
             int position = srcHolder.getAdapterPosition();
-            String  todoname=mToDoList.get(position).getTodo();
+            String  Todo_name=mToDoList.get(position).getTodo();
+            int Todo_id=mToDoList.get(position).getId();
             //在这里弹出一个对话框
-            new android.app.AlertDialog.Builder(showActivity.this)
-                    .setMessage("确定要删除该事件？"+todoname)
+            new AlertDialog.Builder(showActivity.this)
+                    .setMessage("确定要删除该事件？"+Todo_name)
                     .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             Toast.makeText(showActivity.this, "你点击了确定按钮~", Toast.LENGTH_SHORT).show();
                             Todo updatetodo=new Todo();
                             updatetodo.setIs_delete(true);
-                            updatetodo.updateAll("todo=?",todoname);
+                            updatetodo.updateAll("id = ?",String.valueOf(Todo_id));
+                            List<Todo> test=LitePal.findAll(Todo.class);
 
                             mToDoList.remove(position);
-                            //LitePal.deleteAll(Todo.class,"todo=?",todo);
                             mAdapter.notifyItemRemoved(position);
 
                             Toast.makeText(showActivity.this, "现在的第" + position + "条被删除。", Toast.LENGTH_SHORT).show();
+                            onResume();
                         }
                     })
                     .setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -524,11 +545,12 @@ public class showActivity extends BaseActivity implements
                         public void onClick(DialogInterface dialogInterface, int i) {
                             ((DragTouchAdapter)mAdapter).updateItemsData(mToDoList);//取消删除
                         }
-                    })//即使点了取消之后事件依然被删除啊啊，要不然试试页面刷新
+                    })
                     .show();
+
+
         }
     };
-
     public void onClick_Dialog(View view){//监听事件
         switch(view.getId()){
             case R.id.fab:
@@ -537,15 +559,7 @@ public class showActivity extends BaseActivity implements
                 addTodoDialog.setOnTodoAddListener(new OnTodoAddListener() {
                     @Override
                     public void onTodoAdd() {
-
-                        int year = current_calendar.getYear();
-                        int month = current_calendar.getMonth();
-                        int day = current_calendar.getDay();
-                        String currentDate = String.valueOf(year) + "/" + String.format("%02d", month) + "/" +String.format("%02d", day);
-                        mToDoList= LitePal.where("is_delete = ? and date=?", "0",currentDate).
-                                order("date desc").find(Todo.class);
-                        mAdapter.notifyDataSetChanged(mToDoList);
-
+                        onResume();
                     }
                 } );
                 addTodoDialog.show(getSupportFragmentManager(),"tag");//显示对话框
@@ -571,6 +585,8 @@ public class showActivity extends BaseActivity implements
         String currentDate = String.valueOf(year) + "/" + String.format("%02d", month) + "/" +String.format("%02d", day);
         mToDoList= LitePal.where("is_delete = ? and date=?", "0",currentDate).
                 order("date desc").find(Todo.class);
+        swap_position();
+        init_is_done();//已完成的打钩
         mAdapter.notifyDataSetChanged(mToDoList);
 
         LinearLayout noInfoContent = findViewById(R.id.noInfoContent);

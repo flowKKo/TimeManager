@@ -24,8 +24,8 @@
         app:layout_constraintBottom_toTopOf="@+id/todo_chip"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/checkbox"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.chip.Chip
@@ -34,11 +34,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:text="@string/today"
+        android:theme="@style/Theme.MaterialComponents.Light"
         app:chipIcon="@drawable/ic_today"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/todo_text"
-        android:theme="@style/Theme.MaterialComponents.Light"
-         />
+        app:layout_constraintTop_toBottomOf="@id/todo_text" />
+
+    <Button
+        android:id="@+id/tomato"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/ic_baseline_access_alarm_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints">
+
+    </Button>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
