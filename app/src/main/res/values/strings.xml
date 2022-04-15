@@ -21,4 +21,5 @@
     <string name="set_break_time">设置休息时长</string>
     <string name="potato">potato</string>
     <string name="default_count">0</string>
+    <string name="skip">跳过</string>
 </resources>

@@ -25,8 +25,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,18 +49,22 @@ public class MainActivity extends AppCompatActivity {
     //    boolean isProcessRunning = false;
 //    if (isProcessRunning == true) return;
     boolean isTimeRunning = false, isBreak = false;
-//    isProcessRunning = true;
+    //    isProcessRunning = true;
     final static long DEFAULT_WORKING_TIME = 1500000, DEFAULT_BREAK_TIME = 300000;
     static long startTime, breakTime, millisLeft;
     ImageButton resumePauseButton, resetButton;
+    Button skipButton;
     CountDownTimer timer;
     ProgressBar timerProgressBar;
     TextView timerText;
     EditText numCount;
     Vibrator vibrator;
     Ringtone ringtone;
+    private ImageView star_working, star_breaking;
     boolean isdone = true; //记录当前番茄钟是否被用完，是则为true，反之为false
     int id = -1; //记录当前番茄钟的编号
+    private Animation bigAnimation, smallAnimation;
+    private boolean isSkipExist = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,11 +75,16 @@ public class MainActivity extends AppCompatActivity {
 
         resumePauseButton = findViewById(R.id.resumePauseButton);
         resetButton = findViewById(R.id.resetButton);
+        skipButton = findViewById(R.id.skip_btn);
+        skipButton.setEnabled(false);
         timerProgressBar = findViewById(R.id.progressBar);
         timerText = findViewById(R.id.textView);
         numCount = findViewById(R.id.editTextNumberDecimal);
+        star_working = (ImageView) findViewById(R.id.toWorkView);
+        star_breaking = (ImageView) findViewById(R.id.toBreakView);
         readCount();
         numCount.setKeyListener(null);
+        scaleAnimation(); //初始化动画参数
 
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
@@ -80,6 +93,13 @@ public class MainActivity extends AppCompatActivity {
         startTime = DEFAULT_WORKING_TIME;
         breakTime = DEFAULT_BREAK_TIME;
 
+        if (isBreak) {
+            //star_control(star_working, false);
+            star_control(star_breaking, true);
+        } else {
+            star_control(star_working, true);
+            //star_control(star_breaking, false);
+        }
         millisLeft = (isBreak) ? breakTime : startTime;
         onStart();
     }
@@ -116,7 +136,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.options, menu);
@@ -127,8 +146,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.workingTimerOption:
-                if (isTimeRunning == true)
-                {
+                if (isTimeRunning == true) {
                     Toast.makeText(this, "番茄钟正在进行，请勿修改时间", Toast.LENGTH_LONG).show();
                     return false;
                 }
@@ -136,12 +154,10 @@ public class MainActivity extends AppCompatActivity {
                 workIntent.putExtra("startTime", startTime);
                 workIntent.putExtra("requestCode", 10);
                 startActivityForResult(workIntent, 10);
-
                 return true;
             case R.id.breakTimerOption:
 
-                if (isTimeRunning == true)
-                {
+                if (isTimeRunning == true) {
                     Toast.makeText(this, "番茄钟正在进行，请勿修改时间", Toast.LENGTH_LONG).show();
                     return false;
                 }
@@ -201,8 +217,7 @@ public class MainActivity extends AppCompatActivity {
 
                 resetTimer();
                 defineProgress();
-            }
-            else if (requestCode == 20) {
+            } else if (requestCode == 20) {
                 breakTime = Objects.requireNonNull(data.getExtras()).getLong("breakTime");
 
                 resetTimer();
@@ -213,25 +228,41 @@ public class MainActivity extends AppCompatActivity {
 
     private void startTimer() {
         isTimeRunning = true;
-        if (isdone && !isBreak)
-        {//如果当前番茄钟结束，且下一个仍为专注模式
+        if (isdone && !isBreak) {//如果当前番茄钟结束，且下一个仍为专注模式
             isdone = false;
             record_pomodoro(false); //记录番茄钟
-
+        }
+        if (isBreak && !isSkipExist)
+        {
+            //--------------------------------------------动画出现按钮----------------
+            skipButton.setEnabled(true);
+            skipButton.startAnimation(bigAnimation); //放大动画
+            skipButton.setVisibility(View.VISIBLE); //显示按钮
+            isSkipExist = true; //标记按钮存在
         }
         timer = new CountDownTimer(millisLeft, 100) {
-
+            int countDown = 10000;
             @Override
             public void onTick(long millisUntilFinished) {
                 millisLeft = millisUntilFinished;
-
                 updateTimerProgress();
+                if (isSkipExist && countDown == 0)
+                {
+                    skipButton.setVisibility(View.INVISIBLE);
+                    skipButton.setText("跳过");
+                    isSkipExist = false;
+                    skipButton.setEnabled(false);
+                }
+                if (isSkipExist)
+                {
+                    skipButton.setText("跳过(" + countDown / 1000 + ")");
+                    countDown = countDown - 100;
+                }
             }
 
             @Override
             public void onFinish() {
-                if (!isBreak)
-                {//记录番茄钟的结束
+                if (!isBreak) {//记录番茄钟的结束
                     update_pomodoro();
                 }
                 alertTimerFinish();
@@ -244,10 +275,11 @@ public class MainActivity extends AppCompatActivity {
         updateResumePauseButton();
     }
 
-    private void update_pomodoro()
-    {
+    //状态更新为1
+    private void update_pomodoro() {
         Clock_Database db1 = new Clock_Database();
         db1.setState(true);
+        db1.setTime(startTime);
         db1.updateAll("id = ?", String.valueOf(id)); //更新该id的番茄钟
         isdone = true;
     }
@@ -259,7 +291,7 @@ public class MainActivity extends AppCompatActivity {
         //年
         int year = calendar.get(Calendar.YEAR);
         //月
-        int month = calendar.get(Calendar.MONTH)+1;
+        int month = calendar.get(Calendar.MONTH) + 1;
         //日
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         //整合
@@ -278,8 +310,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void changeCount() {
-        if (!isBreak)
-        {
+        if (!isBreak) {
             int curCount = Integer.parseInt(numCount.getText().toString());
             curCount += 1;
             numCount.setText(String.valueOf(curCount));
@@ -297,15 +328,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void changeTimerType() {
-        if (!isBreak)
-        {
+        if (!isBreak) {
             millisLeft = breakTime;
-        }
-        else
-        {
+        } else {
             millisLeft = startTime;
         }
         isBreak = !isBreak;
+        if (isBreak) {
+            star_control(star_working, false);
+            star_control(star_breaking, true);
+
+            //--------------------------------------------动画出现按钮----------------
+            skipButton.setEnabled(true);
+            skipButton.startAnimation(bigAnimation); //放大动画
+            skipButton.setVisibility(View.VISIBLE); //显示按钮
+            isSkipExist = true; //标记按钮存在
+            //点击事件：
+            skipButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    skipBreaking();
+                }
+            });
+            //--------------------------------------------动画出现按钮----------------
+
+        } else {
+            star_control(star_working, true);
+            star_control(star_breaking, false);
+        }
         resetTimer();
 
         NotificationManager manager = (NotificationManager) getSystemService
@@ -365,16 +415,15 @@ public class MainActivity extends AppCompatActivity {
     private void updateResumePauseButton() {
         resumePauseButton.setImageResource(isTimeRunning ? R.drawable.baseline_pause_24 : R.drawable.baseline_play_arrow_24);
     }
+
     @Override
     public void onBackPressed() {
         moveTaskToBack(true);
     }
 
     @Override
-    public void finish()
-    {
-        if (isTimeRunning && !isBreak)
-        {
+    public void finish() {
+        if (isTimeRunning && !isBreak) {
             record_pomodoro(false);
         }
     }
@@ -383,12 +432,84 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         int a = 1;
         //如果在番茄钟运行途中退出，则记录为专注失败
-        if (isTimeRunning && !isBreak)
-        {
+        if (isTimeRunning && !isBreak) {
             record_pomodoro(false);
         }
         super.onDestroy();
     }
 
-}
+    //缩放动画
+    private void scaleAnimation() {
+        //放大
+        bigAnimation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.scale_big);
+        //缩小
+        smallAnimation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.scale_small);
+    }
 
+    public void star_control(ImageView image_id, boolean toShow) {
+        if (toShow) {//如果是要显示该星星
+            image_id.startAnimation(bigAnimation);
+            image_id.setVisibility(View.VISIBLE);
+        } else {//如果要隐藏该星星
+            image_id.startAnimation(smallAnimation);
+
+            smallAnimation.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    image_id.setVisibility(View.INVISIBLE);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+
+                }
+            });
+        }
+    }
+
+//    void countDownbtn() {
+//        skipButton.startAnimation(bigAnimation); //放大动画
+//        skipButton.setVisibility(View.VISIBLE); //显示按钮
+//        //点击事件：
+//        skipButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                skipBreaking();
+//            }
+//        });
+//    }
+
+    //跳过休息模式
+    private void skipBreaking() {
+        alertTimerFinish();
+        changeCount();
+        changeTimerType();
+        defineProgress();
+        //隐藏动画
+//        smallAnimation.setAnimationListener(new Animation.AnimationListener() {
+//            @Override
+//            public void onAnimationStart(Animation animation) {
+//
+//            }
+//
+//            @Override
+//            public void onAnimationEnd(Animation animation) {
+//                skipButton.setVisibility(View.INVISIBLE);
+//            }
+//
+//            @Override
+//            public void onAnimationRepeat(Animation animation) {
+//
+//            }
+//        });
+        skipButton.setVisibility(View.INVISIBLE);
+        skipButton.setEnabled(false);
+        skipButton.setText("跳过");
+        isSkipExist = false;
+    }
+}
