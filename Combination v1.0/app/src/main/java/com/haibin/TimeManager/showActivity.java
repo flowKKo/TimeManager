@@ -239,7 +239,7 @@ public class showActivity extends BaseActivity implements
 
     @Override
     public void onCalendarOutOfRange(Calendar calendar) {
-        Toast.makeText(this, String.format("%s : OutOfRange", calendar), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, String.format("%s : OutOfRange", calendar), Toast.LENGTH_SHORT).show();
     }
 
     @SuppressLint("SetTextI18n")
@@ -260,12 +260,12 @@ public class showActivity extends BaseActivity implements
 
     @Override
     public void onCalendarLongClickOutOfRange(Calendar calendar) {
-        Toast.makeText(this, String.format("%s : LongClickOutOfRange", calendar), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, String.format("%s : LongClickOutOfRange", calendar), Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onCalendarLongClick(Calendar calendar) {
-        Toast.makeText(this, "长按不选择日期\n" + getCalendarText(calendar), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "长按不选择日期\n" + getCalendarText(calendar), Toast.LENGTH_SHORT).show();
     }
 
     private static String getCalendarText(Calendar calendar) {
@@ -324,13 +324,13 @@ public class showActivity extends BaseActivity implements
 
     @Override
     public void onCalendarInterceptClick(Calendar calendar, boolean isClick) {
-        Toast.makeText(this, calendar.toString() + "拦截不可点击", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, calendar.toString() + "拦截不可点击", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onYearChange(int year) {
         mTextMonthDay.setText(String.valueOf(year));
-        Log.e("onYearChange", " 年份变化 " + year);
+        //Log.e("onYearChange", " 年份变化 " + year);
     }
 
 
@@ -473,7 +473,7 @@ public class showActivity extends BaseActivity implements
     }
     //编辑信息
     public void onItemClick(View itemView, int position) {
-        Toast.makeText(this, "第" + position + "个", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "第" + position + "个", Toast.LENGTH_SHORT).show();
         //在这里调用修改信息
         EditTodoDialog editTodoDialog = new EditTodoDialog(mToDoList.get(position).getId());
         editTodoDialog.setOnTodoEditListener(new OnTodoEditListener() {
@@ -527,32 +527,16 @@ public class showActivity extends BaseActivity implements
             int position = srcHolder.getAdapterPosition();
             String  Todo_name=mToDoList.get(position).getTodo();
             int Todo_id=mToDoList.get(position).getId();
-            //在这里弹出一个对话框
-            new AlertDialog.Builder(showActivity.this)
-                    .setMessage("确定要删除该事件？"+Todo_name)
-                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            Toast.makeText(showActivity.this, "你点击了确定按钮~", Toast.LENGTH_SHORT).show();
-                            Todo updatetodo=new Todo();
-                            updatetodo.setIs_delete(true);
-                            updatetodo.updateAll("id = ?",String.valueOf(Todo_id));
-                            List<Todo> test=LitePal.findAll(Todo.class);
+            //Toast.makeText(showActivity.this, "你点击了确定按钮~", Toast.LENGTH_SHORT).show();
+            Todo updatetodo=new Todo();
+            updatetodo.setIs_delete(true);
+            updatetodo.updateAll("id = ?",String.valueOf(Todo_id));
+            List<Todo> test=LitePal.findAll(Todo.class);
 
-                            mToDoList.remove(position);
-                            mAdapter.notifyItemRemoved(position);
+            mToDoList.remove(position);
+            mAdapter.notifyItemRemoved(position);
 
-                            Toast.makeText(showActivity.this, "现在的第" + position + "条被删除。", Toast.LENGTH_SHORT).show();
-                            onResume();
-                        }
-                    })
-                    .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            ((DragTouchAdapter)mAdapter).updateItemsData(mToDoList);//取消删除
-                        }
-                    })
-                    .show();
+            //Toast.makeText(showActivity.this, "现在的第" + position + "条被删除。", Toast.LENGTH_SHORT).show();
 
 
         }
@@ -589,11 +573,14 @@ public class showActivity extends BaseActivity implements
         int month = current_calendar.getMonth();
         int day = current_calendar.getDay();
         String currentDate = String.valueOf(year) + "/" + String.format("%02d", month) + "/" +String.format("%02d", day);
+
+
         mToDoList= LitePal.where("is_delete = ? and date=?", "0",currentDate).
                 order("date desc").find(Todo.class);
         swap_position();
         init_is_done();//已完成的打钩
         mAdapter.notifyDataSetChanged(mToDoList);
+
 
         LinearLayout noInfoContent = findViewById(R.id.noInfoContent);
         if(mToDoList.size() == 0){
