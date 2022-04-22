@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/green"
     tools:context=".MainActivity">
 
     <!--        app:layout_constraintBottom_toBottomOf="c"-->
@@ -54,7 +55,7 @@
         android:layout_marginStart="56dp"
         android:layout_marginBottom="140dp"
         android:background="@drawable/ic_round_circle"
-        android:backgroundTint="#2196F3"
+        android:backgroundTint="#1CE365"
         android:contentDescription="@string/button_reset"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +68,7 @@
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="140dp"
         android:background="@drawable/ic_round_circle"
-        android:backgroundTint="#F44336"
+        android:backgroundTint="#1CE365"
         android:contentDescription="@string/button_default"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

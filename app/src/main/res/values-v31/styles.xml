@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <item name="colorPrimary">#3F51B5</item>
+        <item name="colorPrimaryDark">#414141</item>
+        <item name="colorAccent">#673AB7</item>
+        <item name="android:windowBackground">@android:color/system_accent1_50</item>
+    </style>
 </resources>
