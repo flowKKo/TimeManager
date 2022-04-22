@@ -255,13 +255,6 @@ public class MainActivity extends BaseActivity {
                 } );
                 addTodoDialog.show(getSupportFragmentManager(),"tag");//显示对话框
 
-                //在这里顺便监听一下数据库的内容
-                List<Todo> testlist;
-                testlist=LitePal.findAll(Todo.class);
-                for(Todo todo:mToDoList){
-                    Log.d("MainActivity","taskname is"+todo.getTodo());
-                    Log.d("MainActivity","这件事情是否已完成"+todo.getIs_done());
-                }
                 break;
             default: break;
         }
