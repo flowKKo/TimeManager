@@ -9,6 +9,10 @@
         android:orderInCategory="100"
         android:title="历史待办"/>
     <item
+        android:id="@+id/future_activity"
+        android:orderInCategory="100"
+        android:title="未来待办"/>
+    <item
         android:id="@+id/dustbin_activity"
         android:orderInCategory="100"
         android:title="垃圾箱"/>

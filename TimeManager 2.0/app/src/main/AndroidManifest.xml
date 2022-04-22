@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name="org.litepal.LitePalApplication"
         android:allowBackup="true"
@@ -25,6 +26,11 @@
 
         <activity
             android:name=".menu.search_dustbin"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:launchMode="singleTask"/>/>
+
+        <activity
+            android:name=".menu.search_future"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:launchMode="singleTask"/>/>
 
@@ -77,6 +83,10 @@
         <activity android:name=".menu.help_for_user"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:launchMode="singleTask"/>
+
+        <meta-data
+            android:name="ScopedStorage"
+            android:value="true"/>
 
     </application>
 

@@ -13,6 +13,9 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import com.haibin.TimeManager.menu.search_future;
+import com.haibin.TimeManager.menu.search_history;
+
 public class cancel_delete_fragment extends Fragment {
     private LocalBroadcastManager localBroadcastManager;
     @Override
@@ -37,13 +40,18 @@ public class cancel_delete_fragment extends Fragment {
                     intent = new Intent("MyAction1");
                 }else if(context instanceof showDailyTodoActivity){
                     intent = new Intent("MyAction2");
-                }else{
+                }else if(context instanceof search_future){
                     intent = new Intent("MyAction3");
+                }else if(context instanceof search_history){
+                    intent = new Intent("MyAction4");
+                }else{
+                    intent = new Intent("MyAction5");
                 }
+
                 boolean cancel=true;
                 intent.putExtra("cancel",cancel);
                 localBroadcastManager.sendBroadcast(intent);
-                Toast.makeText(getActivity(), "Clicked", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getActivity(), "Clicked", Toast.LENGTH_LONG).show();
             }
         });
     }
