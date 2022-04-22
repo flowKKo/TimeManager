@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@drawable/cancel_delete_round_edge"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/cancel_delete_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/have_deleted"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="5dp"
+        tools:ignore="MissingConstraints"
+
+         />
+
+    <Button
+        android:id="@+id/cancel_delete_button"
+        android:text="@string/cancel"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        tools:ignore="MissingConstraints">
+
+    </Button>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
