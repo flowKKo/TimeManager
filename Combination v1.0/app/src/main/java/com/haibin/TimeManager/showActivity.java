@@ -596,7 +596,6 @@ public class showActivity extends BaseActivity implements
         init_is_done();//已完成的打钩
         mAdapter.notifyDataSetChanged(mToDoList);
 
-
         LinearLayout noInfoContent = findViewById(R.id.noInfoContent);
         if(mToDoList.size() == 0){
             noInfoContent.setVisibility(View.VISIBLE);

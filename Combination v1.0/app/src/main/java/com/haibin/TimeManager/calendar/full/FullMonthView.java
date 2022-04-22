@@ -16,11 +16,7 @@ public class FullMonthView extends MonthView {
 
     private Paint mRectPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
-    /**
-     * 自定义魅族标记的圆形背景
-     */
     private Paint mSchemeBasicPaint = new Paint();
-
 
     public FullMonthView(Context context) {
         super(context);
@@ -39,7 +35,6 @@ public class FullMonthView extends MonthView {
         //4.0以上硬件加速会导致无效
         mSelectedPaint.setMaskFilter(new BlurMaskFilter(50, BlurMaskFilter.Blur.SOLID));
     }
-
     /**
      * 绘制选中的日子
      *
@@ -55,7 +50,6 @@ public class FullMonthView extends MonthView {
         canvas.drawRect(x, y , x + mItemWidth, y + mItemHeight, mBorderPaint);
         return true;
     }
-
     /**
      * 绘制标记的事件日子
      *

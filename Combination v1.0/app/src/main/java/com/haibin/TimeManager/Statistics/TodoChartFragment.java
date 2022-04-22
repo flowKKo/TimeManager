@@ -49,10 +49,8 @@ public class TodoChartFragment extends Fragment {
 
 
     public TodoChartFragment() {
-        // Required empty public constructor
+
     }
-
-
     public static TodoChartFragment newInstance(String param1, String param2) {
         TodoChartFragment fragment = new TodoChartFragment();
         Bundle args = new Bundle();
@@ -61,7 +59,6 @@ public class TodoChartFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,13 +67,11 @@ public class TodoChartFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_todo_chart, container, false);
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -105,12 +100,10 @@ public class TodoChartFragment extends Fragment {
         setDataset();
         lineChart.setData(lineData);
     }
-
     public static boolean isIntegerForDouble(double obj) {
         double eps = 1e-4;  // 精度范围
         return obj-Math.floor(obj) < eps;
     }
-
     private void setDisplay(){
         lineChart.setScaleXEnabled(false);
         lineChart.setScaleYEnabled(false);
@@ -129,7 +122,6 @@ public class TodoChartFragment extends Fragment {
         lineChart.getDescription().setTextColor(Color.BLACK);//设置文本颜色
         lineChart.getDescription().setPosition(x,y);
     }
-
     private void setXAxis(){
         XAxis xAxis = lineChart.getXAxis();
         xAxis.setDrawGridLines(false);
@@ -146,7 +138,6 @@ public class TodoChartFragment extends Fragment {
             }
         });
     }
-
     private void setYAxis(){
         YAxis yAxis2 = lineChart.getAxisRight();
         yAxis2.setEnabled(false);
@@ -167,7 +158,6 @@ public class TodoChartFragment extends Fragment {
             }
         });
     }
-
     private void setDataset(){
         List<Entry> entries = new ArrayList<Entry>();
         for(int i = 0 ; i < Datas.length; i++){
@@ -196,5 +186,4 @@ public class TodoChartFragment extends Fragment {
             }
         });
     }
-
 }

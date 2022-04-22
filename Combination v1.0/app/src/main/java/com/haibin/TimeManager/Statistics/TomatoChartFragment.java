@@ -56,8 +56,6 @@ public class TomatoChartFragment extends Fragment {
     public TomatoChartFragment() {
         // Required empty public constructor
     }
-
-
     public static TomatoChartFragment newInstance(String param1, String param2) {
         TomatoChartFragment fragment = new TomatoChartFragment();
         Bundle args = new Bundle();
@@ -66,7 +64,6 @@ public class TomatoChartFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,14 +95,12 @@ public class TomatoChartFragment extends Fragment {
 
 
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_tomato_chart, container, false);
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -117,14 +112,10 @@ public class TomatoChartFragment extends Fragment {
         setDataset();
         lineChart.setData(lineData);
     }
-
-
     public static boolean isIntegerForDouble(double obj) {
         double eps = 1e-4;  // 精度范围
         return obj-Math.floor(obj) < eps;
     }
-
-
     private void setDisplay(){
         lineChart.setScaleXEnabled(false);
         lineChart.setScaleYEnabled(false);
@@ -144,7 +135,6 @@ public class TomatoChartFragment extends Fragment {
         lineChart.getDescription().setTextColor(Color.BLACK);//设置文本颜色
         lineChart.getDescription().setPosition(x,y);
     }
-
     private void setXAxis(){
         XAxis xAxis = lineChart.getXAxis();
         xAxis.setDrawGridLines(false);
@@ -161,7 +151,6 @@ public class TomatoChartFragment extends Fragment {
             }
         });
     }
-
     private void setYAxis(){
         YAxis yAxis2 = lineChart.getAxisRight();
         yAxis2.setEnabled(false);
@@ -182,7 +171,6 @@ public class TomatoChartFragment extends Fragment {
             }
         });
     }
-
     private void setDataset(){
         List<Entry> entries = new ArrayList<Entry>();
         for(int i = 0 ; i < Datas.length; i++){

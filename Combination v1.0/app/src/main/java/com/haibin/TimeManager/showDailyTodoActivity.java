@@ -138,7 +138,6 @@ public class showDailyTodoActivity extends AppCompatActivity {
             }
         });
     }
-
     private class LocalReceiver extends BroadcastReceiver {//消息从adapter收到了
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -189,8 +188,6 @@ public class showDailyTodoActivity extends AppCompatActivity {
             }
         }
     }
-
-
     //取消广播的注册
     @Override
     public void onDestroy() {
@@ -215,7 +212,6 @@ public class showDailyTodoActivity extends AppCompatActivity {
     protected OnItemMoveListener getItemMoveListener() {
         return onItemMoveListener;
     }
-
     //Item的拖拽/侧滑删除时，手指状态发生变化监听。
     //用来设置Item在拖拽/删除时背景变化的函数
     private final OnItemStateChangedListener mOnItemStateChangedListener = new OnItemStateChangedListener() {
@@ -233,7 +229,6 @@ public class showDailyTodoActivity extends AppCompatActivity {
             }
         }
     };
-
     //监听拖拽和侧滑删除，更新UI和数据源
     private final OnItemMoveListener onItemMoveListener = new OnItemMoveListener() {
         @Override
@@ -281,7 +276,6 @@ public class showDailyTodoActivity extends AppCompatActivity {
                     .show();
         }
     };
-
     public void onClick_Dialog(View view){//监听事件
         switch(view.getId()){
             case R.id.fab:

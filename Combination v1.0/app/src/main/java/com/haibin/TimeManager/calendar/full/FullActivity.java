@@ -40,12 +40,10 @@ public class FullActivity extends BaseActivity implements
     public static void show(Context context) {
         context.startActivity(new Intent(context, FullActivity.class));
     }
-
     @Override
     protected int getLayoutId() {
         return R.layout.activity_full;
     }
-
     @SuppressLint("SetTextI18n")
     @Override
     protected void initView() {
@@ -119,14 +117,12 @@ public class FullActivity extends BaseActivity implements
 
         current_calendar = mCalendarView.getSelectedCalendar();
     }
-
     @Override
     protected void initData() {
         int year = mCalendarView.getCurYear();
         int month = mCalendarView.getCurMonth();
         monthDataInit(year, month);
     }
-
     private void monthDataInit(int year, int month) {
         Map<String, Calendar> map = new HashMap<>();
 
@@ -167,7 +163,6 @@ public class FullActivity extends BaseActivity implements
         //此方法在巨大的数据量上不影响遍历性能，推荐使用
         mCalendarView.setSchemeDate(map);
     }
-
     private Calendar getSchemeCalendar(int year, int month, int day, int color, String text) {
         Calendar calendar = new Calendar();
         calendar.setYear(year);
@@ -177,12 +172,10 @@ public class FullActivity extends BaseActivity implements
         calendar.setScheme(text);
         return calendar;
     }
-
     @Override
     public void onCalendarOutOfRange(Calendar calendar) {
 
     }
-
     @SuppressLint("SetTextI18n")
     @Override
     public void onCalendarSelect(Calendar calendar, boolean isClick) {
@@ -209,7 +202,6 @@ public class FullActivity extends BaseActivity implements
             startActivity(intent);
         }
     }
-
     @Override
     protected void onResume() {
         super.onResume();
