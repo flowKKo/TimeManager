@@ -2661,6 +2661,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable button_circle_selector
 drawable button_selector
 drawable calendar
 drawable clock
@@ -2711,6 +2712,7 @@ drawable material_ic_keyboard_arrow_previous_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
+drawable menu_selector
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -2741,6 +2743,10 @@ drawable record
 drawable select_white
 drawable selector_green
 drawable shape_border
+drawable shape_button_circle_normal
+drawable shape_button_circle_select
+drawable shape_button_rect_normal
+drawable shape_button_rect_select
 drawable shape_dialog_edge
 drawable statistics
 drawable test_custom_background
@@ -3279,7 +3285,10 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView_EditBlank
 id textView_begin
+id textView_blank
+id textView_day
 id textView_end
 id text_input_end_icon
 id text_input_error_icon
@@ -3434,7 +3443,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_calendar
 layout activity_custom
 layout activity_full
 layout activity_help_for_user

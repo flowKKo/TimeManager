@@ -30,7 +30,6 @@ public class CustomActivity extends BaseActivity implements
     TextView mTextLunar;
 
     TextView mTextCurrentDay;
-
     CalendarView mCalendarView;
 
     RelativeLayout mRelativeTool;

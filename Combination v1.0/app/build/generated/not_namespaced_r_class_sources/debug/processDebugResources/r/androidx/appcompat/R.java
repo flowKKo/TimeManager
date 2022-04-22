@@ -598,9 +598,9 @@ public final class R {
         public static final int btn_radio_off_to_on_mtrl_animation = 0x7f08007f;
         public static final int btn_radio_on_mtrl = 0x7f080080;
         public static final int btn_radio_on_to_off_mtrl_animation = 0x7f080081;
-        public static final int test_level_drawable = 0x7f0800d5;
-        public static final int tooltip_frame_dark = 0x7f0800d7;
-        public static final int tooltip_frame_light = 0x7f0800d8;
+        public static final int test_level_drawable = 0x7f0800db;
+        public static final int tooltip_frame_dark = 0x7f0800dd;
+        public static final int tooltip_frame_light = 0x7f0800de;
     }
     public static final class id {
         private id() {}
@@ -675,14 +675,14 @@ public final class R {
         public static final int tabMode = 0x7f0901f9;
         public static final int textSpacerNoButtons = 0x7f09020e;
         public static final int textSpacerNoTitle = 0x7f09020f;
-        public static final int title = 0x7f09021f;
-        public static final int titleDividerNoCustom = 0x7f090220;
-        public static final int title_template = 0x7f090221;
-        public static final int topPanel = 0x7f09022f;
-        public static final int unchecked = 0x7f09023e;
-        public static final int uniform = 0x7f09023f;
-        public static final int up = 0x7f090241;
-        public static final int wrap_content = 0x7f090253;
+        public static final int title = 0x7f090222;
+        public static final int titleDividerNoCustom = 0x7f090223;
+        public static final int title_template = 0x7f090224;
+        public static final int topPanel = 0x7f090232;
+        public static final int unchecked = 0x7f090241;
+        public static final int uniform = 0x7f090242;
+        public static final int up = 0x7f090244;
+        public static final int wrap_content = 0x7f090256;
     }
     public static final class integer {
         private integer() {}
@@ -734,10 +734,10 @@ public final class R {
         public static final int abc_search_view = 0x7f0c0019;
         public static final int abc_select_dialog_material = 0x7f0c001a;
         public static final int abc_tooltip = 0x7f0c001b;
-        public static final int select_dialog_item_material = 0x7f0c007a;
-        public static final int select_dialog_multichoice_material = 0x7f0c007b;
-        public static final int select_dialog_singlechoice_material = 0x7f0c007c;
-        public static final int support_simple_spinner_dropdown_item = 0x7f0c007e;
+        public static final int select_dialog_item_material = 0x7f0c0079;
+        public static final int select_dialog_multichoice_material = 0x7f0c007a;
+        public static final int select_dialog_singlechoice_material = 0x7f0c007b;
+        public static final int support_simple_spinner_dropdown_item = 0x7f0c007d;
     }
     public static final class string {
         private string() {}

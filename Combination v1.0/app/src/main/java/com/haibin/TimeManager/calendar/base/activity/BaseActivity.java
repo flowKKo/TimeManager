@@ -12,11 +12,6 @@ import android.view.WindowManager;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-/**
- * 基类
- * Created by huanghaibin on 2017/11/16.
- */
-
 public abstract class BaseActivity extends AppCompatActivity {
 
     private static boolean isMiUi = false;

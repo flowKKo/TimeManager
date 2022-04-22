@@ -9,11 +9,6 @@ import android.text.TextUtils;
 import com.haibin.calendarview.Calendar;
 import com.haibin.calendarview.WeekView;
 
-/**
- * 演示一个变态需求的周视图
- * Created by huanghaibin on 2018/2/9.
- */
-
 public class CustomWeekView extends WeekView {
 
 

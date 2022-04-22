@@ -29,6 +29,7 @@ import com.haibin.TimeManager.EditTodoDialog.EditTodoDialog;
 import com.haibin.TimeManager.EditTodoDialog.OnTodoEditListener;
 import com.haibin.TimeManager.Pomodoro.PomodoroActivity;
 import com.haibin.TimeManager.Statistics.StatisticsActivity;
+import com.haibin.TimeManager.Todo.Date;
 import com.haibin.TimeManager.Todo.Todo;
 import com.haibin.TimeManager.calendar.full.FullActivity;
 import com.yanzhenjie.recyclerview.SwipeRecyclerView;
@@ -284,7 +285,14 @@ public class showDailyTodoActivity extends AppCompatActivity {
     public void onClick_Dialog(View view){//监听事件
         switch(view.getId()){
             case R.id.fab:
-                AddTodoDialog addTodoDialog = new AddTodoDialog();
+
+                int year = Integer.valueOf(curDate.substring(0, 4));
+                int month = Integer.valueOf(curDate.substring(6, 7));
+                int day = Integer.valueOf(curDate.substring(8, 10));
+
+                Date dialogDate = new Date(year, month, day);
+
+                AddTodoDialog addTodoDialog = new AddTodoDialog(dialogDate);
                 //设置添加后监听函数，刷新recyclerView
                 addTodoDialog.setOnTodoAddListener(new OnTodoAddListener() {
                     @Override

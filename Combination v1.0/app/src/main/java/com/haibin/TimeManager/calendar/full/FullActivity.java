@@ -18,7 +18,6 @@ import com.haibin.calendarview.Calendar;
 import com.haibin.calendarview.CalendarView;
 import com.haibin.TimeManager.R;
 import com.haibin.TimeManager.calendar.base.activity.BaseActivity;
-import com.haibin.TimeManager.calendar.custom.CustomActivity;
 
 import org.litepal.LitePal;
 
@@ -28,9 +27,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public class FullActivity extends BaseActivity implements
-        CalendarView.OnCalendarSelectListener,
-        CalendarView.OnYearChangeListener,
-        View.OnClickListener {
+        CalendarView.OnCalendarSelectListener{
 
     TextView mTextMonthDay;
     TextView mTextYear;
@@ -76,7 +73,6 @@ public class FullActivity extends BaseActivity implements
         });
 
         mCalendarView.setOnCalendarSelectListener(this);
-        mCalendarView.setOnYearChangeListener(this);
         mTextYear.setText(String.valueOf(mCalendarView.getCurYear()));
         mYear = mCalendarView.getCurYear();
         mTextMonthDay.setText(mCalendarView.getCurMonth() + "月" + mCalendarView.getCurDay() + "日");
@@ -172,8 +168,6 @@ public class FullActivity extends BaseActivity implements
         mCalendarView.setSchemeDate(map);
     }
 
-
-
     private Calendar getSchemeCalendar(int year, int month, int day, int color, String text) {
         Calendar calendar = new Calendar();
         calendar.setYear(year);
@@ -182,11 +176,6 @@ public class FullActivity extends BaseActivity implements
         calendar.setSchemeColor(color);//如果单独标记颜色、则会使用这个颜色
         calendar.setScheme(text);
         return calendar;
-    }
-
-    @Override
-    public void onClick(View v) {
-        CustomActivity.show(this);
     }
 
     @Override
@@ -209,7 +198,6 @@ public class FullActivity extends BaseActivity implements
         }
         current_calendar = calendar;
 
-
         if(isClick){
             int year = calendar.getYear();
             int month = calendar.getMonth();
@@ -223,17 +211,9 @@ public class FullActivity extends BaseActivity implements
     }
 
     @Override
-    public void onYearChange(int year) {
-        mTextMonthDay.setText(String.valueOf(year));
-    }
-
-
-    @Override
     protected void onResume() {
         super.onResume();
         monthDataInit(current_calendar.getYear(), current_calendar.getMonth());
     }
-
-
 }
 

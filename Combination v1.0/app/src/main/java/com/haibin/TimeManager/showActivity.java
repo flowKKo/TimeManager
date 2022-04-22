@@ -1,7 +1,6 @@
 package com.haibin.TimeManager;
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -18,7 +17,6 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
@@ -28,7 +26,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.haibin.TimeManager.Adapter.BaseAdapter;
 import com.haibin.TimeManager.Adapter.DragTouchAdapter;
 import com.haibin.TimeManager.AddTodoDialog.AddTodoDialog;
 import com.haibin.TimeManager.AddTodoDialog.OnTodoAddListener;
@@ -36,6 +33,7 @@ import com.haibin.TimeManager.EditTodoDialog.EditTodoDialog;
 import com.haibin.TimeManager.EditTodoDialog.OnTodoEditListener;
 import com.haibin.TimeManager.Pomodoro.PomodoroActivity;
 import com.haibin.TimeManager.Statistics.StatisticsActivity;
+import com.haibin.TimeManager.Todo.Date;
 import com.haibin.TimeManager.Todo.Todo;
 import com.haibin.TimeManager.calendar.full.FullActivity;
 import com.haibin.TimeManager.menu.help_for_user;
@@ -48,13 +46,11 @@ import com.haibin.TimeManager.calendar.base.activity.BaseActivity;
 import com.yanzhenjie.recyclerview.SwipeRecyclerView;
 import com.yanzhenjie.recyclerview.touch.OnItemMoveListener;
 import com.yanzhenjie.recyclerview.touch.OnItemStateChangedListener;
-import com.yanzhenjie.recyclerview.widget.DefaultItemDecoration;
 
 import org.litepal.LitePal;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Locale;
 
 public class showActivity extends BaseActivity implements
         CalendarView.OnCalendarSelectListener,
@@ -557,7 +553,13 @@ public class showActivity extends BaseActivity implements
     public void onClick_Dialog(View view){//监听事件
         switch(view.getId()){
             case R.id.fab:
-                AddTodoDialog addTodoDialog = new AddTodoDialog();
+
+                int year = current_calendar.getYear();
+                int month = current_calendar.getMonth();
+                int day = current_calendar.getDay();
+                Date currentDate = new Date(year, month, day);
+
+                AddTodoDialog addTodoDialog = new AddTodoDialog(currentDate);
                 //设置添加后监听函数，刷新recyclerView
                 addTodoDialog.setOnTodoAddListener(new OnTodoAddListener() {
                     @Override

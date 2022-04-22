@@ -13,8 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.haibin.TimeManager.Adapter.BaseAdapter;
 import com.haibin.TimeManager.Adapter.DragTouchAdapter;
-import com.haibin.TimeManager.EditTodoDialog.EditTodoDialog;
-import com.haibin.TimeManager.EditTodoDialog.OnTodoEditListener;
 import com.haibin.TimeManager.R;
 import com.haibin.TimeManager.Todo.Todo;
 import com.yanzhenjie.recyclerview.OnItemClickListener;

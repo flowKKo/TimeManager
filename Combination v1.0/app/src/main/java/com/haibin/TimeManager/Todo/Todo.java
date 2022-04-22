@@ -99,6 +99,4 @@ public class Todo extends LitePalSupport {
         return time;
     }
     public Todo(){}
-
-
 }

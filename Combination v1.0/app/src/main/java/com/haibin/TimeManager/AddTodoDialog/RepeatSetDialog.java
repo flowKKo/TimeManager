@@ -1,6 +1,7 @@
 package com.haibin.TimeManager.AddTodoDialog;
 
 import android.app.DatePickerDialog;
+import android.content.res.ColorStateList;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
@@ -101,6 +103,18 @@ public class RepeatSetDialog extends DialogFragment {
         textView_end=(TextView)getView().findViewById(R.id.textView_end);
         button_close=(ImageButton)getView().findViewById(R.id.button_Repeatclose);
         button_ok=(Button)getView().findViewById(R.id.button_Repeatok);
+        //将BottomNavugationView镂空
+        bottomNavigationView.setItemIconTintList(null);
+        //设置Menu选中颜色
+        int[][] states = new int[][]{
+                new int[]{-android.R.attr.state_checked},
+                new int[]{android.R.attr.state_checked}
+        };
+        int[] colors = new int[]{getResources().getColor(R.color.black),
+                getResources().getColor(R.color.green_normal)
+        };
+        ColorStateList csl = new ColorStateList(states, colors);
+        bottomNavigationView.setItemTextColor(csl);
         //设置viewpager中的fragment
         fragments.add(new DayFragment());//加入需要的各个fragment
         fragments.add(new WeekFragment());
@@ -110,8 +124,8 @@ public class RepeatSetDialog extends DialogFragment {
         SelectRepeatFragmentPagerAdapter adapter=new SelectRepeatFragmentPagerAdapter(getParentFragmentManager(),
                 getLifecycle(),fragments);//自定义adapter对象
         viewPager.setAdapter(adapter);//为viewpager设置adapter
-        viewPager.setCurrentItem(0);//初始页面
         viewPager.setOffscreenPageLimit(3);//预加载
+        viewPager.setCurrentItem(0);//初始页面
         viewPager.setUserInputEnabled(false);//设置不可滑动
         initDatePicker();//初始化日期选择器
         initOnClick();//信号槽连接
@@ -150,6 +164,38 @@ public class RepeatSetDialog extends DialogFragment {
         }
     }
 
+    public void initDatePicker(){
+        //初始化日期选择器
+        datePickerDialog = new DatePickerDialog(getContext(), 0,
+                new DatePickerDialog.OnDateSetListener(){//日期选中监听
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int day){
+                        if(is_SelectBegin){
+                            //选择开始日期
+                            repeatSet.date_begin.SetDate(year,month+1,day);
+                            if(repeatSet.date_end.getDay()!=0&&repeatSet.date_end.LessEqual(repeatSet.date_begin)){
+                                //非法输入，强行改正
+                                repeatSet.date_begin.SetDate(repeatSet.date_end.year,
+                                        repeatSet.date_end.month,repeatSet.date_end.day);
+                            }
+                            textView_begin.setText(repeatSet.date_begin.tostring());
+                        }
+                        else{
+                            //选择结束日期
+                            repeatSet.date_end.SetDate(year,month+1,day);
+                            if(repeatSet.date_begin.getDay()!=0&&repeatSet.date_end.LessEqual(repeatSet.date_begin)){
+                                //非法输入，强行改正
+                                repeatSet.date_end.SetDate(repeatSet.date_begin.year,
+                                        repeatSet.date_begin.month,repeatSet.date_begin.day);
+                            }
+                            textView_end.setText(repeatSet.date_end.tostring());
+                        }
+                    }
+                },
+                calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+    }
+
+    //年任务设置响应
     private void onClick_year(DatePicker datePicker, int year, int month, int day) {
         List<Fragment> list=((SelectRepeatFragmentPagerAdapter)viewPager.getAdapter()).fragmentList;
         YearFragment yearFragment=(YearFragment) list.get(3);
@@ -158,7 +204,7 @@ public class RepeatSetDialog extends DialogFragment {
                 String.format("%02d",day)+"日");//设置文本
         repeatSet.DayOfYear=btn.getText().toString();
     }
-
+    //周任务设置响应
     private void onClick_week(View view) {
         String day=null;
         switch(view.getId()){
@@ -194,12 +240,12 @@ public class RepeatSetDialog extends DialogFragment {
             ((Button)view).setSelected(true);
         }
     }
-
+    //月任务设置响应
     private void onClick_month(NumberPicker numberPicker, int oldVal, int newVal) {
         String[] list=numberPicker.getDisplayedValues();
         repeatSet.DayOfMonth=list[newVal];
     }
-
+    //处理用户点击控件后的事件
     private void onClick(View view) {
         switch(view.getId()){
             case R.id.textView_begin://开始日期选择
@@ -214,16 +260,22 @@ public class RepeatSetDialog extends DialogFragment {
                 dismiss();//关闭
                 break;
             case R.id.button_Repeatok://确认按钮
-                //此处返回设置的参数
                 //repeatSet.setRepeatSet(viewPager.getCurrentItem(),date_begin,date_end,DaysOfWeek,DayOfMonth,DayOfYear);
-                repeatSet.RepeatMode=viewPager.getCurrentItem();
-                onRepeatSetListener.onRepeatSet(repeatSet);//返回重复设置参数
-                dismiss();//关闭
+                if(((TextView) getView().findViewById(R.id.textView_begin)).getText().length()==0||
+                    ((TextView) getView().findViewById(R.id.textView_end)).getText().length()==0){
+                    //没有确定时间
+                    Toast.makeText(getContext(),"请输入开始、结束时间！",Toast.LENGTH_LONG).show();
+                }
+                else{//此处返回设置的参数
+                    repeatSet.RepeatMode=viewPager.getCurrentItem();
+                    onRepeatSetListener.onRepeatSet(repeatSet);//返回重复设置参数
+                    dismiss();//关闭
+                }
                 break;
             default: break;
         }
     }
-
+    //响应用户点击菜单栏
     private boolean onClick_Menu(MenuItem menuItem) {//RepeatMode菜单栏监听
         if(!is_ViewPagerOnClick) initViewPagerOnClick();//viewpager中信号槽连接
         switch(menuItem.getItemId()){
@@ -244,28 +296,7 @@ public class RepeatSetDialog extends DialogFragment {
         }
         return true;
     }
-
-    public void initDatePicker(){
-        //初始化日期选择器
-        datePickerDialog = new DatePickerDialog(getContext(), 0,
-                new DatePickerDialog.OnDateSetListener(){//日期选中监听
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int day){
-                        if(is_SelectBegin){
-                            //选择开始日期
-                            repeatSet.date_begin.SetDate(year,month+1,day);
-                            textView_begin.setText(repeatSet.date_begin.tostring());
-                        }
-                        else{
-                            //选择结束日期
-                            repeatSet.date_end.SetDate(year,month+1,day);
-                            textView_end.setText(repeatSet.date_end.tostring());
-                        }
-                    }
-                },
-                calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
-    }
-
+    //设置监听者，方便使用者监听“设置重复任务”事件的发生
     public void setOnRepeatSetListener(OnRepeatSetListener onRepeatSetListener){
         this.onRepeatSetListener=onRepeatSetListener;//函数回调定义
     }

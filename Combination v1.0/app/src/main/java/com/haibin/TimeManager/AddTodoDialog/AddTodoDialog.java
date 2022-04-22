@@ -2,6 +2,7 @@ package com.haibin.TimeManager.AddTodoDialog;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,7 @@ import com.haibin.TimeManager.Todo.Date;
 import com.haibin.TimeManager.Todo.Time;
 import com.haibin.TimeManager.Todo.Todo;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.haibin.TimeManager.SysCalendar.SysCalendar;
 
 import org.litepal.LitePal;
 
@@ -42,16 +44,21 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
             new Date(0, 0, 0), new LinkedList<>(),"", "");
     private boolean is_repeat=false;//是否重复任务
     private RepeatSetDialog repeatSetDialog=null;//重复任务设置对话框
-    private boolean isIs_repeat=false;//不重复
+    //private boolean isIs_repeat=false;//不重复
     private OnTodoAddListener onTodoAddListener;//监听者
 
     // 构造方法
-    public static AddTodoDialog newInstance(Long feedId) {
+    public static AddTodoDialog newInstance(Long feedId,Date date) {//需要传入默认日期
         Bundle args = new Bundle();
         args.putLong("FEED_ID", feedId);
-        AddTodoDialog fragment = new AddTodoDialog();
+        AddTodoDialog fragment = new AddTodoDialog(date);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    //构造函数
+    public AddTodoDialog(Date date){//需要传入默认日期
+        select_date=date;
     }
 
     // 创建View
@@ -72,9 +79,14 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
          */
         //设置父背景为透明
         ((View) view.getParent()).setBackgroundColor(getResources().getColor(android.R.color.transparent));
-        ((EditText)getView().findViewById(R.id.EditText_date)).setText(Integer.toString(calendar.get(Calendar.YEAR))+'/'+
-                String.format("%02d",calendar.get(Calendar.MONTH)+1)+'/'+
-                String.format("%02d",calendar.get(Calendar.DAY_OF_MONTH)));
+        //设置默认日期
+        ((EditText)getView().findViewById(R.id.EditText_date)).setText(Integer.toString(select_date.getYear())+'/'+
+                String.format("%02d",select_date.getMonth())+'/'+
+                String.format("%02d",select_date.getDay()));
+        //给button添加图标
+        /*Drawable icon = getResources().getDrawable(R.drawable.clock);
+        icon.setBounds(0,0,80,80);
+        ((Button)getView().findViewById(R.id.button_clock)).setCompoundDrawables(icon, null, null, null);*/
         initDialog();//初始化各个对话框
         initOnClick();//初始化监听
     }
@@ -101,6 +113,7 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
                         select_time.minute=minute;
                         //按钮显示选中的时间
                         ((Button)getView().findViewById(R.id.button_clock)).setText(select_time.tostring());
+                        ((Button)getView().findViewById(R.id.button_clock)).setSelected(true);//按钮标记为选中
                         is_clock=true;//设置提醒标志
                     }
                 },12,0,true);
@@ -130,14 +143,20 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
         btn_repeat.setOnClickListener(this::onClick_Dialog);
     }
 
-
+    //处理用户点击相关控件后的事件
     public void onClick_Dialog(View view){//监听事件
         switch(view.getId()){
             case R.id.button_addtodo:  //添加待办事项
-                AddToSQL();//添加到数据库
-                Toast.makeText(getContext(),"添加成功", Toast.LENGTH_SHORT).show();
-                onTodoAddListener.onTodoAdd();//函数回调
-                dismiss();//销毁添加待办事项对话框
+                if(((EditText)getView().findViewById(R.id.EditText_ToDo)).getText().toString().length()==0){
+                    //未输入内容
+                    Toast.makeText(getContext(),"请填写内容", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    AddToSQL();//添加到数据库
+                    Toast.makeText(getContext(),"添加成功", Toast.LENGTH_SHORT).show();
+                    onTodoAddListener.onTodoAdd();//函数回调
+                    dismiss();//销毁添加待办事项对话框
+                }
                 break;
             case R.id.button_select_date:  //选择日期
                 datePickerDialog.show();
@@ -150,6 +169,7 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
                 else{
                     //还原按钮
                     ((Button)getView().findViewById(R.id.button_clock)).setText("不提醒");
+                    ((Button)getView().findViewById(R.id.button_clock)).setSelected(false);//按钮标记为未选中
                     is_clock=false;//取消提醒
                 }
                 break;
@@ -163,12 +183,14 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
                             is_repeat=true;
                             //按钮文本提示...
                             ((Button)getView().findViewById(R.id.button_repeat)).setText("重复");
+                            ((Button)getView().findViewById(R.id.button_repeat)).setSelected(true);//按钮标记为选中
                         }
                     });
                     repeatSetDialog.show(getParentFragmentManager(),"This is repeatSetDialog");
                 }
                 else{//还原按钮
                     ((Button)getView().findViewById(R.id.button_repeat)).setText("不重复");
+                    ((Button)getView().findViewById(R.id.button_repeat)).setSelected(false);//按钮标记为未选中
                     is_repeat=false;//取消重复
                 }
                 break;
@@ -178,6 +200,7 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
 
     }
 
+    //将数据添加到数据库
     public void AddToSQL(){
         int max_id;
         if(LitePal.count("Todo")==0) max_id=0;
@@ -194,6 +217,10 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
             todo.setId(max_id+1);
             todo.setIs_delete(false);
             todo.save();//插入数据
+            if(is_clock){//如果提醒，交给系统处理
+                SysCalendar.addCalendarEvent(getContext(),"Todo"+Integer.toString(todo.getId()),
+                        todo.getTodo(),select_date,select_time);
+            }
         }
         else{//重复添加
             String []week={"星期天","星期一","星期二","星期三","星期四","星期五","星期六",};
@@ -241,9 +268,16 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
 
             }
             LitePal.saveAll(todos);//保存
+            if(is_clock){//如果提醒，交给系统处理
+                for(int i=0;i<todos.size();i++){//将所有重复todo提醒交给系统
+                    SysCalendar.addCalendarEvent(getContext(),"Todo"+Integer.toString(todos.get(i).getId()),
+                            todos.get(i).getTodo(),select_date,select_time);
+                }
+            }
         }
     }
 
+    //将要添加的待办事项放到到一个list中
     public void AddTodoToList(List<Todo> todos, int id, Date date){//重复任务添加一个到list
         todos.add(new Todo());
         todos.get(todos.size()-1).setTodo(((EditText)getView().findViewById(R.id.EditText_ToDo)).getText().toString());
@@ -254,8 +288,10 @@ public class AddTodoDialog extends BottomSheetDialogFragment {
         todos.get(todos.size()-1).setTime(select_time.tostring());
         todos.get(todos.size()-1).setDate(date.tostring());
         todos.get(todos.size()-1).setId(id);
+        todos.get(todos.size()-1).setIs_delete(false);
     }
 
+    //设置监听者，方便使用者监听“添加待办事项”的发生
     public void setOnTodoAddListener(OnTodoAddListener onTodoAddListener){
         this.onTodoAddListener=onTodoAddListener;//回调函数定义
     }

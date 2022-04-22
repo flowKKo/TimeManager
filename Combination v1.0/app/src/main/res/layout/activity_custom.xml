@@ -7,7 +7,6 @@
     android:background="#ffffff"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.haibin.TimeManager.MainActivity"
     tools:ignore="RtlHardcoded,HardcodedText,RtlSymmetry,SmallSp">
 
 
@@ -108,7 +107,6 @@
             app:current_month_text_color="#333333"
             app:max_year="2020"
             app:min_year="2004"
-            app:month_view="com.haibin.TimeManager.calendar.custom.CustomMonthView"
             app:month_view_show_mode="mode_fix"
             app:other_month_lunar_text_color="#e1e1e1"
             app:other_month_text_color="#e1e1e1"

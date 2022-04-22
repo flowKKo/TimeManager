@@ -362,16 +362,16 @@ public class search_history extends AppCompatActivity {
 
         switch(view.getId()){
             case R.id.fab:
-                AddTodoDialog addTodoDialog = new AddTodoDialog();
-                //设置添加后监听函数，刷新recyclerView
-                addTodoDialog.setOnTodoAddListener(new OnTodoAddListener() {
-                    @Override
-                    public void onTodoAdd() {
-                        HistoryList=LitePal.findAll(Todo.class);
-                        mAdapter.notifyDataSetChanged(HistoryList);
-                    }
-                } );
-                addTodoDialog.show(getSupportFragmentManager(),"tag");//显示对话框
+//                AddTodoDialog addTodoDialog = new AddTodoDialog();
+//                //设置添加后监听函数，刷新recyclerView
+//                addTodoDialog.setOnTodoAddListener(new OnTodoAddListener() {
+//                    @Override
+//                    public void onTodoAdd() {
+//                        HistoryList=LitePal.findAll(Todo.class);
+//                        mAdapter.notifyDataSetChanged(HistoryList);
+//                    }
+//                } );
+//                addTodoDialog.show(getSupportFragmentManager(),"tag");//显示对话框
 
                 //在这里顺便监听一下数据库的内容
                 List<Todo> testlist;

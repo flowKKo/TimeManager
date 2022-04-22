@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.haibin.TimeManager.AddTodoDialog.OnTodoAddListener;
 import com.haibin.TimeManager.R;
 import com.haibin.TimeManager.Todo.Date;
 import com.haibin.TimeManager.Todo.Time;
