@@ -27,9 +27,9 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int fragment_container_view_tag = 0x7f0900e8;
-        public static final int special_effects_controller_view_tag = 0x7f0901df;
-        public static final int visible_removing_fragment_view_tag = 0x7f09024d;
+        public static final int fragment_container_view_tag = 0x7f0900e9;
+        public static final int special_effects_controller_view_tag = 0x7f0901e1;
+        public static final int visible_removing_fragment_view_tag = 0x7f090251;
     }
     public static final class styleable {
         private styleable() {}

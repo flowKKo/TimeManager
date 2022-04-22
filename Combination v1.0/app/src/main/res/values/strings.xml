@@ -114,4 +114,7 @@
     <string name="potato">potato</string>
     <string name="default_count">0</string>
 
+
+    <string name="skip">跳过</string>
+
 </resources>

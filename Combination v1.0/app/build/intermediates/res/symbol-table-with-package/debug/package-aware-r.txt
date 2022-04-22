@@ -35,6 +35,8 @@ anim nav_default_enter_anim
 anim nav_default_exit_anim
 anim nav_default_pop_enter_anim
 anim nav_default_pop_exit_anim
+anim scale_big
+anim scale_small
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -2651,6 +2653,7 @@ drawable baseline_timelapse_white_36
 drawable baseline_timelapse_white_48
 drawable bg_material
 drawable bg_ripple
+drawable breaking
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2674,6 +2677,7 @@ drawable design_snackbar_background
 drawable done_button
 drawable edittext_selector
 drawable forest
+drawable green
 drawable help_1
 drawable help_2
 drawable ic_baseline_access_alarm_24
@@ -2754,6 +2758,7 @@ drawable test_level_drawable
 drawable todo
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable working
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -2861,6 +2866,7 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id breakTimerOption
+id breaking
 id buttonPanel
 id button_Fri
 id button_Mon
@@ -3223,6 +3229,7 @@ id shrink
 id sin
 id single_mode
 id skipCollapsed
+id skip_btn
 id skipped
 id slide
 id sliding_pane_detail_container
@@ -3303,6 +3310,8 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id toBreakView
+id toWorkView
 id todoChart
 id todo_chip
 id todo_row_layout
@@ -3349,6 +3358,7 @@ id vp_week
 id west
 id withText
 id withinBounds
+id working
 id workingTimeView
 id workingTimerOption
 id wrap
@@ -3769,6 +3779,7 @@ string simple
 string simple_desc
 string single
 string single_desc
+string skip
 string status_bar_notification_info_overflow
 string sun
 string textview
