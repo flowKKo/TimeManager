@@ -31,8 +31,6 @@
     <output-test url="file://$MODULE_DIR$/../../../calendarview/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../calendarview">
-      <sourceFolder url="file://$MODULE_DIR$/../../../calendarview/build/generated/source/apt/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../calendarview/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../calendarview/src/androidTest/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../calendarview/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../calendarview/src/main/res" type="java-resource" />

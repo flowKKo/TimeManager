@@ -1,12 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: org.litepal.guolindev:core:3.2.3@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e67552cb729162c1d5f565abfb67be76/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e67552cb729162c1d5f565abfb67be76/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e67552cb729162c1d5f565abfb67be76/AndroidManifest.xml" />
-      <root url="jar://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/5a0f5aa88fe9a27413e7e2392ac504a5/jars/classes.jar!/" />
-      <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/5a0f5aa88fe9a27413e7e2392ac504a5/res" />
-      <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/5a0f5aa88fe9a27413e7e2392ac504a5/AndroidManifest.xml" />
+      <root url="jar://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/9099f1081d16bded52ad96d8a2656da9/jars/classes.jar!/" />
+      <root url="file://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/9099f1081d16bded52ad96d8a2656da9/res" />
+      <root url="file://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/9099f1081d16bded52ad96d8a2656da9/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

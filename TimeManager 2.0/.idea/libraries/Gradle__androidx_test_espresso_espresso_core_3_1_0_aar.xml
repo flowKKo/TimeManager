@@ -1,14 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.test.espresso:espresso-core:3.1.0@aar">
     <CLASSES>
-      <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/219d20c269380ae5c7879dfb320f1de7/res" />
-      <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/df5e3e93f8df3d3458f6633c0f421777/res" />
+      <root url="jar://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/ec6269ead01f1399a54c245e74e0e817/jars/classes.jar!/" />
       <root url="file://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/ec6269ead01f1399a54c245e74e0e817/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a55d9718963f3f31aee3102545439d64/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a55d9718963f3f31aee3102545439d64/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a55d9718963f3f31aee3102545439d64/res" />
-      <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/df5e3e93f8df3d3458f6633c0f421777/AndroidManifest.xml" />
-      <root url="jar://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/df5e3e93f8df3d3458f6633c0f421777/jars/classes.jar!/" />
+      <root url="file://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/ec6269ead01f1399a54c245e74e0e817/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
