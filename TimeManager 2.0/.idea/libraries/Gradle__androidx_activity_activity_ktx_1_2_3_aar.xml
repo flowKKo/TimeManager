@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.activity:activity-ktx:1.2.3@aar">
+    <CLASSES>
+      <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/b9714764052835370b19e66abac81f73/res" />
+      <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/33773b3659521bf38880da437baab701/res" />
+      <root url="file://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/e131bc0a9db916a369e5b93185e64691/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/be56dabd8207098cab15afa4f6b973a0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/be56dabd8207098cab15afa4f6b973a0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/be56dabd8207098cab15afa4f6b973a0/jars/classes.jar!/" />
+      <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/33773b3659521bf38880da437baab701/AndroidManifest.xml" />
+      <root url="jar://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/33773b3659521bf38880da437baab701/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.test:runner:1.1.0@aar">
+    <CLASSES>
+      <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/d50f2f0ab1c8bd43a0e663679928b3f1/res" />
+      <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/9961ccbb0e8b5ba898dfbd5d13d4511a/res" />
+      <root url="file://D:/CodeRelated/Android_SDK/caches/transforms-2/files-2.1/ff85fc388eb287eb629377d543229050/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/df48e8c03bf64607de3a2d96a50226b3/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/df48e8c03bf64607de3a2d96a50226b3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/df48e8c03bf64607de3a2d96a50226b3/AndroidManifest.xml" />
+      <root url="jar://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/9961ccbb0e8b5ba898dfbd5d13d4511a/jars/classes.jar!/" />
+      <root url="file://D:/CodeRelated/Android_SDK/.gradle/caches/transforms-2/files-2.1/9961ccbb0e8b5ba898dfbd5d13d4511a/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
