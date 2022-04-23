@@ -9,8 +9,8 @@
         android:id="@+id/textView_end"
         android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:hint="什么时候结束？"
         android:background="@drawable/shape_border"
+        android:hint="什么时候结束？"
         android:textSize="24sp"
         app:layout_constraintTop_toBottomOf="@+id/textView_begin" />
 
@@ -57,8 +57,8 @@
 
     <Button
         android:id="@+id/button_Repeatok"
-        android:layout_width="86dp"
-        android:layout_height="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="确认"
@@ -69,9 +69,18 @@
         android:id="@+id/textView_begin"
         android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:hint="什么时候开始？"
         android:background="@drawable/shape_border"
+        android:hint="什么时候开始？"
         android:textSize="24sp"
         app:layout_constraintTop_toBottomOf="@+id/RepeatSelect" />
+
+    <TextView
+        android:id="@+id/textView_RepeatBlank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="         "
+        app:layout_constraintTop_toBottomOf="@+id/button_Repeatok"
+        tools:layout_editor_absoluteX="168dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

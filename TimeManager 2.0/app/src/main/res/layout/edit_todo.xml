@@ -8,63 +8,63 @@
 
     <EditText
         android:id="@+id/editText_editTodo"
-        android:layout_width="362dp"
+        android:layout_width="wrap_content"
         android:layout_height="45dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/edittext_selector"
         android:ems="10"
         android:hint="准备做什么？"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/button_save"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton_editClose" />
 
     <Button
         android:id="@+id/button_edit_select_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/button_selector"
         android:text="选择日期"
-        app:layout_constraintStart_toEndOf="@+id/editText_editDate"
-        app:layout_constraintTop_toBottomOf="@+id/editText_editTodo" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_save" />
 
     <Button
         android:id="@+id/button_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="252dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/button_selector"
         android:text="保存"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton_editClose" />
 
     <Button
         android:id="@+id/button_editClock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/button_selector"
         android:drawableLeft="@android:drawable/ic_lock_idle_alarm"
         android:text="不提醒"
-        app:layout_constraintStart_toEndOf="@+id/editText_editDate"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_edit_select_date" />
 
     <EditText
         android:id="@+id/editText_editDate"
-        android:layout_width="252dp"
+        android:layout_width="wrap_content"
         android:layout_height="45dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/edittext_selector"
         android:cursorVisible="false"
         android:ems="10"
         android:focusable="false"
         android:textIsSelectable="false"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_edit_select_date"
         app:layout_constraintTop_toBottomOf="@+id/editText_editTodo" />
 
     <ImageButton

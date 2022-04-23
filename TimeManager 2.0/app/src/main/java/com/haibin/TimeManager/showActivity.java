@@ -64,14 +64,7 @@ import java.util.TimerTask;
 
 public class showActivity extends BaseActivity implements
         CalendarView.OnCalendarSelectListener,
-        CalendarView.OnCalendarLongClickListener,
-        CalendarView.OnMonthChangeListener,
-        CalendarView.OnYearChangeListener,
-        CalendarView.OnWeekChangeListener,
-        CalendarView.OnViewChangeListener,
         CalendarView.OnCalendarInterceptListener,
-        CalendarView.OnYearViewChangeListener,
-        DialogInterface.OnClickListener,
         View.OnClickListener {
 
     TextView mTextMonthDay;
@@ -161,12 +154,10 @@ public class showActivity extends BaseActivity implements
 
 
     }
-
     @Override
     protected int getLayoutId() {
         return R.layout.activity_show;
     }
-
     @SuppressLint("SetTextI18n")
     @Override
     protected void initView() {
@@ -192,17 +183,11 @@ public class showActivity extends BaseActivity implements
         });
 
         mCalendarLayout = findViewById(R.id.calendarLayout);
-        mCalendarView.setOnYearChangeListener(this);
         mCalendarView.setOnCalendarSelectListener(this);
-        mCalendarView.setOnMonthChangeListener(this);
-        mCalendarView.setOnCalendarLongClickListener(this, true);
-        mCalendarView.setOnWeekChangeListener(this);
-        mCalendarView.setOnYearViewChangeListener(this);
 
         //设置日期拦截事件，仅适用单选模式，当前无效
         mCalendarView.setOnCalendarInterceptListener(this);
 
-        mCalendarView.setOnViewChangeListener(this);
         mTextYear.setText(String.valueOf(mCalendarView.getCurYear()));
         mYear = mCalendarView.getCurYear();
         mTextMonthDay.setText(mCalendarView.getCurMonth() + "月" + mCalendarView.getCurDay() + "日");
@@ -254,40 +239,20 @@ public class showActivity extends BaseActivity implements
             }
         });
     }
-
     @SuppressWarnings("unused")
     @Override
     protected void initData() {
         final int year = mCalendarView.getCurYear();
         final int month = mCalendarView.getCurMonth();
     }
-
-    @Override
-    public void onClick(DialogInterface dialog, int which) {
-
-    }
-
     @Override
     public void onClick(View v){
 
     }
-
-    private Calendar getSchemeCalendar(int year, int month, int day, int color, String text) {
-        Calendar calendar = new Calendar();
-        calendar.setYear(year);
-        calendar.setMonth(month);
-        calendar.setDay(day);
-        calendar.setSchemeColor(color);//如果单独标记颜色、则会使用这个颜色
-        calendar.setScheme(text);
-        return calendar;
-    }
-
-
     @Override
     public void onCalendarOutOfRange(Calendar calendar) {
         //Toast.makeText(this, String.format("%s : OutOfRange", calendar), Toast.LENGTH_SHORT).show();
     }
-
     @SuppressLint("SetTextI18n")
     @Override
     public void onCalendarSelect(Calendar calendar, boolean isClick) {
@@ -305,91 +270,20 @@ public class showActivity extends BaseActivity implements
     }
 
     @Override
-    public void onCalendarLongClickOutOfRange(Calendar calendar) {
-        //Toast.makeText(this, String.format("%s : LongClickOutOfRange", calendar), Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onCalendarLongClick(Calendar calendar) {
-        //Toast.makeText(this, "长按不选择日期\n" + getCalendarText(calendar), Toast.LENGTH_SHORT).show();
-    }
-
-    private static String getCalendarText(Calendar calendar) {
-        return String.format("新历%s \n 农历%s \n 公历节日：%s \n 农历节日：%s \n 节气：%s \n 是否闰月：%s",
-                calendar.getMonth() + "月" + calendar.getDay() + "日",
-                calendar.getLunarCalendar().getMonth() + "月" + calendar.getLunarCalendar().getDay() + "日",
-                TextUtils.isEmpty(calendar.getGregorianFestival()) ? "无" : calendar.getGregorianFestival(),
-                TextUtils.isEmpty(calendar.getTraditionFestival()) ? "无" : calendar.getTraditionFestival(),
-                TextUtils.isEmpty(calendar.getSolarTerm()) ? "无" : calendar.getSolarTerm(),
-                calendar.getLeapMonth() == 0 ? "否" : String.format("闰%s月", calendar.getLeapMonth()));
-    }
-
-    @SuppressLint("SetTextI18n")
-    @Override
-    public void onMonthChange(int year, int month) {
-        Log.e("onMonthChange", "  -- " + year + "  --  " + month);
-        Calendar calendar = mCalendarView.getSelectedCalendar();
-        mTextLunar.setVisibility(View.VISIBLE);
-        mTextYear.setVisibility(View.VISIBLE);
-        mTextMonthDay.setText(calendar.getMonth() + "月" + calendar.getDay() + "日");
-        mTextYear.setText(String.valueOf(calendar.getYear()));
-        mTextLunar.setText(calendar.getLunar());
-        mYear = calendar.getYear();
-    }
-
-    @Override
-    public void onViewChange(boolean isMonthView) {
-        Log.e("onViewChange", "  ---  " + (isMonthView ? "月视图" : "周视图"));
-    }
-
-
-    @Override
-    public void onWeekChange(List<Calendar> weekCalendars) {
-        for (Calendar calendar : weekCalendars) {
-            Log.e("onWeekChange", calendar.toString());
-        }
-    }
-
-    @Override
-    public void onYearViewChange(boolean isClose) {
-        Log.e("onYearViewChange", "年视图 -- " + (isClose ? "关闭" : "打开"));
-    }
-
-    /**
-     * 屏蔽某些不可点击的日期，可根据自己的业务自行修改
-     *
-     * @param calendar calendar
-     * @return 是否屏蔽某些不可点击的日期，MonthView和WeekView有类似的API可调用
-     */
-    @Override
     public boolean onCalendarIntercept(Calendar calendar) {
         Log.e("onCalendarIntercept", calendar.toString());
         int day = calendar.getDay();
         return day == 1 || day == 3 || day == 6 || day == 11 || day == 12 || day == 15 || day == 20 || day == 26;
     }
-
     @Override
     public void onCalendarInterceptClick(Calendar calendar, boolean isClick) {
         //Toast.makeText(this, calendar.toString() + "拦截不可点击", Toast.LENGTH_SHORT).show();
     }
-
-    @Override
-    public void onYearChange(int year) {
-        mTextMonthDay.setText(String.valueOf(year));
-        //Log.e("onYearChange", " 年份变化 " + year);
-    }
-
-
-
-
-
-
     //侧边栏
     public boolean onCreateOptionsMenu(Menu menu) {//得到MenuInflater对象并调用inflate方法创建菜单
         getMenuInflater().inflate(R.menu.main,menu);
         return true;
     }
-
     @Override
     protected  void onActivityResult(int requestCode, int resultCode, Intent data)  {
         super.onActivityResult(requestCode, resultCode,  data);
@@ -409,8 +303,6 @@ public class showActivity extends BaseActivity implements
             }
         }
     }
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -439,7 +331,6 @@ public class showActivity extends BaseActivity implements
         }
         return true;
     }
-
     //这个函数会让已经完成的事件标记为已完成
     public void init_is_done(){
         for(int i=0;i<mToDoList.size();i++){
@@ -470,8 +361,6 @@ public class showActivity extends BaseActivity implements
             else i++;
         }
     }
-
-
     private class LocalReceiver extends BroadcastReceiver {//消息从adapter收到了
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -568,7 +457,6 @@ public class showActivity extends BaseActivity implements
     protected OnItemMoveListener getItemMoveListener() {
         return onItemMoveListener;
     }
-
     //Item的拖拽/侧滑删除时，手指状态发生变化监听。
     //用来设置Item在拖拽/删除时背景变化的函数
     private final OnItemStateChangedListener mOnItemStateChangedListener = new OnItemStateChangedListener() {
@@ -586,7 +474,6 @@ public class showActivity extends BaseActivity implements
             }
         }
     };
-
     //监听拖拽和侧滑删除，更新UI和数据源
     private final OnItemMoveListener onItemMoveListener = new OnItemMoveListener() {
         @Override
@@ -652,7 +539,6 @@ public class showActivity extends BaseActivity implements
         }
 
     };
-
     //添加和删除cancel_delete Fragment
     private void addFragment(Fragment fragment, String tag) {
         androidx.fragment.app.FragmentManager manager=getSupportFragmentManager();
@@ -660,14 +546,12 @@ public class showActivity extends BaseActivity implements
         transaction.add(R.id.fragment_container, fragment, tag);
         transaction.commitAllowingStateLoss();
     }
-
     private void deleteFragment(Fragment fragment){
         androidx.fragment.app.FragmentManager manager=getSupportFragmentManager();
         androidx.fragment.app.FragmentTransaction transaction=manager.beginTransaction();
         transaction.remove(fragment);
         transaction.commitAllowingStateLoss();
     }
-
     private void removeFragment2() {
         androidx.fragment.app.FragmentManager manager=getSupportFragmentManager();
         Fragment fragment = manager.findFragmentByTag("fragment1");
@@ -675,7 +559,6 @@ public class showActivity extends BaseActivity implements
         transaction.remove(fragment);
         transaction.commitAllowingStateLoss();
     }
-
     public void onClick_Dialog(View view){//监听事件
         switch(view.getId()){
             case R.id.fab:
@@ -699,7 +582,6 @@ public class showActivity extends BaseActivity implements
             default: break;
         }
     }
-
     @Override
     protected void onResume() {
         super.onResume();
