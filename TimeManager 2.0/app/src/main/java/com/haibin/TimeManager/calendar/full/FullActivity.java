@@ -118,6 +118,9 @@ public class FullActivity extends BaseActivity implements
         });
 
         current_calendar = mCalendarView.getSelectedCalendar();
+
+        mCalendarView.setRange(1949,10,1,2099,12,31);
+
     }
 
     @Override
