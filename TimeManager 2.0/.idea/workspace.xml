@@ -10,14 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96b8cd60-0a15-4359-b8a8-4d4408c35b9c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/TimeManager_2.0.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/TimeManager_2.0.app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/calendarview/TimeManager_2.0.calendarview.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/calendarview/TimeManager_2.0.calendarview.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/haibin/TimeManager/calendar/custom/CustomActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/haibin/TimeManager/calendar/custom/CustomActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/haibin/TimeManager/calendar/full/FullActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/haibin/TimeManager/calendar/full/FullActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
