@@ -1,4 +1,4 @@
-package com.example.todolist.AddTodoDialog;
+package com.haibin.TimeManager.AddTodoDialog;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.todolist.R;
+import com.haibin.TimeManager.R;
 
 import java.util.Calendar;
 import java.util.Locale;

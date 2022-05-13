@@ -8,54 +8,55 @@
 
     <EditText
         android:id="@+id/editText_editTodo"
-        android:layout_width="354dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/edittext_selector"
         android:ems="10"
-        android:hint="   准备做什么？"
+        android:hint="准备做什么？"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/button_save"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton_editClose" />
 
     <Button
         android:id="@+id/button_edit_select_date"
-        android:layout_width="94dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="28dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/button_selector"
         android:text="选择日期"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_editTodo" />
+        app:layout_constraintTop_toBottomOf="@+id/button_save" />
 
     <Button
         android:id="@+id/button_save"
-        android:layout_width="81dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="268dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/button_selector"
         android:text="保存"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton_editClose" />
 
     <Button
         android:id="@+id/button_editClock"
-        android:layout_width="86dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="36dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/button_selector"
+        android:drawableLeft="@android:drawable/ic_lock_idle_alarm"
         android:text="不提醒"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_edit_select_date" />
 
     <EditText
         android:id="@+id/editText_editDate"
-        android:layout_width="252dp"
-        android:layout_height="41dp"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/edittext_selector"
@@ -68,12 +69,21 @@
 
     <ImageButton
         android:id="@+id/imageButton_editClose"
-        android:layout_width="42dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:layout_constraintStart_toEndOf="@+id/button_save"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/presence_offline" />
+
+    <TextView
+        android:id="@+id/textView_EditBlank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="192dp"
+        android:text="       "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_editClock" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

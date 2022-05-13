@@ -2,11 +2,13 @@
 <litepal>
     <dbname value="TodoList" />
 
-    <version value="7" />
+    <version value="9" />
 
     <list>
-        <mapping class="com.example.todolist.Todo.Todo" />
-<!--        <mapping class="com.example.todolist.Date"></mapping>
-        <mapping class="com.example.todolist.Time"></mapping>-->
+        <mapping class="com.haibin.TimeManager.Todo.Todo" />
+<!--        <mapping class="com.haibin.TimeManager.Date"></mapping>
+        <mapping class="com.haibin.TimeManager.Time"></mapping>-->\
+
+        <mapping class="com.haibin.TimeManager.Pomodoro.Clock_Database"></mapping>
     </list>
 </litepal>

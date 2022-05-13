@@ -1,4 +1,4 @@
-package com.example.todolist.AddTodoDialog;
+package com.haibin.TimeManager.AddTodoDialog;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import android.widget.NumberPicker;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.todolist.R;
+import com.haibin.TimeManager.R;
 
 /**
  * A simple {@link Fragment} subclass.

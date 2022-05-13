@@ -1,4 +1,4 @@
-package com.example.todolist.Todo;
+package com.haibin.TimeManager.Todo;
 
 public class Time {
     public int hour;//小时

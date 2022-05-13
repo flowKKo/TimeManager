@@ -6,9 +6,11 @@
         android:width="1px" />
 
     <!--填充设置-->
-    <solid android:color="#80B6FAFA"/>
+    <solid android:color="#FFFFFF"/>
     <!--<solid android:color="@color/white"/>-->
     <!--圆角设置-->
-    <corners android:radius="20dp"/>
+    <corners
+        android:topLeftRadius="8dp"
+        android:topRightRadius="8dp"/>
 
 </shape>
