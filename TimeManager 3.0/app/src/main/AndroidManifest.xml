@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.haibin.TimeManager">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="org.litepal.LitePalApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/show_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/show_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
+        <activity
+            android:name=".menu.load"
+            android:exported="false" />
+        <activity
+            android:name=".menu.add_user"
+            android:exported="false" />
+        <activity
+            android:name=".menu.search_dustbin"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".menu.search_future"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".menu.search_history"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".calendar.custom.CustomActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".calendar.full.FullActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".showActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".showDailyTodoActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".Statistics.StatisticsActivity"
+            android:label="数据复盘回顾"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".Pomodoro.PomodoroActivity"
+            android:label="番茄钟"
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".Pomodoro.SetTimeActivity"
+            android:label="番茄钟"
+            android:parentActivityName=".Pomodoro.PomodoroActivity"
+            android:theme="@style/Theme.AppCompat.Light">
+            android:launchMode="singleTask">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Pomodoro.PomodoroActivity" />
+        </activity>
+        <activity
+            android:name=".menu.help_for_user"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <meta-data
+            android:name="ScopedStorage"
+            android:value="true" />
+    </application>
+
+</manifest>

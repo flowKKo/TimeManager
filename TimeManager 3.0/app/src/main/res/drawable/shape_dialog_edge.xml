@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!--描边设置-->
+    <stroke android:color="@android:color/transparent"
+        android:width="1px" />
+
+    <!--填充设置-->
+    <solid android:color="#FFFFFF"/>
+    <!--<solid android:color="@color/white"/>-->
+    <!--圆角设置-->
+    <corners
+        android:topLeftRadius="8dp"
+        android:topRightRadius="8dp"/>
+
+</shape>

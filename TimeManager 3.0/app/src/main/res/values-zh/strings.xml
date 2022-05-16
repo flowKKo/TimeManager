@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">BitTodo</string>
+
+    <string-array name="english_week_string_array">
+        <item>日</item>
+        <item>一</item>
+        <item>二</item>
+        <item>三</item>
+        <item>四</item>
+        <item>五</item>
+        <item>六</item>
+    </string-array>
+
+    <string-array name="chinese_week_string_array">
+        <item>周日</item>
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+    </string-array>
+
+    <string name="list_dialog_title">动态更新</string>
+
+    <string name="func_dialog_title">功能支持</string>
+
+    <string-array name="list_dialog_items">
+        <item>周日为周起始</item>
+        <item>周一为周起始</item>
+        <item>周六为周起始</item>
+        <item>更换选择模式：单选/默认</item>
+        <item>热插拔更换周月视图</item>
+        <item>月视图模式：全部显示</item>
+        <item>月视图模式：仅当前月份</item>
+        <item>月视图模式：自动填充</item>
+    </string-array>
+
+    <string-array name="func_dialog_items">
+        <item>展开日历布局</item>
+        <item>收缩日历布局</item>
+        <item>上一页</item>
+        <item>下一页</item>
+        <item>返回今天</item>
+        <item>限制日期范围</item>
+        <item>显示日期范围</item>
+    </string-array>
+
+    <string name="textview">TextView</string>
+    <string name="today">Today</string>
+    <string name="todolist">ToDoList</string>
+    <string name="querydata">Query Data</string>
+    <string name="adddata">Add Data</string>
+
+
+    <string name="button_play">Resume</string>
+    <string name="button_pause">Pause</string>
+    <string name="button_reset">Reset</string>
+    <string name="working_timer_option">Set working time</string>
+    <string name="break_timer_option">Set break time</string>
+    <string name="time">%1$s:%2$s</string>
+    <string name="hour_time">%1$s:%2$s:%3$s</string>
+    <string name="default_time">25:00</string>
+    <string name="button_default">Start</string>
+    <string name="set_alarm_sound">Set alarm sound</string>
+    <string name="done_button">Set</string>
+    <string name="hour_hint">Hours</string>
+    <string name="minute_hint">Minutes</string>
+    <string name="second_hint">Seconds</string>
+    <string name="worker_icon">Worker</string>
+    <string name="error_edit_text">Fields can\'t be all empty!</string>
+    <string name="all_zeros">Fields can\'t be all zeros!</string>
+    <string name="set_start_time">设置专注时长</string>
+    <string name="set_break_time">设置休息时长</string>
+    <string name="potato">potato</string>
+    <string name="default_count">0</string>
+
+
+    <string name="skip">跳过</string>
+
+
+</resources>

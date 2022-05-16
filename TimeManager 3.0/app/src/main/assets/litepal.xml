@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="TodoList" />
+
+    <version value="11" />
+
+    <list>
+        <mapping class="com.haibin.TimeManager.Todo.Todo" />
+        <mapping class="com.haibin.TimeManager.Todo.Local_user"/>
+        <mapping class="com.haibin.TimeManager.Pomodoro.Clock_Database"></mapping>
+
+    </list>
+</litepal>

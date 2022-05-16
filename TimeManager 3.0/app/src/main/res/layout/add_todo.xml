@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_dialog_edge"
+    android:visibility="visible"
+    tools:layout_editor_absoluteX="18dp"
+    tools:layout_editor_absoluteY="0dp"
+    tools:visibility="visible">
+
+    <Button
+        android:id="@+id/button_repeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/button_selector"
+        android:drawableStart="@android:drawable/stat_notify_sync_noanim"
+        android:text="不重复"
+        app:layout_constraintEnd_toStartOf="@+id/button_clock"
+        app:layout_constraintTop_toBottomOf="@+id/EditText_date" />
+
+    <EditText
+        android:id="@+id/EditText_ToDo"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/shape_border"
+        android:ems="10"
+        android:hint="准备做什么？"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/button_addtodo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_selector"
+        android:drawableStart="@android:drawable/ic_lock_idle_alarm"
+        android:text="不提醒"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditText_date" />
+
+    <Button
+        android:id="@+id/button_addtodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_selector"
+        android:text="添加"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/EditText_date"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/shape_border"
+        android:cursorVisible="false"
+        android:ems="10"
+        android:focusable="false"
+        android:textIsSelectable="false"
+        app:layout_constraintEnd_toStartOf="@+id/button_select_date"
+        app:layout_constraintTop_toBottomOf="@+id/EditText_ToDo" />
+
+    <Button
+        android:id="@+id/button_select_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_selector"
+        android:text="选择日期"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_addtodo" />
+
+    <TextView
+        android:id="@+id/textView_blank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="      "
+        app:layout_constraintTop_toBottomOf="@+id/button_repeat"
+        tools:layout_editor_absoluteX="160dp" />
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="410dp"
+        android:layout_height="212dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <EditText
+            android:id="@+id/EditText_ToDo"
+            android:layout_width="299dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/edittext_selector"
+            android:ems="10"
+            android:hint="   准备做什么？"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toStartOf="@+id/button_addtodo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_addtodo"
+            android:layout_width="86dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:text="添加"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_select_date"
+            android:layout_width="122dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:text="选择日期"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_addtodo" />
+
+        <EditText
+            android:id="@+id/EditText_date"
+            android:layout_width="254dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/edittext_selector"
+            android:cursorVisible="false"
+            android:ems="10"
+            android:focusable="false"
+            android:textIsSelectable="false"
+            app:layout_constraintEnd_toStartOf="@+id/button_select_date"
+            app:layout_constraintTop_toBottomOf="@+id/EditText_ToDo" />
+
+        <Button
+            android:id="@+id/button_clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="不提醒"
+            app:layout_constraintTop_toBottomOf="@+id/button_select_date"
+            tools:layout_editor_absoluteX="312dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>-->
+</androidx.constraintlayout.widget.ConstraintLayout>

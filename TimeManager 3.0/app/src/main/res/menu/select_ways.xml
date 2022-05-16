@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/select_day"
+        android:title="每天"
+        android:icon="@drawable/menu_selector"/>
+
+    <item android:id="@+id/select_week"
+        android:title="每周"
+        android:icon="@drawable/menu_selector"/>
+
+    <item android:id="@+id/select_month"
+        android:title="每月"
+        android:icon="@drawable/menu_selector"/>
+
+    <item android:id="@+id/select_year"
+        android:title="每年"
+        android:icon="@drawable/menu_selector"/>
+</menu>

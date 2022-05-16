@@ -1,2 +1,2 @@
-TimeManager v2.0 
+TimeManager v3.0 
 
