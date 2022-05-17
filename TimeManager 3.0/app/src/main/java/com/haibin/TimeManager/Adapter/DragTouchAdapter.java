@@ -136,11 +136,8 @@ public class DragTouchAdapter extends BaseAdapter<DragTouchAdapter.ViewHolder> {
             task_name = itemView.findViewById(R.id.todo_text);
             check_box=itemView.findViewById(R.id.checkbox);
             date=itemView.findViewById(R.id.todo_chip);
-            tomato=itemView.findViewById(R.id.tomato);
             itemView.findViewById(R.id.todo_text).setOnTouchListener(this);//为什么要额外设置一个部件来监听呢
 
-            // 匿名内部内方式设置点击事件
-            tomato.setOnClickListener(this::onClick_Dialog);
 
         }
         public void setVisibility(boolean isVisible){
@@ -166,15 +163,7 @@ public class DragTouchAdapter extends BaseAdapter<DragTouchAdapter.ViewHolder> {
             }*/
             return false;
         }
-        //点击进入番茄钟界面
-        public void onClick_Dialog(View view){
-            switch(view.getId()){
-                case R.id.tomato:
 
-                    break;
-                default: break;
-            }
-        }
     }
 
 }

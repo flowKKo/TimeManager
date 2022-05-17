@@ -47,12 +47,13 @@
             android:text="暂无日程"/>
 
     </LinearLayout>
+
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_marginTop="10dp"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_marginLeft="400dp"
+        android:layout_marginLeft="320dp"
         android:scaleType="fitCenter"
         app:srcCompat="@mipmap/ic_laji"
         android:background="#00000000"
